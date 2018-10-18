@@ -27,5 +27,19 @@ namespace TaviscaDataAnalyzerServiceProvider
             return result;
 
         }
+
+        public string MarketingAirlineBookingsInfoService(UIRequest uIRequest)
+        {
+            string result = null;
+            string data = "MarketingAirLine" + uIRequest.FromDate + uIRequest.ToDate;
+            result = cache.Get(data);
+            if (result == null)
+            {
+                IAirRepository sqlDatabase = new AirSqlDatabase();
+                result = sqlDatabase.MarketingAirlineBookingsInfoDatabase(uIRequest);
+                cache.Post(data, result);
+            }
+            return result;
+        }
     }
 }

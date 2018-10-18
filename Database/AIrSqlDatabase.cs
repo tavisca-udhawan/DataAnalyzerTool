@@ -38,5 +38,31 @@ namespace TaviscaDataAnalyzerDatabase
             var json = JsonConvert.SerializeObject(list);
             return json;
         }
+
+        public string MarketingAirlineBookingsInfoDatabase(UIRequest uIRequest)
+        {
+            var connector = sqlConnector.ConnectionEstablisher();
+            List<MarketingAirlineBookings> list = new List<MarketingAirlineBookings>();
+            string query = $"SELECT t4.FullName,t5.MarketingAirlineCode,Count(t5.MarketingAirlineCode) as Bookings   FROM TripProducts t1 JOIN TripFolders t2 ON t1.TripFolderId=t2.FolderId JOIN Payments t3 ON t2.FolderId=t3.TripFolderId JOIN AirSegments t5 ON t5.TripProductId = t1.Id Join Airlines t4 ON t4.AirlineCode=t5.MarketingAirlineCode Join PassengerSegments t7 ON t7.TripProductId=t1.Id where t7.BookingStatus='Purchased'and t1.ModifiedDate between  '{uIRequest.FromDate}' and '{uIRequest.ToDate}'  and t1.ProductType='Air' group by t5.MarketingAirlineCode,t4.FullName;  ";
+            SqlCommand command = new SqlCommand(query, connector)
+            {
+                CommandType = CommandType.Text
+            };
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+            DataTable dataTable = new DataTable();
+            connector.Open();
+            dataAdapter.Fill(dataTable);
+            connector.Close();
+            foreach (DataRow dataRow in dataTable.Rows)
+            {
+                MarketingAirlineBookings marketingAirline = new MarketingAirlineBookings();
+                marketingAirline.AirlineName = Convert.ToString(dataRow["FullName"]);
+                marketingAirline.AirLineCode= Convert.ToString(dataRow["MarketingAirlineCode"]);
+                marketingAirline.NumberOfBookings = Convert.ToInt32(dataRow["Bookings"]);
+                list.Add(marketingAirline);
+            }
+            var json = JsonConvert.SerializeObject(list);
+            return json;
+        }
     }
 }

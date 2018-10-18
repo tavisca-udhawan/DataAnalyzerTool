@@ -47,6 +47,7 @@
     <Compile Include="AirSqlDatabase.cs" />
     <Compile Include="IAirRepository.cs" />
     <Compile Include="Models\Flights\AirPaymentType.cs" />
+    <Compile Include="Models\Flights\MarketingAirlineBookings.cs" />
     <Compile Include="Models\Hotels\Cities.cs" />
     <Compile Include="Models\Hotels\FailuresInBooking.cs" />
     <Compile Include="Models\Hotels\HotelBookingDates.cs" />

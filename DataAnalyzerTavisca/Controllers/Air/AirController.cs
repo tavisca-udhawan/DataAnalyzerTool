@@ -32,6 +32,14 @@ namespace DataAnalyzerTavisca.Controllers.Air
             return airPaymentType;
         }
 
-       
+        [HttpGet]
+        [Route("api/Air/MarketingAirlineBookingInfo")]
+        public object GetMarketingAirlineBookingInfo([FromUri] string fromDate, string toDate)
+        {
+            UIRequest uiRequest = new UIRequest { FromDate = fromDate, ToDate = toDate };
+            IAirWebApiService webApiServiceProvider = new AirWebApiService();
+            List<MarketingAirlineBookings> airPaymentType = JsonConvert.DeserializeObject<List<MarketingAirlineBookings>>(webApiServiceProvider.MarketingAirlineBookingsInfoService(uiRequest));
+            return airPaymentType;
+        }
     }
 }

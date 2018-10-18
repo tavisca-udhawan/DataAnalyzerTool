@@ -10,5 +10,6 @@ namespace TaviscaDataAnalyzerDatabase
    public interface IAirRepository
     {
         string AirPaymentTypeDatabase(UIRequest uIRequest);
+        string MarketingAirlineBookingsInfoDatabase(UIRequest uIRequest);
     }
 }

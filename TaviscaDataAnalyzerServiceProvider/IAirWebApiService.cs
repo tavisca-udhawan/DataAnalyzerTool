@@ -10,5 +10,6 @@ namespace TaviscaDataAnalyzerServiceProvider
    public interface IAirWebApiService
     {
         string AirPaymentTypeService(UIRequest uIRequest);
+        string MarketingAirlineBookingsInfoService(UIRequest uIRequest);
     }
 }
