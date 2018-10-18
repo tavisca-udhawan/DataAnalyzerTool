@@ -14,6 +14,30 @@ namespace TaviscaDataAnalyzerDatabase
     public class AirSqlDatabase : IAirRepository
     {
         SqlConnector sqlConnector = new SqlConnector();
+
+        public string AirFailureCountDatabase(UIRequest uIRequest)
+        {
+            var connector = sqlConnector.ConnectionEstablisher();
+            FailureCount failure = new FailureCount();
+            string query = $"SELECT COUNT(t3.BookingStatus) as FailureCount FROM AirSegments t1 JOIN TripProducts t2 ON t1.TripProductId = t2.Id JOIN PassengerSegments  t3 ON t2.Id = t3.TripProductId where t2.ModifiedDate between '{uIRequest.FromDate}' and '{uIRequest.ToDate}' and t3.BookingStatus ='Purchased' and t2.ProductType='Air' ;";
+            SqlCommand command = new SqlCommand(query, connector)
+            {
+                CommandType = CommandType.Text
+            };
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+            DataTable dataTable = new DataTable();
+            connector.Open();
+            dataAdapter.Fill(dataTable);
+            connector.Close();
+            foreach (DataRow dataRow in dataTable.Rows)
+            {
+               failure.failureCount= Convert.ToInt32(dataRow["FailureCount"]);
+            }
+            var json = JsonConvert.SerializeObject(failure);
+            return json;
+
+        }
+
         public string AirPaymentTypeDatabase(UIRequest uIRequest)
         {
             var connector = sqlConnector.ConnectionEstablisher();

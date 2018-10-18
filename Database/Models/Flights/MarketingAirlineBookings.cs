@@ -9,7 +9,8 @@ namespace TaviscaDataAnalyzerDatabase.Models.Flights
    public class MarketingAirlineBookings
     {
         public string AirlineName { get; set; }
-        public int NumberOfBookings { get; set; }
         public string AirLineCode { get; set; }
+        public int NumberOfBookings { get; set; }
+        
     }
 }

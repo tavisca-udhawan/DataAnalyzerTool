@@ -11,5 +11,7 @@ namespace TaviscaDataAnalyzerDatabase
     {
         string AirPaymentTypeDatabase(UIRequest uIRequest);
         string MarketingAirlineBookingsInfoDatabase(UIRequest uIRequest);
+        string AirFailureCountDatabase(UIRequest uIRequest);
+        
     }
 }

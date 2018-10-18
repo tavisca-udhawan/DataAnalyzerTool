@@ -11,5 +11,6 @@ namespace TaviscaDataAnalyzerServiceProvider
     {
         string AirPaymentTypeService(UIRequest uIRequest);
         string MarketingAirlineBookingsInfoService(UIRequest uIRequest);
+        string FailureCountInfoService(UIRequest uIRequest);
     }
 }

@@ -28,6 +28,20 @@ namespace TaviscaDataAnalyzerServiceProvider
 
         }
 
+        public string FailureCountInfoService(UIRequest uIRequest)
+        {
+            string result = null;
+            string data = "AirFailureCount" + uIRequest.FromDate + uIRequest.ToDate;
+            result = cache.Get(data);
+            if (result == null)
+            {
+                IAirRepository sqlDatabase = new AirSqlDatabase();
+                result = sqlDatabase.AirFailureCountDatabase(uIRequest);
+                cache.Post(data, result);
+            }
+            return result;
+        }
+
         public string MarketingAirlineBookingsInfoService(UIRequest uIRequest)
         {
             string result = null;
