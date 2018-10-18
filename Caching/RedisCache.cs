@@ -10,12 +10,12 @@ using System.Threading.Tasks;
 namespace TaviscaDataAnalyzerCache
 {
 
-    public class ServiceProvider : ICache
+    public class RedisCache : ICache
     {
         IDatabase redisDatabase;
         RedisConnector connector = new RedisConnector();
 
-        public ServiceProvider()
+        public RedisCache()
         {
             redisDatabase = connector.Connection.GetDatabase();
         }

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace TaviscaDataAnalyzerDatabase
 {
-    public class SqlDatabase:IRepository
+    public class HotelSqlDatabase:IHotelRepository
     {
         SqlConnector sqlConnector = new SqlConnector();
         public string GetAllLocationsDatabase()

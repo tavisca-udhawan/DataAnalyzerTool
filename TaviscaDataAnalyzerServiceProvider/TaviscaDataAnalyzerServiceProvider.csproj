@@ -40,8 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IWebApiServiceProvider.cs" />
-    <Compile Include="WebApiServiceProvider.cs" />
+    <Compile Include="AirWebApiService.cs" />
+    <Compile Include="IAirWebApiService.cs" />
+    <Compile Include="IHotelWebApiServiceProvider.cs" />
+    <Compile Include="HotelWebApiServiceProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

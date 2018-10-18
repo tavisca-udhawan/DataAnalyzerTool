@@ -20,8 +20,8 @@ namespace TaviscaDataAnalyzerApi.Controllers
         [Route("api/HotelLocations")]
         public object GetAllLocations()
         {
-            IWebApiServiceProvider service = new WebApiServiceProvider();
-            Cities ListOfCities = JsonConvert.DeserializeObject<Cities>(service.GetAllLocationsCache()); ;
+            IHotelWebApiServiceProvider service = new HotelWebApiServiceProvider();
+            Cities ListOfCities = JsonConvert.DeserializeObject<Cities>(service.GetAllLocationsService()); ;
             return ListOfCities;
         }
 
@@ -30,8 +30,8 @@ namespace TaviscaDataAnalyzerApi.Controllers
         public object GetHotelLocationWithDates([FromUri] string fromDate, string toDate)
         {
             UIRequest query = new UIRequest { ToDate = toDate, FromDate = fromDate };
-            IWebApiServiceProvider service = new WebApiServiceProvider();
-            List<HotelsInALocationWithDates> ListOfHotelsWithDates = JsonConvert.DeserializeObject<List<HotelsInALocationWithDates>>(service.HotelsAtALocationWithDatesCache(query));
+            IHotelWebApiServiceProvider service = new HotelWebApiServiceProvider();
+            List<HotelsInALocationWithDates> ListOfHotelsWithDates = JsonConvert.DeserializeObject<List<HotelsInALocationWithDates>>(service.HotelsAtALocationWithDatesService(query));
             return ListOfHotelsWithDates;
         }
 
@@ -40,8 +40,8 @@ namespace TaviscaDataAnalyzerApi.Controllers
         public object GetHotelNamesWithDates([FromUri] string fromDate, string toDate, string location)
         {
             UIRequest query = new UIRequest { ToDate = toDate, FromDate = fromDate, Filter = location };
-            IWebApiServiceProvider service = new WebApiServiceProvider();
-            List<HotelNamesWithBookings> ListOfHotelNamesWithDates = JsonConvert.DeserializeObject<List<HotelNamesWithBookings>>(service.HotelNameWithDatesCache(query));
+            IHotelWebApiServiceProvider service = new HotelWebApiServiceProvider();
+            List<HotelNamesWithBookings> ListOfHotelNamesWithDates = JsonConvert.DeserializeObject<List<HotelNamesWithBookings>>(service.HotelNameWithDatesService(query));
             return ListOfHotelNamesWithDates;
         }
 
@@ -50,8 +50,8 @@ namespace TaviscaDataAnalyzerApi.Controllers
         public object GetSupplierNamesWithDates([FromUri] string fromDate, string toDate, string location)
         {
             UIRequest query = new UIRequest { ToDate = toDate, FromDate = fromDate, Filter = location };
-            IWebApiServiceProvider service = new WebApiServiceProvider();
-            List<IndividualSupplierBookings> ListOfSuppliers = JsonConvert.DeserializeObject<List<IndividualSupplierBookings>>(service.SupplierNamesWithDatesCache(query));
+            IHotelWebApiServiceProvider service = new HotelWebApiServiceProvider();
+            List<IndividualSupplierBookings> ListOfSuppliers = JsonConvert.DeserializeObject<List<IndividualSupplierBookings>>(service.SupplierNamesWithDatesService(query));
             return ListOfSuppliers;
         }
 
@@ -60,8 +60,8 @@ namespace TaviscaDataAnalyzerApi.Controllers
         public object GetFailureCount([FromUri] string fromDate, string toDate, string location)
         {
             UIRequest query = new UIRequest { ToDate = toDate, FromDate = fromDate, Filter = location };
-            IWebApiServiceProvider service = new WebApiServiceProvider();
-            FailuresInBooking FailureCount = JsonConvert.DeserializeObject<FailuresInBooking>(service.FailureCountCache(query));
+            IHotelWebApiServiceProvider service = new HotelWebApiServiceProvider();
+            FailuresInBooking FailureCount = JsonConvert.DeserializeObject<FailuresInBooking>(service.FailureCountService(query));
             return FailureCount;
         }
 
@@ -70,8 +70,8 @@ namespace TaviscaDataAnalyzerApi.Controllers
         public object GetPaymentType([FromUri] string fromDate, string toDate, string location)
         {
             UIRequest query = new UIRequest { ToDate = toDate, FromDate = fromDate, Filter = location };
-            IWebApiServiceProvider service = new WebApiServiceProvider();
-            List<PaymentDetails> payment = JsonConvert.DeserializeObject<List<PaymentDetails>>(service.PaymentDetailsCache(query));
+            IHotelWebApiServiceProvider service = new HotelWebApiServiceProvider();
+            List<PaymentDetails> payment = JsonConvert.DeserializeObject<List<PaymentDetails>>(service.PaymentDetailsService(query));
             return payment;
         }
 
@@ -80,8 +80,8 @@ namespace TaviscaDataAnalyzerApi.Controllers
         public object GetBookingDates([FromUri] string fromDate, string toDate, string location)
         {
             UIRequest query = new UIRequest { ToDate = toDate, FromDate = fromDate, Filter = location };
-            IWebApiServiceProvider service = new WebApiServiceProvider();
-            List<HotelBookingDates> hotelBookingDates = JsonConvert.DeserializeObject<List<HotelBookingDates>>(service.BookingDatesCache(query));
+            IHotelWebApiServiceProvider service = new HotelWebApiServiceProvider();
+            List<HotelBookingDates> hotelBookingDates = JsonConvert.DeserializeObject<List<HotelBookingDates>>(service.BookingDatesService(query));
             return hotelBookingDates;
         }
 
@@ -90,8 +90,8 @@ namespace TaviscaDataAnalyzerApi.Controllers
         public object GetSuccessfulCount()
         {
 
-            IWebApiServiceProvider service = new WebApiServiceProvider();
-            List<TotalHotelBookings> totalHotelBookings = JsonConvert.DeserializeObject<List<TotalHotelBookings>>(service.TotalHotelBookingsCache());
+            IHotelWebApiServiceProvider service = new HotelWebApiServiceProvider();
+            List<TotalHotelBookings> totalHotelBookings = JsonConvert.DeserializeObject<List<TotalHotelBookings>>(service.TotalHotelBookingsService());
             return totalHotelBookings;
         }
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace TaviscaDataAnalyzerDatabase
 {
-    public interface IRepository
+    public interface IHotelRepository
     {
         string GetAllLocationsDatabase();
         string HotelsAtALocationWithDatesDatabases(UIRequest query);
