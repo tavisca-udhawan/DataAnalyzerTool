@@ -15,13 +15,7 @@ namespace DataAnalyzerTavisca.Controllers.Air
 {
     public class AirController : ApiController
     {
-        // GET: api/Air
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
-        // GET: api/Air/5
+        
         [HttpGet]
         [Route ("api/Air/PaymentType")]
         public object GetPaymentType([FromUri] string fromDate, string toDate)
@@ -59,6 +53,17 @@ namespace DataAnalyzerTavisca.Controllers.Air
             IAirWebApiService webApiServiceProvider = new AirWebApiService();
             List<TotalBookings> totatlBookings = JsonConvert.DeserializeObject<List<TotalBookings>>(webApiServiceProvider.TotalBookingsInfoService());
             return totatlBookings;
+        }
+
+
+        [HttpGet]
+        [Route("api/Air/BookingsWithinDateRange")]
+        public object GetBookingsWithinDateRangeInfo([FromUri] string fromDate, string toDate)
+        {
+            UIRequest uiRequest = new UIRequest { FromDate = fromDate, ToDate = toDate };
+            IAirWebApiService webApiServiceProvider = new AirWebApiService();
+            List<DatesWithBookings> dateWithBookings = JsonConvert.DeserializeObject<List<DatesWithBookings>>(webApiServiceProvider.BookingsWithinDateRangeInfoService(uiRequest));
+            return dateWithBookings;
         }
     }
 }

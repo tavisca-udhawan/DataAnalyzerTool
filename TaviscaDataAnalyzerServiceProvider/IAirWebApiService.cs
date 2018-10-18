@@ -13,5 +13,6 @@ namespace TaviscaDataAnalyzerServiceProvider
         string MarketingAirlineBookingsInfoService(UIRequest uIRequest);
         string FailureCountInfoService(UIRequest uIRequest);
         string TotalBookingsInfoService();
+        string BookingsWithinDateRangeInfoService(UIRequest uIRequest);
     }
 }

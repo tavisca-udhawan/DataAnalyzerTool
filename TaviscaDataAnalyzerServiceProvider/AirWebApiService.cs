@@ -28,6 +28,20 @@ namespace TaviscaDataAnalyzerServiceProvider
 
         }
 
+        public string BookingsWithinDateRangeInfoService(UIRequest uIRequest)
+        {
+            string result = null;
+            string data = "BookingsWithinDateRange" + uIRequest.FromDate + uIRequest.ToDate;
+            result = cache.Get(data);
+            if (result == null)
+            {
+                IAirRepository sqlDatabase = new AirSqlDatabase();
+                result = sqlDatabase.BookingsWithinDateRangeInfoDatabase(uIRequest);
+                cache.Post(data, result);
+            }
+            return result;
+        }
+
         public string FailureCountInfoService(UIRequest uIRequest)
         {
             string result = null;

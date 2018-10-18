@@ -13,5 +13,6 @@ namespace TaviscaDataAnalyzerDatabase
         string MarketingAirlineBookingsInfoDatabase(UIRequest uIRequest);
         string AirFailureCountDatabase(UIRequest uIRequest);
         string TotalBookingsInfoDatabase();
+        string BookingsWithinDateRangeInfoDatabase(UIRequest uIRequest);
     }
 }

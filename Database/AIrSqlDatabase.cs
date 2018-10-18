@@ -63,6 +63,43 @@ namespace TaviscaDataAnalyzerDatabase
             return json;
         }
 
+        public string BookingsWithinDateRangeInfoDatabase(UIRequest uIRequest)
+        {
+            var connector = sqlConnector.ConnectionEstablisher();
+            List<DatesWithBookings> list = new List<DatesWithBookings>();
+            string query = $"SELECT  t1.ModifiedDate ,COUNT(t1.ModifiedDate) AS Bookings FROM TripProducts t1 JOIN PassengerSegments t2 ON t1.Id=t2.TripProductId JOIN  AirSegments t3 ON t3.TripProductId=t1.Id where t1.ProductType='Air' AND t2.BookingStatus='Purchased' AND t1.ModifiedDate between '{uIRequest.FromDate}' and '{uIRequest.ToDate}' group by t1.ModifiedDate;";
+            SqlCommand command = new SqlCommand(query, connector)
+            {
+                CommandType = CommandType.Text
+            };
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+            DataTable dataTable = new DataTable();
+            connector.Open();
+            dataAdapter.Fill(dataTable);
+            connector.Close();
+            foreach (DataRow dataRow in dataTable.Rows)
+            {
+
+                DatesWithBookings datesWithBookings = new DatesWithBookings();
+
+                string bookingDate = Convert.ToString(dataRow["ModifiedDate"]);
+                bookingDate = bookingDate.Substring(0, 9);
+                if (list.Exists(existingAlready => existingAlready.Date == bookingDate))
+                {
+
+                    list[list.FindIndex(existingAlready => existingAlready.Date == bookingDate)].NumberOfBookings += Convert.ToInt32(dataRow["Bookings"]);
+                }
+                else
+                {
+                    datesWithBookings.Date = bookingDate;
+                    datesWithBookings.NumberOfBookings = Convert.ToInt32(dataRow["Bookings"]);
+                    list.Add(datesWithBookings);
+                }
+            }
+            var json = JsonConvert.SerializeObject(list);
+            return json;
+        }
+
         public string MarketingAirlineBookingsInfoDatabase(UIRequest uIRequest)
         {
             var connector = sqlConnector.ConnectionEstablisher();
