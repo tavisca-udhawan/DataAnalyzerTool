@@ -55,5 +55,19 @@ namespace TaviscaDataAnalyzerServiceProvider
             }
             return result;
         }
+
+        public string TotalBookingsInfoService()
+        {
+            string result = null;
+            string data = "AirTotalBookingsCount";
+            result = cache.Get(data);
+            if (result == null)
+            {
+                IAirRepository sqlDatabase = new AirSqlDatabase();
+                result = sqlDatabase.TotalBookingsInfoDatabase();
+                cache.Post(data, result);
+            }
+            return result;
+        }
     }
 }

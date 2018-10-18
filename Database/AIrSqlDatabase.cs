@@ -88,5 +88,30 @@ namespace TaviscaDataAnalyzerDatabase
             var json = JsonConvert.SerializeObject(list);
             return json;
         }
+
+        public string TotalBookingsInfoDatabase()
+        {
+            var connector = sqlConnector.ConnectionEstablisher();
+            List<TotalBookings> list = new List<TotalBookings>();
+            string query = $"SELECT t2.BookingStatus ,COUNT(t2.BookingStatus) As AllBookings FROM TripProducts t1 JOIN PassengerSegments t2 ON t1.Id=t2.TripProductId where t1.ProductType='Air' group by t2.BookingStatus;";
+            SqlCommand command = new SqlCommand(query, connector)
+            {
+                CommandType = CommandType.Text
+            };
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
+            DataTable dataTable = new DataTable();
+            connector.Open();
+            dataAdapter.Fill(dataTable);
+            connector.Close();
+            foreach (DataRow dataRow in dataTable.Rows)
+            {
+                TotalBookings totalBookings = new TotalBookings();
+                totalBookings.BookingStatus = Convert.ToString(dataRow["BookingStatus"]);
+                totalBookings.NumberOfBookings = Convert.ToInt32(dataRow["AllBookings"]);
+                list.Add(totalBookings);
+            }
+            var json = JsonConvert.SerializeObject(list);
+            return json;
+        }
     }
 }

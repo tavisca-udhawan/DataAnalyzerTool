@@ -49,6 +49,7 @@
     <Compile Include="Models\Flights\AirPaymentType.cs" />
     <Compile Include="Models\Flights\FailureCount.cs" />
     <Compile Include="Models\Flights\MarketingAirlineBookings.cs" />
+    <Compile Include="Models\Flights\TotalBookings.cs" />
     <Compile Include="Models\Hotels\Cities.cs" />
     <Compile Include="Models\Hotels\FailuresInBooking.cs" />
     <Compile Include="Models\Hotels\HotelBookingDates.cs" />

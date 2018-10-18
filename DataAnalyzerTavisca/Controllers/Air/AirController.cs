@@ -51,5 +51,14 @@ namespace DataAnalyzerTavisca.Controllers.Air
             FailureCount airPaymentType = JsonConvert.DeserializeObject<FailureCount>(webApiServiceProvider.FailureCountInfoService(uiRequest));
             return airPaymentType;
         }
+
+        [HttpGet]
+        [Route("api/Air/TotalBookings")]
+        public object GetTotalBookingsInfo()
+        {
+            IAirWebApiService webApiServiceProvider = new AirWebApiService();
+            List<TotalBookings> totatlBookings = JsonConvert.DeserializeObject<List<TotalBookings>>(webApiServiceProvider.TotalBookingsInfoService());
+            return totatlBookings;
+        }
     }
 }
