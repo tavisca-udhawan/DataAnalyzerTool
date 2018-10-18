@@ -1,0 +1,12 @@
+div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 60%;
+    margin: 10px auto;
+    vertical-align: middle;    
+}
+button{
+    height: 40px;
+    margin-top: 10px;
+}

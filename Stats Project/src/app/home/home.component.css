@@ -1,0 +1,15 @@
+.realtime-date-time{
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+.circle{
+    border-radius: 50%;
+    border: 1px solid;
+    height: 300px;
+    width: 300px;
+    margin: 0 auto;
+}
+.booking-text{
+    margin: 0 auto;
+}

@@ -1,0 +1,22 @@
+<div>
+<mat-form-field>
+    <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="firstPicker" placeholder="Start Date">
+    <mat-datepicker-toggle matSuffix [for]="firstPicker"></mat-datepicker-toggle>
+    <mat-datepicker #firstPicker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="secondPicker" placeholder="End Date">
+    <mat-datepicker-toggle matSuffix [for]="secondPicker"></mat-datepicker-toggle>
+    <mat-datepicker #secondPicker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Graph Type">
+      <mat-option *ngFor="let graph of graphs" [value]="graph.value">
+        {{graph.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button mat-raised-button color="primary">
+      Get Flights Data
+      </button>
+    </div>
