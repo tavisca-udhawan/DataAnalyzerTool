@@ -36,7 +36,7 @@ namespace TaviscaDataAnalyzerDatabase
             return json;
         }
 
-        public string HotelsAtALocationWithDatesDatabases(QueryFormat queryFormat)
+        public string HotelsAtALocationWithDatesDatabases(UIRequest queryFormat)
         {
             var connector = sqlConnector.ConnectionEstablisher();
             List<HotelsInALocationWithDates> list = new List<HotelsInALocationWithDates>();
@@ -74,7 +74,7 @@ namespace TaviscaDataAnalyzerDatabase
             var json = JsonConvert.SerializeObject(list);
             return json;
         }
-        public string HotelNameWithDatesDatabases(QueryFormat queryFormat)
+        public string HotelNameWithDatesDatabases(UIRequest queryFormat)
         {
             var connector = sqlConnector.ConnectionEstablisher();
             List<HotelNamesWithBookings> list = new List<HotelNamesWithBookings>();
@@ -98,7 +98,7 @@ namespace TaviscaDataAnalyzerDatabase
             var json = JsonConvert.SerializeObject(list);
             return json;
         }
-        public string SupplierNamesWithDatesDatabase(QueryFormat queryFormat)
+        public string SupplierNamesWithDatesDatabase(UIRequest queryFormat)
         {
             var connector = sqlConnector.ConnectionEstablisher();
             List<IndividualSupplierBookings> list = new List<IndividualSupplierBookings>();
@@ -130,7 +130,7 @@ namespace TaviscaDataAnalyzerDatabase
             var json = JsonConvert.SerializeObject(list);
             return json;
         }
-        public string FailureCountDataBase(QueryFormat queryFormat)
+        public string FailureCountDataBase(UIRequest queryFormat)
         {
             var connector = sqlConnector.ConnectionEstablisher();
             FailuresInBooking failuresInBooking = new FailuresInBooking();
@@ -153,7 +153,7 @@ namespace TaviscaDataAnalyzerDatabase
             return json;
         }
 
-        public string PaymentDetailsDatabase(QueryFormat queryFormat)
+        public string PaymentDetailsDatabase(UIRequest queryFormat)
         {
             var connector = sqlConnector.ConnectionEstablisher();
             List<PaymentDetails> list = new List<PaymentDetails>();
@@ -178,7 +178,7 @@ namespace TaviscaDataAnalyzerDatabase
             return json;
         }
 
-        public string BookingDatesDatabase(QueryFormat queryFormat)
+        public string BookingDatesDatabase(UIRequest queryFormat)
         {
             var connector = sqlConnector.ConnectionEstablisher();
             List<HotelBookingDates> list = new List<HotelBookingDates>();

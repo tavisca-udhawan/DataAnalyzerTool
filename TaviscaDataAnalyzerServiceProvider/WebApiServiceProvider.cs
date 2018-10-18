@@ -16,7 +16,7 @@ namespace TaviscaDataAnalyzerServiceProvider
         {
             cache = new TaviscaDataAnalyzerCache.ServiceProvider();
         }
-        public string BookingDatesCache(QueryFormat query)
+        public string BookingDatesCache(UIRequest query)
         {
             string result = null;
             string data = "BookingDates" + query.Filter + query.FromDate + query.ToDate;
@@ -30,7 +30,7 @@ namespace TaviscaDataAnalyzerServiceProvider
             return result;
         }
 
-        public string FailureCountCache(QueryFormat query)
+        public string FailureCountCache(UIRequest query)
         {
             string result = null;
             string data = "FailureCount";
@@ -58,7 +58,7 @@ namespace TaviscaDataAnalyzerServiceProvider
             return result;
         }
 
-        public string HotelNameWithDatesCache(QueryFormat query)
+        public string HotelNameWithDatesCache(UIRequest query)
         {
             string result = null;
             string data = query.ToDate + query.Filter + query.FromDate;
@@ -72,7 +72,7 @@ namespace TaviscaDataAnalyzerServiceProvider
             return result;
         }
 
-        public string HotelsAtALocationWithDatesCache(QueryFormat query)
+        public string HotelsAtALocationWithDatesCache(UIRequest query)
         {
             string result = null;
             string data = query.ToDate + query.FromDate;
@@ -86,7 +86,7 @@ namespace TaviscaDataAnalyzerServiceProvider
             return result;
         }
 
-        public string PaymentDetailsCache(QueryFormat query)
+        public string PaymentDetailsCache(UIRequest query)
         {
             string result = null;
             string data = query.ToDate + query.FromDate + "Payment" + query.Filter;
@@ -100,7 +100,7 @@ namespace TaviscaDataAnalyzerServiceProvider
             return result;
         }
 
-        public string SupplierNamesWithDatesCache(QueryFormat query)
+        public string SupplierNamesWithDatesCache(UIRequest query)
         {
             string result = null;
             string data = query.ToDate + query.FromDate + query.Filter;

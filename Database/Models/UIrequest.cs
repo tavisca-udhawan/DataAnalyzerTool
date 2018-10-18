@@ -5,7 +5,7 @@ using System.Web;
 
 namespace TaviscaDataAnalyzerDatabase.Models
 {
-    public class QueryFormat
+    public class UIRequest
     {
        
         public string Filter { get; set; }

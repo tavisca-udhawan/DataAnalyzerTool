@@ -10,13 +10,13 @@ namespace TaviscaDataAnalyzerDatabase
     public interface IRepository
     {
         string GetAllLocationsDatabase();
-        string HotelsAtALocationWithDatesDatabases(QueryFormat query);
+        string HotelsAtALocationWithDatesDatabases(UIRequest query);
 
-        string SupplierNamesWithDatesDatabase(QueryFormat query);
-        string HotelNameWithDatesDatabases(QueryFormat query);
-        string BookingDatesDatabase(QueryFormat query);
-        string FailureCountDataBase(QueryFormat query);
-        string PaymentDetailsDatabase(QueryFormat query);
+        string SupplierNamesWithDatesDatabase(UIRequest query);
+        string HotelNameWithDatesDatabases(UIRequest query);
+        string BookingDatesDatabase(UIRequest query);
+        string FailureCountDataBase(UIRequest query);
+        string PaymentDetailsDatabase(UIRequest query);
 
         string TotalHotelBookingsDataBase();
     }

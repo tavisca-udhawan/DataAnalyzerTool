@@ -29,7 +29,7 @@ namespace TaviscaDataAnalyzerApi.Controllers
         [Route("api/Hotels/HotelLocationWithDates")]
         public object GetHotelLocationWithDates([FromUri] string fromDate, string toDate)
         {
-            QueryFormat query = new QueryFormat { ToDate = toDate, FromDate = fromDate };
+            UIRequest query = new UIRequest { ToDate = toDate, FromDate = fromDate };
             IWebApiServiceProvider service = new WebApiServiceProvider();
             List<HotelsInALocationWithDates> ListOfHotelsWithDates = JsonConvert.DeserializeObject<List<HotelsInALocationWithDates>>(service.HotelsAtALocationWithDatesCache(query));
             return ListOfHotelsWithDates;
@@ -39,7 +39,7 @@ namespace TaviscaDataAnalyzerApi.Controllers
         [Route("api/Hotels/HotelNamesWithDates")]
         public object GetHotelNamesWithDates([FromUri] string fromDate, string toDate, string location)
         {
-            QueryFormat query = new QueryFormat { ToDate = toDate, FromDate = fromDate, Filter = location };
+            UIRequest query = new UIRequest { ToDate = toDate, FromDate = fromDate, Filter = location };
             IWebApiServiceProvider service = new WebApiServiceProvider();
             List<HotelNamesWithBookings> ListOfHotelNamesWithDates = JsonConvert.DeserializeObject<List<HotelNamesWithBookings>>(service.HotelNameWithDatesCache(query));
             return ListOfHotelNamesWithDates;
@@ -49,7 +49,7 @@ namespace TaviscaDataAnalyzerApi.Controllers
         [Route("api/Hotels/SupplierNamesWithDates")]
         public object GetSupplierNamesWithDates([FromUri] string fromDate, string toDate, string location)
         {
-            QueryFormat query = new QueryFormat { ToDate = toDate, FromDate = fromDate, Filter = location };
+            UIRequest query = new UIRequest { ToDate = toDate, FromDate = fromDate, Filter = location };
             IWebApiServiceProvider service = new WebApiServiceProvider();
             List<IndividualSupplierBookings> ListOfSuppliers = JsonConvert.DeserializeObject<List<IndividualSupplierBookings>>(service.SupplierNamesWithDatesCache(query));
             return ListOfSuppliers;
@@ -59,7 +59,7 @@ namespace TaviscaDataAnalyzerApi.Controllers
         [Route("api/Hotels/FailureCount")]
         public object GetFailureCount([FromUri] string fromDate, string toDate, string location)
         {
-            QueryFormat query = new QueryFormat { ToDate = toDate, FromDate = fromDate, Filter = location };
+            UIRequest query = new UIRequest { ToDate = toDate, FromDate = fromDate, Filter = location };
             IWebApiServiceProvider service = new WebApiServiceProvider();
             FailuresInBooking FailureCount = JsonConvert.DeserializeObject<FailuresInBooking>(service.FailureCountCache(query));
             return FailureCount;
@@ -69,7 +69,7 @@ namespace TaviscaDataAnalyzerApi.Controllers
         [Route("api/Hotels/PaymentType")]
         public object GetPaymentType([FromUri] string fromDate, string toDate, string location)
         {
-            QueryFormat query = new QueryFormat { ToDate = toDate, FromDate = fromDate, Filter = location };
+            UIRequest query = new UIRequest { ToDate = toDate, FromDate = fromDate, Filter = location };
             IWebApiServiceProvider service = new WebApiServiceProvider();
             List<PaymentDetails> payment = JsonConvert.DeserializeObject<List<PaymentDetails>>(service.PaymentDetailsCache(query));
             return payment;
@@ -79,7 +79,7 @@ namespace TaviscaDataAnalyzerApi.Controllers
         [Route("api/Hotels/BookingDates")]
         public object GetBookingDates([FromUri] string fromDate, string toDate, string location)
         {
-            QueryFormat query = new QueryFormat { ToDate = toDate, FromDate = fromDate, Filter = location };
+            UIRequest query = new UIRequest { ToDate = toDate, FromDate = fromDate, Filter = location };
             IWebApiServiceProvider service = new WebApiServiceProvider();
             List<HotelBookingDates> hotelBookingDates = JsonConvert.DeserializeObject<List<HotelBookingDates>>(service.BookingDatesCache(query));
             return hotelBookingDates;

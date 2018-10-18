@@ -10,13 +10,13 @@ namespace TaviscaDataAnalyzerServiceProvider
     public interface IWebApiServiceProvider
     {
         string GetAllLocationsCache();
-        string HotelsAtALocationWithDatesCache(QueryFormat query);
-        string HotelNameWithDatesCache(QueryFormat query);
+        string HotelsAtALocationWithDatesCache(UIRequest query);
+        string HotelNameWithDatesCache(UIRequest query);
 
-        string SupplierNamesWithDatesCache(QueryFormat query);
-        string FailureCountCache(QueryFormat query);
-        string PaymentDetailsCache(QueryFormat query);
-        string BookingDatesCache(QueryFormat query);
+        string SupplierNamesWithDatesCache(UIRequest query);
+        string FailureCountCache(UIRequest query);
+        string PaymentDetailsCache(UIRequest query);
+        string BookingDatesCache(UIRequest query);
         string TotalHotelBookingsCache();
     }
 }
