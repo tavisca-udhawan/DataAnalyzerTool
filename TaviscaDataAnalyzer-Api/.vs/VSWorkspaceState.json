@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Caching\\bin",
+    "\\Caching\\obj",
+    "\\Caching\\Properties",
+    "\\DataAnalyzerTavisca",
+    "\\DataAnalyzerTavisca.Tests"
+  ],
+  "SelectedNode": "\\DataAnalyzerTavisca.Tests\\app.config",
+  "PreviewInSolutionExplorer": true
+}
