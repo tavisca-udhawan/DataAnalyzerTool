@@ -1,0 +1,50 @@
+<div id="form">
+<form novalidate [formGroup]="loginForm">
+  <mat-form-field>
+      <input matInput #sdate [min]="minDate" [max]="maxDate" (dateChange)="checkStartDate()" [readonly]="true" [(ngModel)]="currentStartDate" name="currentStartDate" [matDatepicker]="firstPicker" placeholder="Start Date" formControlName="startDateControl" required>
+      <mat-error *ngIf="loginForm.controls.startDateControl.hasError('required')">
+         *Required
+      </mat-error>
+      <mat-datepicker-toggle matSuffix [for]="firstPicker"></mat-datepicker-toggle>
+      <mat-datepicker #firstPicker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput #ldate [min]="currentStartDate" [max]="maxDate" [readonly]="true" [matDatepicker]="secondPicker" [attr.disabled]="IsVisible" name="currentEndDate" placeholder="End Date" formControlName="endDateControl" required>
+      <mat-error *ngIf="loginForm.controls.endDateControl.hasError('required')">
+        *Required
+      </mat-error>
+      <mat-datepicker-toggle matSuffix [for]="secondPicker"></mat-datepicker-toggle>
+      <mat-datepicker #secondPicker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+        <input type="text" placeholder="Location" aria-label="Number" matInput [matAutocomplete]="auto" [(ngModel)]="searchTerm" formControlName="location" name="searchTerm" required>
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let item of res | hotelLocations : searchTerm" [value]="item" >
+            {{ item }}
+          </mat-option>
+        </mat-autocomplete>
+        <mat-error *ngIf="loginForm.controls.location.hasError('required')">
+          *Required
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="Graph Type" [formControl]="graphTypes" formControlName="graphTypes" required multiple>
+          <mat-option *ngFor="let graph of graphs" [value]="graph.value">{{graph.viewValue}}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="loginForm.controls.graphTypes.hasError('required')">
+          *Required
+        </mat-error>
+      </mat-form-field>
+    <button mat-raised-button color="warn" (click) = dataAnalysis(sdate.value,ldate.value)>
+        Get Hotel Data
+        </button>
+      </form>
+        </div>
+        <div class="graphs">
+          <booking-faliure-count-based-graph></booking-faliure-count-based-graph>
+          <hotel-location-based-graph></hotel-location-based-graph>
+          <location-based-graph></location-based-graph>
+          <payment-mode-based-graph></payment-mode-based-graph>
+          <rating-based-graph></rating-based-graph>
+          <supplier-name-based-graph></supplier-name-based-graph>
+  </div>
