@@ -30,18 +30,50 @@ export class HotelLocationBasedGraphComponent implements OnInit  {
   Bookings: any=[];
   Hotels: any = [];
   @Input() location: string;
-  @Input() startDate: Date;
-  @Input() endDate: Date;
-  //constructor( private http: HttpClient){}
+  @Input() startDate: string;
+  @Input() endDate: string;
+  paymentStartDate: string;
+  paymentEndDate: string;
+  paymentLocation: string;
+  defaultStartDate: string = "2015-05-15"
+  defaultEndDate: string = "2018-05-15"
+  defaultLocation: string = "Las Vegas"
   constructor (private service:GraphsServiceService) { }
-
-    ngOnInit(){
-      this.hotelLocationGraph = null;
+  setDatesAndLocation()
+  {
+    if(this.startDate == null)
+    {
+      this.paymentStartDate = this.defaultStartDate
+    }
+    else 
+    {
+      this.paymentStartDate = this.startDate
+    }
+    if(this.endDate == null)
+    {
+      this.paymentEndDate = this.defaultEndDate
+    }
+    else 
+    {
+      this.paymentEndDate = this.endDate
+    }
+    if(this.location == null)
+    {
+      this.paymentLocation = this.defaultLocation
+    }
+    else 
+    {
+      this.paymentLocation = this.location
+    }
+  }
+  ngOnInit(){
+      this.setDatesAndLocation()
+        this.hotelLocationGraph = null;
       this.defaultGraphType = "radar";
       this.Bookings = []
       this.Hotels = []
 
-      this.service.httpResponseFilters("Hotels","HotelNamesWithDates?fromDate=2015-07-27 00:00:00.000&toDate=2015-08-27 00:00:00.000&location=Las Vegas")
+      this.service.httpResponseFilters("Hotels","HotelNamesWithDates?fromDate="+ this.paymentStartDate +" 00:00:00.000&toDate="+this.paymentEndDate+" 00:00:00.000&location="+this.paymentLocation)
       .subscribe( data=>{
               
                       for(var i=0;i<Object.keys(data).length;i++)

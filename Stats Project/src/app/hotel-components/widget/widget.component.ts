@@ -16,20 +16,22 @@ export interface Graph {
 export class WidgetComponent implements OnInit {
   currentStartDate:Date;
   currentEndDate:Date=new Date();
-  hotelEndDate:Date;
-  hotelStartDate: Date;
+  hotelEndDate:string;
+  hotelStartDate: string;
   selectedValue:string;
   temp = "hello";
   minDate = new Date(2016, 0, 1);
   maxDate = new Date();
   startDate:Date=null;
+  location:any;
   IsVisible:boolean=true;
+  checkValue:Array<string>=['location', 'name', 'bookDate', 'supplierName', 'failure', 'paymentMode'];
   graphs: Graph[] = [
     {value: 'location', viewValue: 'Hotel Location'},
-    {value: 'chain', viewValue: 'Hotel Chain'},
-    {value: 'rating', viewValue: 'Rating'},
+   // {value: 'chain', viewValue: 'Hotel Chain'},
+   // {value: 'rating', viewValue: 'Rating'},
     {value: 'name', viewValue: 'Hotel Name'},
-    {value: 'date', viewValue: 'Check-in and Check-out Date'},
+ //  {value: 'date', viewValue: 'Check-in and Check-out Date'},
     {value: 'bookDate', viewValue: 'Booking Date'},
     {value: 'supplierName', viewValue: 'Supplier Name'},
     {value: 'failure', viewValue: 'Booking Failure Count'},
@@ -73,23 +75,33 @@ export class WidgetComponent implements OnInit {
   checkStartDate(){
     this.IsVisible=false;
   }
-  dataAnalysis(startDate, endDate){
+  dataAnalysis(startDate, endDate,checkVal){
     this._markAsDirty(this.inputForm);
-    this.hotelEndDate = endDate;
-    this.hotelStartDate = startDate;
-    console.log(this.hotelStartDate + " "+ this.hotelEndDate)
-    this.dateFormatter(this.hotelEndDate)
-    this.dateFormatter(this.hotelStartDate)
+    this.hotelEndDate = endDate.toString();
+   if(checkVal!=null)
+    {this.checkValue=checkVal;}
+    this.hotelStartDate = startDate.toString();
+    this.hotelEndDate = this.dateFormatter(this.hotelEndDate)
+    this.hotelStartDate = this.dateFormatter(this.hotelStartDate)
+
+    
+    //  var container = document.getElementById("graphs");
+    //  var content = container.innerHTML;
+    //  container.innerHTML= content; 
+    
+   //this line is to watch the result in console , you can remove it later	
+    console.log("Refreshed"); 
+ 
   }
   dateFormatter(yourDate)
   {
      var currentDate = yourDate.toString()
-     console.log(currentDate + "your date")
      var dd: string = "";
      var mm: string = "";
      var yyyy: string = "";
      var formattedDate: string;
      var flag: number= 0;
+
      for(var i = 0; i< currentDate.length; i++)
      {
         if(currentDate[i]=="/")
@@ -109,11 +121,9 @@ export class WidgetComponent implements OnInit {
           yyyy = yyyy + currentDate[i];
         }
       } 
-      debugger;
-        formattedDate = yyyy+"/"+mm+"/"+dd;
-        console.log(formattedDate+" formatted date") ;    
+        formattedDate = yyyy+"-"+mm+"-"+dd;
+        return formattedDate ;    
      }
-  
   private _markAsDirty(group:FormGroup){
     group.markAsDirty();
     for(let i in group.controls){

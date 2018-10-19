@@ -1,31 +1,27 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {Chart, ChartDataSets, ChartArea} from 'chart.js';
-import 'hammerjs';
-import 'chartjs-plugin-zoom';
-import { debug } from 'util';
-import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { GraphsServiceService } from 'src/app/service/hotel-service/graphs-service.service';
-
-
+import { ChartDataSets } from 'chart.js';
+import * as Chart from 'chart.js';
 export interface GraphTypes {
   value: string;
   viewValue: string;
 }
 @Component({
-  selector: 'booking-faliure-count-based-graph',
-  templateUrl: './booking-faliure-count-based-graph.component.html',
-  styleUrls: ['./booking-faliure-count-based-graph.component.css']
+  selector: 'app-hotel-names-with-dates-graph',
+  templateUrl: './hotel-names-with-dates-graph.component.html',
+  styleUrls: ['./hotel-names-with-dates-graph.component.css']
 })
-export class BookingFaliureCountBasedGraphComponent implements OnInit {
- 
-  graphTypeValue: string
-  title = 'Booking failure Analysis';
-  chart: string = "bar";
+export class HotelNamesWithDatesGraphComponent implements OnInit {
+
+  GraphTypeValue: string
+  title = 'Hotels with Dates Graph';
+  chart: string = "line";
   hotelLocationGraph: any;
   defaultGraphType: string
   errorMsg: any
-  Failures: any = [];
-  
+  HotelsAtParticularLocation: any=[];
+  totalBookings: any = [];
+  Place: any = [];
   @Input() location: string;
   @Input() startDate: string;
   @Input() endDate: string;
@@ -65,17 +61,24 @@ export class BookingFaliureCountBasedGraphComponent implements OnInit {
   }
   ngOnInit(){
       this.setDatesAndLocation()
-     this.hotelLocationGraph = null;
-      this.defaultGraphType = "radar";
-      this.Failures = []
-
-      this.service.httpResponseFilters("Hotels","FailureCount?fromDate="+ this.paymentStartDate +" 00:00:00.000&toDate="+this.paymentEndDate+" 00:00:00.000&location="+this.paymentLocation)
+         this.hotelLocationGraph = null;
+      this.defaultGraphType = "line";
+      this.HotelsAtParticularLocation = []
+      this.totalBookings= []
+      this.Place= []
+      this.service.httpResponseFilters("Hotels","HotelLocationWithDates?fromDate="+ this.paymentStartDate +" 00:00:00.000&toDate="+this.paymentEndDate+" 00:00:00.000")
       .subscribe( data=>{
               
-                      console.log(data.counter)
-                    
-                          this.Failures.push(data.counter);
-                    
+                      for(var i=0;i<Object.keys(data).length;i++)
+                        {
+                          console.log(data[i].HotelsAtParticularLocation[0]["HotelName"]);
+                          console.log(data[i].HotelsAtParticularLocation[0]["Bookings"]);
+                          this.HotelsAtParticularLocation.push(data[i].HotelsAtParticularLocation[0]["HotelName"]+"-"+data[i].HotelsAtParticularLocation[0]["Bookings"]);
+                          this.totalBookings.push(data[i].totalBookings);
+                          this.Place.push(data[i].Place);
+                        //  console.log(this.Bookings);
+                        }
+                        //debugger;
                         this.DisplayGraph( this.chart);
                   },
           error=>{ this.errorMsg = error;}
@@ -105,21 +108,29 @@ export class BookingFaliureCountBasedGraphComponent implements OnInit {
 
         if(this.hotelLocationGraph!=null)
         {this.hotelLocationGraph.destroy();}
-         this.hotelLocationGraph = new Chart('booking-faliure-chart', {
+         this.hotelLocationGraph = new Chart('hotel-with-dates-chart', {
           type: chart,
           data: {
-            labels:this.Failures,
+            labels: this.HotelsAtParticularLocation,
 
             datasets: [
               {
-                label: 'Failures',
-                data: this.Failures, 
+                label: 'Bookings',
+                data: this.totalBookings, 
+                borderColor: '#00AEFF',
+                fill: true,
+                lineTension: 0.2,
+                borderWidth: 1
+              },
+              {
+                label: 'Location',
+                data: this.Place, 
                 borderColor: '#00AEFF',
                 fill: true,
                 lineTension: 0.2,
                 borderWidth: 1
               }
-            ]
+            ],
           },
 
           options: {
@@ -158,8 +169,6 @@ export class BookingFaliureCountBasedGraphComponent implements OnInit {
       {
         alert("working");
       }
+      
    
-    }
-   
-  
-  
+}

@@ -14,7 +14,7 @@ import { CommonModule } from '@angular/common';
 import { FlightWidgetComponent } from './flight-components/flight-widget/flight-widget.component';
 import { LocationBasedGraphComponent } from './hotel-components/Hotel-Statistics/location-based-graph/location-based-graph.component';
 import { HotelLocationBasedGraphComponent } from './hotel-components/Hotel-Statistics/hotel-location-based-graph/hotel-location-based-graph.component';
-import { RatingBasedGraphComponent } from './hotel-components/Hotel-Statistics/rating-based-graph/rating-based-graph.component';
+import { BookingWithDatesGraphComponent } from './hotel-components/Hotel-Statistics/booking-with-dates-graph/booking-with-dates-graph.component';
 import { SupplierNameBasedGraphComponent } from './hotel-components/Hotel-Statistics/supplier-name-based-graph/supplier-name-based-graph.component';
 import { BookingFaliureCountBasedGraphComponent } from './hotel-components/Hotel-Statistics/booking-faliure-count-based-graph/booking-faliure-count-based-graph.component';
 import { PaymentModeBasedGraphComponent } from './hotel-components/Hotel-Statistics/payment-mode-based-graph/payment-mode-based-graph.component';
@@ -23,6 +23,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {  GraphsServiceService } from './service/hotel-service/graphs-service.service';
 import { HttpClientModule } from '@angular/common/http';
 import  'chartjs-plugin-zoom';
+import 'hammerjs';
+import { HotelNamesWithDatesGraphComponent } from './hotel-components/Hotel-Statistics/hotel-names-with-dates-graph/hotel-names-with-dates-graph.component';
+import { DemoComponent } from './demo/demo.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,11 +36,13 @@ import  'chartjs-plugin-zoom';
     FlightWidgetComponent,
     LocationBasedGraphComponent,
     HotelLocationBasedGraphComponent,
-    RatingBasedGraphComponent,
+    BookingWithDatesGraphComponent,
     SupplierNameBasedGraphComponent,
     BookingFaliureCountBasedGraphComponent,
     PaymentModeBasedGraphComponent,
-    HotelLocationsPipe
+    HotelLocationsPipe,
+    HotelNamesWithDatesGraphComponent,
+    DemoComponent
   ],
   imports: [
     BrowserModule,

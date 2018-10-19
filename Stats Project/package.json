@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
     "angularjs-datepicker": "^2.1.23",
+    "canvasjs": "^1.8.1",
     "chart.js": "^2.7.3",
     "chartjs-plugin-zoom": "^0.6.5",
     "core-js": "^2.5.4",

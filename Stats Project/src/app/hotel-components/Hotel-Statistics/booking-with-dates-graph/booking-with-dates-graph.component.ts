@@ -2,8 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import {Chart, ChartDataSets, ChartArea} from 'chart.js';
 import 'hammerjs';
 import 'chartjs-plugin-zoom';
-import { debug } from 'util';
-import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 import { GraphsServiceService } from 'src/app/service/hotel-service/graphs-service.service';
 
 
@@ -12,20 +10,20 @@ export interface GraphTypes {
   viewValue: string;
 }
 @Component({
-  selector: 'booking-faliure-count-based-graph',
-  templateUrl: './booking-faliure-count-based-graph.component.html',
-  styleUrls: ['./booking-faliure-count-based-graph.component.css']
+  selector: 'booking-with-dates-graph',
+  templateUrl: './booking-with-dates-graph.component.html',
+  styleUrls: ['./booking-with-dates-graph.component.css']
 })
-export class BookingFaliureCountBasedGraphComponent implements OnInit {
- 
-  graphTypeValue: string
-  title = 'Booking failure Analysis';
-  chart: string = "bar";
+export class BookingWithDatesGraphComponent implements OnInit {
+
+  GraphTypeValue: string
+  title = 'Booking with Dates Graph';
+  chart: string = "line";
   hotelLocationGraph: any;
   defaultGraphType: string
   errorMsg: any
-  Failures: any = [];
-  
+  BookingDates: any=[];
+  NumberOfBooking: any = [];
   @Input() location: string;
   @Input() startDate: string;
   @Input() endDate: string;
@@ -66,16 +64,19 @@ export class BookingFaliureCountBasedGraphComponent implements OnInit {
   ngOnInit(){
       this.setDatesAndLocation()
      this.hotelLocationGraph = null;
-      this.defaultGraphType = "radar";
-      this.Failures = []
+      this.defaultGraphType = "line";
+      this.BookingDates = []
+      this.NumberOfBooking= []
 
-      this.service.httpResponseFilters("Hotels","FailureCount?fromDate="+ this.paymentStartDate +" 00:00:00.000&toDate="+this.paymentEndDate+" 00:00:00.000&location="+this.paymentLocation)
+      this.service.httpResponseFilters("Hotels","BookingDates?fromDate="+ this.paymentStartDate +" 00:00:00.000&toDate="+this.paymentEndDate+" 00:00:00.000&location="+this.paymentLocation)
       .subscribe( data=>{
               
-                      console.log(data.counter)
-                    
-                          this.Failures.push(data.counter);
-                    
+                      for(var i=0;i<Object.keys(data).length;i++)
+                        {
+                          this.BookingDates.push(data[i].BookingDates);
+                          this.NumberOfBooking.push(data[i].NumberOfBookings);
+                        //  console.log(this.Bookings);
+                        }
                         this.DisplayGraph( this.chart);
                   },
           error=>{ this.errorMsg = error;}
@@ -105,15 +106,15 @@ export class BookingFaliureCountBasedGraphComponent implements OnInit {
 
         if(this.hotelLocationGraph!=null)
         {this.hotelLocationGraph.destroy();}
-         this.hotelLocationGraph = new Chart('booking-faliure-chart', {
+         this.hotelLocationGraph = new Chart('booking-with-dates-chart', {
           type: chart,
           data: {
-            labels:this.Failures,
+            labels: this.BookingDates,
 
             datasets: [
               {
-                label: 'Failures',
-                data: this.Failures, 
+                label: 'Bookings',
+                data: this.NumberOfBooking, 
                 borderColor: '#00AEFF',
                 fill: true,
                 lineTension: 0.2,
@@ -158,8 +159,10 @@ export class BookingFaliureCountBasedGraphComponent implements OnInit {
       {
         alert("working");
       }
+      
    
     }
    
   
   
+

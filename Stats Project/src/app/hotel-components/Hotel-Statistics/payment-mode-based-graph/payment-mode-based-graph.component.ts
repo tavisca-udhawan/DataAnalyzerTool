@@ -16,7 +16,7 @@ export interface GraphTypes {
 })
 export class PaymentModeBasedGraphComponent implements OnInit {
 
-  raphTypeValue: string
+  GraphTypeValue: string
   title = 'Modes of Payment';
   chart: string = "line";
   hotelLocationGraph: any;
@@ -25,20 +25,62 @@ export class PaymentModeBasedGraphComponent implements OnInit {
   PaymentType: any=[];
   NumberOfBooking: any = [];
   @Input() location: string;
-  @Input() startDate: Date;
-  @Input() endDate: Date;
-  //constructor( private http: HttpClient){}
+  @Input() startDate: string;
+  @Input() endDate: string;
+  paymentStartDate: string;
+  paymentEndDate: string;
+  paymentLocation: string;
+  defaultStartDate: string = "2015-05-15"
+  defaultEndDate: string = "2018-05-15"
+  defaultLocation: string = "Las Vegas"
   constructor (private service:GraphsServiceService) { }
 
-    ngOnInit(){
+  getRandomColorHex() {
+    var hex = "0123456789ABCDEF",
+        color = "#";
+    for (var i = 1; i <= 6; i++) {
+      color += hex[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+
+  setDatesAndLocation()
+  {
+    if(this.startDate == null)
+    {
+      this.paymentStartDate = this.defaultStartDate
+    }
+    else 
+    {
+      this.paymentStartDate = this.startDate
+    }
+    if(this.endDate == null)
+    {
+      this.paymentEndDate = this.defaultEndDate
+    }
+    else 
+    {
+      this.paymentEndDate = this.endDate
+    }
+    if(this.location == null)
+    {
+      this.paymentLocation = this.defaultLocation
+    }
+    else 
+    {
+      this.paymentLocation = this.location
+    }
+  }
+  ngOnInit(){
+      this.setDatesAndLocation()
+      console.log(this.startDate + " "+ this.endDate + " "+ this.location)
       this.hotelLocationGraph = null;
       this.defaultGraphType = "line";
       this.PaymentType = []
       this.NumberOfBooking= []
-
-      this.service.httpResponseFilters("Hotels","PaymentType?fromDate=2015-07-27 00:00:00.000&toDate=2015-08-27 00:00:00.000&location=Las Vegas")
+         this.service.httpResponseFilters("Hotels","PaymentType?fromDate="+ this.paymentStartDate +" 00:00:00.000&toDate="+this.paymentEndDate+" 00:00:00.000&location="+this.paymentLocation)
       .subscribe( data=>{
-              
+             
                       for(var i=0;i<Object.keys(data).length;i++)
                         {
                           this.PaymentType.push(data[i].PaymentType);
@@ -48,9 +90,8 @@ export class PaymentModeBasedGraphComponent implements OnInit {
                         this.DisplayGraph( this.chart);
                   },
           error=>{ this.errorMsg = error;}
-
+                    
             );
-
     }
     graphs: GraphTypes[] = [
       {value: 'bar', viewValue: 'Bar Graph'},
@@ -82,6 +123,11 @@ export class PaymentModeBasedGraphComponent implements OnInit {
             datasets: [
               {
                 label: 'Bookings',
+                backgroundColor: [ this.getRandomColorHex(),
+                  this.getRandomColorHex(),
+                  this.getRandomColorHex(),
+                  this.getRandomColorHex(),
+                  this.getRandomColorHex()],
                 data: this.NumberOfBooking, 
                 borderColor: '#00AEFF',
                 fill: true,
@@ -127,7 +173,7 @@ export class PaymentModeBasedGraphComponent implements OnInit {
       {
         alert("working");
       }
-
+ 
     }
    
   
