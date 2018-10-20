@@ -3,7 +3,7 @@ import {Chart, ChartDataSets, ChartArea} from 'chart.js';
 import 'hammerjs';
 import 'chartjs-plugin-zoom';
 import { GraphsServiceService } from 'src/app/service/hotel-service/graphs-service.service';
-
+declare var CanvasJS: any;
 
 export interface GraphTypes {
   value: string;
@@ -33,6 +33,7 @@ export class PaymentModeBasedGraphComponent implements OnInit {
   defaultStartDate: string = "2015-05-15"
   defaultEndDate: string = "2018-05-15"
   defaultLocation: string = "Las Vegas"
+  graphDataPoints= [];
   constructor (private service:GraphsServiceService) { }
 
   getRandomColorHex() {
@@ -73,21 +74,23 @@ export class PaymentModeBasedGraphComponent implements OnInit {
   }
   ngOnInit(){
       this.setDatesAndLocation()
-      console.log(this.startDate + " "+ this.endDate + " "+ this.location)
       this.hotelLocationGraph = null;
       this.defaultGraphType = "line";
       this.PaymentType = []
       this.NumberOfBooking= []
+  
          this.service.httpResponseFilters("Hotels","PaymentType?fromDate="+ this.paymentStartDate +" 00:00:00.000&toDate="+this.paymentEndDate+" 00:00:00.000&location="+this.paymentLocation)
       .subscribe( data=>{
              
                       for(var i=0;i<Object.keys(data).length;i++)
                         {
-                          this.PaymentType.push(data[i].PaymentType);
-                          this.NumberOfBooking.push(data[i].NumberOfBooking);
+                          this.PaymentType.push(data[i].paymentType);
+                          this.NumberOfBooking.push(data[i].numberOfBooking);
                         //  console.log(this.Bookings);
-                        }
+                        } 
                         this.DisplayGraph( this.chart);
+                        
+   
                   },
           error=>{ this.errorMsg = error;}
                     
@@ -97,7 +100,7 @@ export class PaymentModeBasedGraphComponent implements OnInit {
       {value: 'bar', viewValue: 'Bar Graph'},
       {value: 'pie', viewValue: 'Pie Graph'},
       {value: 'line', viewValue: 'Line Graph'},
-      {value: 'radar', viewValue: 'Radar Graph'},
+      {value: 'area', viewValue: 'Area Graph'},
       {value: 'doughnut', viewValue: 'Doughnut Graph'}
     ];
 
@@ -111,64 +114,38 @@ export class PaymentModeBasedGraphComponent implements OnInit {
     }
 
 
-      DisplayGraph(chart ) {
-
-        if(this.hotelLocationGraph!=null)
-        {this.hotelLocationGraph.destroy();}
-         this.hotelLocationGraph = new Chart('payment-mode-chart', {
-          type: chart,
-          data: {
-            labels: this.PaymentType,
-
-            datasets: [
-              {
-                label: 'Bookings',
-                backgroundColor: [ this.getRandomColorHex(),
-                  this.getRandomColorHex(),
-                  this.getRandomColorHex(),
-                  this.getRandomColorHex(),
-                  this.getRandomColorHex()],
-                data: this.NumberOfBooking, 
-                borderColor: '#00AEFF',
-                fill: true,
-                lineTension: 0.2,
-                borderWidth: 1
-              }
-            ]
-          },
-
-          options: {
-
-            onClick(this: ChartDataSets, ev: MouseEvent, points: any) {
-                alert(points[0]._index +" "+chart )
-
-          },
-          legend:{
-            display: false
-          },
-            title: {
-
-              text: this.title,
-              display: true
-            },
-
-            scales: {
-              yAxes: [
-                {
-                  ticks: {
-                    beginAtZero: true
-                  }
-                },
-              ],
-              xAxes: [{
-                ticks: {
-                    display: false //this will remove only the label
-                }
-            }]
-            }
-          }
-        });
+    setDataPoints(xAxis, yAxis)
+    {
+      for(var i = 0; i<xAxis.length;i++)
+      {
+        this.graphDataPoints.push({label: xAxis[i], y: yAxis[i]});
       }
+      
+    }
+    DisplayGraph(chart ) {
+
+      this.setDataPoints(this.PaymentType,this.NumberOfBooking)
+
+      var chart = new CanvasJS.Chart("payment-mode-chart", {
+        zoomEnabled:true,
+        animationEnabled: true,
+        exportEnabled: true,
+        theme: "light1", 
+        title:{
+          text: "Payment Mode Graph"
+        },
+        data: [{
+          type: chart,
+          indexLabelFontColor: "#5A5757",
+          indexLabelPlacement: "outside",
+          dataPoints: this.graphDataPoints,
+          click: function (e) {
+            alert(e.dataPoint.y +" "+e.dataPoint.label)
+          }
+        }]
+      });
+      chart.render();
+    }
       showDetails(event)
       {
         alert("working");

@@ -1,13 +1,17 @@
-div{
-    width: 38em;
+.booking-with-dates-chart-container{
+    width: 1000px;
     margin: 10px auto;
     box-shadow: 10px 10px 20px #888888;
+}
+.booking-with-dates-chart
+{
+    width: 38rem;
 }
 #lol{
     color: red;
 }
 
-section{
+div{
     width: 100%;
     margin: 0 auto;
 }

@@ -46,20 +46,10 @@ export class WidgetComponent implements OnInit {
 
       this.service.httpResponseFilters("Hotels","HotelLocations")
       .subscribe( data=>{ this.response = data;
-                          this.res = data["City"]; },
+                          this.res = data["city"]; },
                   error=>{ this.errorMsg = error;});
                 
     }
-
-
-    //(private httpService: HttpClient) {
-    //    let observable = this.httpService.get("http://localhost:59962/api/HotelLocations");
-
-    //   observable.subscribe((response)=>{
-    //     this.response=response;
-    //    this.res=response["City"];
-    //   })
-    //  }
 
   ngOnInit() {
     this.inputForm=this.fb.group({

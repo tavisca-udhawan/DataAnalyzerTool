@@ -25,7 +25,12 @@ import { HttpClientModule } from '@angular/common/http';
 import  'chartjs-plugin-zoom';
 import 'hammerjs';
 import { HotelNamesWithDatesGraphComponent } from './hotel-components/Hotel-Statistics/hotel-names-with-dates-graph/hotel-names-with-dates-graph.component';
-import { DemoComponent } from './demo/demo.component';
+
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { FailureComponent } from './Home/BookingStatus/failure/failure.component';
+import { SuccessComponent } from './Home/BookingStatus/success/success.component';
+import { CancelledComponent } from './Home/BookingStatus/cancelled/cancelled.component';
+import { PastComponent } from './Home/BookingStatus/past/past.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,11 +47,22 @@ import { DemoComponent } from './demo/demo.component';
     PaymentModeBasedGraphComponent,
     HotelLocationsPipe,
     HotelNamesWithDatesGraphComponent,
-    DemoComponent
+    FailureComponent,
+    SuccessComponent,
+    CancelledComponent,
+    PastComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    NgCircleProgressModule.forRoot({
+      radius: 130,
+      outerStrokeWidth: 22,
+      innerStrokeWidth: 12,
+      outerStrokeColor: "#78C000",
+      innerStrokeColor: "#C7E596",
+      animationDuration: 300,
+     }),
     MatNativeDateModule,
     CommonModule,
     MatSelectModule,

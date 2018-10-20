@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { GraphsServiceService } from 'src/app/service/hotel-service/graphs-service.service';
+declare var CanvasJS: any;
 import { ChartDataSets } from 'chart.js';
 import * as Chart from 'chart.js';
 export interface GraphTypes {
@@ -31,6 +32,7 @@ export class HotelNamesWithDatesGraphComponent implements OnInit {
   defaultStartDate: string = "2015-05-15"
   defaultEndDate: string = "2018-05-15"
   defaultLocation: string = "Las Vegas"
+  graphDataPoints= [];
   constructor (private service:GraphsServiceService) { }
   setDatesAndLocation()
   {
@@ -71,11 +73,9 @@ export class HotelNamesWithDatesGraphComponent implements OnInit {
               
                       for(var i=0;i<Object.keys(data).length;i++)
                         {
-                          console.log(data[i].HotelsAtParticularLocation[0]["HotelName"]);
-                          console.log(data[i].HotelsAtParticularLocation[0]["Bookings"]);
-                          this.HotelsAtParticularLocation.push(data[i].HotelsAtParticularLocation[0]["HotelName"]+"-"+data[i].HotelsAtParticularLocation[0]["Bookings"]);
+                          this.HotelsAtParticularLocation.push(data[i].hotelsAtParticularLocation[0]["hotelName"]+"-"+data[i].hotelsAtParticularLocation[0]["bookings"]);
                           this.totalBookings.push(data[i].totalBookings);
-                          this.Place.push(data[i].Place);
+                          this.Place.push(data[i].place);
                         //  console.log(this.Bookings);
                         }
                         //debugger;
@@ -90,7 +90,7 @@ export class HotelNamesWithDatesGraphComponent implements OnInit {
       {value: 'bar', viewValue: 'Bar Graph'},
       {value: 'pie', viewValue: 'Pie Graph'},
       {value: 'line', viewValue: 'Line Graph'},
-      {value: 'radar', viewValue: 'Radar Graph'},
+      {value: 'area', viewValue: 'Area Graph'},
       {value: 'doughnut', viewValue: 'Doughnut Graph'}
     ];
 
@@ -104,67 +104,38 @@ export class HotelNamesWithDatesGraphComponent implements OnInit {
     }
 
 
-      DisplayGraph(chart ) {
-
-        if(this.hotelLocationGraph!=null)
-        {this.hotelLocationGraph.destroy();}
-         this.hotelLocationGraph = new Chart('hotel-with-dates-chart', {
-          type: chart,
-          data: {
-            labels: this.HotelsAtParticularLocation,
-
-            datasets: [
-              {
-                label: 'Bookings',
-                data: this.totalBookings, 
-                borderColor: '#00AEFF',
-                fill: true,
-                lineTension: 0.2,
-                borderWidth: 1
-              },
-              {
-                label: 'Location',
-                data: this.Place, 
-                borderColor: '#00AEFF',
-                fill: true,
-                lineTension: 0.2,
-                borderWidth: 1
-              }
-            ],
-          },
-
-          options: {
-
-            onClick(this: ChartDataSets, ev: MouseEvent, points: any) {
-                alert(points[0]._index +" "+chart )
-
-          },
-          legend:{
-            display: false
-          },
-            title: {
-
-              text: this.title,
-              display: true
-            },
-
-            scales: {
-              yAxes: [
-                {
-                  ticks: {
-                    beginAtZero: true
-                  }
-                },
-              ],
-              xAxes: [{
-                ticks: {
-                    display: false //this will remove only the label
-                }
-            }]
-            }
-          }
-        });
+    setDataPoints(xAxis, yAxis)
+    {
+      for(var i = 0; i<xAxis.length;i++)
+      {
+        this.graphDataPoints.push({label: xAxis[i], y: yAxis[i]});
       }
+      
+    }
+    DisplayGraph(chart ) {
+
+      this.setDataPoints(this.Place,this.totalBookings)
+
+      var chart = new CanvasJS.Chart("hotel-with-dates-chart", {
+        zoomEnabled:true,
+        animationEnabled: true,
+        exportEnabled: true,
+        theme: "light1", // "light1", "light2", "dark1", "dark2"
+        title:{
+          text: "Hotel Names with Dates Graph"
+        },
+        data: [{
+          type: chart,
+          indexLabelFontColor: "#5A5757",
+          indexLabelPlacement: "outside",
+          dataPoints: this.graphDataPoints,
+          click: function (e) {
+            alert(e.dataPoint.y +" "+e.dataPoint.label)
+          }
+        }]
+      });
+      chart.render();
+    }
       showDetails(event)
       {
         alert("working");

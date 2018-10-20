@@ -3,7 +3,7 @@ import {Chart, ChartDataSets, ChartArea} from 'chart.js';
 import 'hammerjs';
 import 'chartjs-plugin-zoom';
 import { GraphsServiceService } from 'src/app/service/hotel-service/graphs-service.service';
-
+declare var CanvasJS: any;
 
 export interface GraphTypes {
   value: string;
@@ -17,7 +17,7 @@ export interface GraphTypes {
 export class LocationBasedGraphComponent implements OnInit  {
 
   
-  raphTypeValue: string
+  GraphTypeValue: string
   title = 'Location Based Graph';
   chart: string = "line";
   hotelLocationGraph: any;
@@ -34,6 +34,7 @@ export class LocationBasedGraphComponent implements OnInit  {
   defaultStartDate: string = "2015-05-15"
   defaultEndDate: string = "2018-05-15"
   defaultLocation: string = "Las Vegas"
+  graphDataPoints= [];
   //constructor( private http: HttpClient){}
   constructor (private service:GraphsServiceService) { }
   setDatesAndLocation()
@@ -73,7 +74,7 @@ export class LocationBasedGraphComponent implements OnInit  {
       this.service.httpResponseFilters("Hotels","HotelLocations")
       .subscribe( data=>{
               
-                          this.locations=data["City"];
+                          this.locations=data["city"];
                           for(let val in this.locations)
                           this.NumberOfBooking.push(5);
                       this.DisplayGraph( this.chart);
@@ -87,7 +88,7 @@ export class LocationBasedGraphComponent implements OnInit  {
       {value: 'bar', viewValue: 'Bar Graph'},
       {value: 'pie', viewValue: 'Pie Graph'},
       {value: 'line', viewValue: 'Line Graph'},
-      {value: 'radar', viewValue: 'Radar Graph'},
+      {value: 'Area', viewValue: 'Area Graph'},
       {value: 'doughnut', viewValue: 'Doughnut Graph'}
     ];
 
@@ -101,61 +102,39 @@ export class LocationBasedGraphComponent implements OnInit  {
     }
 
 
-      DisplayGraph(chart ) {
-
-        if(this.hotelLocationGraph!=null)
-        {this.hotelLocationGraph.destroy();}
-         this.hotelLocationGraph = new Chart('location-chart', {
-          type: chart,
-          data: {
-            labels: this.locations,
-
-            datasets: [
-              {
-                label: 'Bookings',
-                data: this.NumberOfBooking, 
-                borderColor: '#00AEFF',
-                fill: true,
-                lineTension: 0.2,
-                borderWidth: 1
-              }
-            ]
-          },
-
-          options: {
-
-            onClick(this: ChartDataSets, ev: MouseEvent, points: any) {
-                alert(points[0]._index +" "+chart )
-
-          },
-          legend:{
-            display: false
-          },
-            title: {
-
-              text: this.title,
-              display: true
-            },
-
-            scales: {
-              yAxes: [
-                {
-                  ticks: {
-                    beginAtZero: true
-                  }
-                },
-              ],
-              xAxes: [{
-                ticks: {
-                    display: false //this will remove only the labelss
-                }
-            }]
-            }
-          
-          
-          }
-        });
+    setDataPoints(xAxis, yAxis)
+    {
+      for(var i = 0; i<xAxis.length;i++)
+      {
+        this.graphDataPoints.push({label: xAxis[i], y: yAxis[i]});
       }
+      
+    }
+    DisplayGraph(chart ) {
+
+      this.setDataPoints(this.locations,this.NumberOfBooking)
+
+      var chart = new CanvasJS.Chart("location-chart", {
+        zoomEnabled:true,
+        animationEnabled: true,
+        exportEnabled: true,
+        theme: "light1", // "light1", "light2", "dark1", "dark2"
+        title:{
+          text: "Location Based Graph"
+        },
+        data: [{
+          type: chart, //change type to bar, line, area, pie, etc
+          //indexLabel: "{y}", //Shows y value on all Data Points
+          indexLabelFontColor: "#5A5757",
+          indexLabelPlacement: "outside",
+          dataPoints: this.graphDataPoints,
+          click: function (e) {
+            alert(e.dataPoint.y +" "+e.dataPoint.label)
+          }
+        }]
+      });
+      chart.render();
+    }
       showDetails(event)
       {
         alert("working");

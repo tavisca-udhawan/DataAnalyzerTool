@@ -1,13 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Chart, ChartDataSets, ChartArea} from 'chart.js';
 import {  GraphsServiceService } from '../../../service/hotel-service/graphs-service.service';
-
+declare var CanvasJS: any;
 import 'hammerjs';
-import 'chartjs-plugin-zoom';
-import { HttpClient } from '@angular/common/http';
-import { getViewData } from '@angular/core/src/render3/instructions';
-import { forEach } from '@angular/router/src/utils/collection';
-import { trigger } from '@angular/animations';
 
 
 export interface GraphTypes {
@@ -22,7 +17,6 @@ export interface GraphTypes {
 export class HotelLocationBasedGraphComponent implements OnInit  {
 
   graphTypeValue: string
-  title = 'Hotels in location analysis';
   chart: string = "line";
   hotelLocationGraph: any;
   defaultGraphType: string
@@ -38,6 +32,7 @@ export class HotelLocationBasedGraphComponent implements OnInit  {
   defaultStartDate: string = "2015-05-15"
   defaultEndDate: string = "2018-05-15"
   defaultLocation: string = "Las Vegas"
+  graphDataPoints= [];
   constructor (private service:GraphsServiceService) { }
   setDatesAndLocation()
   {
@@ -78,8 +73,8 @@ export class HotelLocationBasedGraphComponent implements OnInit  {
               
                       for(var i=0;i<Object.keys(data).length;i++)
                         {
-                          this.Bookings.push(data[i].Bookings);
-                          this.Hotels.push(data[i].HotelName);
+                          this.Bookings.push(data[i].bookings);
+                          this.Hotels.push(data[i].hotelName);
                         //  console.log(this.Bookings);
                         }
                         this.DisplayGraph( this.chart);
@@ -93,7 +88,7 @@ export class HotelLocationBasedGraphComponent implements OnInit  {
       {value: 'bar', viewValue: 'Bar Graph'},
       {value: 'pie', viewValue: 'Pie Graph'},
       {value: 'line', viewValue: 'Line Graph'},
-      {value: 'radar', viewValue: 'Radar Graph'},
+      {value: 'area', viewValue: 'Area Graph'},
       {value: 'doughnut', viewValue: 'Doughnut Graph'}
     ];
 
@@ -107,59 +102,38 @@ export class HotelLocationBasedGraphComponent implements OnInit  {
     }
 
 
-      DisplayGraph(chart ) {
-
-        if(this.hotelLocationGraph!=null)
-        {this.hotelLocationGraph.destroy();}
-         this.hotelLocationGraph = new Chart('hotel-location-chart', {
-          type: chart,
-          data: {
-            labels: this.Hotels,
-
-            datasets: [
-              {
-                label: 'Bookings',
-                data: this.Bookings, 
-                borderColor: '#00AEFF',
-                fill: true,
-                lineTension: 0.2,
-                borderWidth: 1
-              }
-            ]
-          },
-
-          options: {
-
-            onClick(this: ChartDataSets, ev: MouseEvent, points: any) {
-                alert(points[0]._index +" "+chart )
-
-          },
-          legend:{
-            display: false
-          },
-            title: {
-
-              text: this.title,
-              display: true
-            },
-
-            scales: {
-              yAxes: [
-                {
-                  ticks: {
-                    beginAtZero: true
-                  }
-                },
-              ],
-              xAxes: [{
-                ticks: {
-                    display: false //this will remove only the label
-                }
-            }]
-            }
-          }
-        });
+    setDataPoints(xAxis, yAxis)
+    {
+      for(var i = 0; i<xAxis.length;i++)
+      {
+        this.graphDataPoints.push({label: xAxis[i], y: yAxis[i]});
       }
+      
+    }
+    DisplayGraph(chart ) {
+
+      this.setDataPoints(this.Hotels,this.Bookings)
+
+      var chart = new CanvasJS.Chart("hotel-location-chart", {
+        zoomEnabled:true,
+        animationEnabled: true,
+        exportEnabled: true,
+        theme: "light1", 
+        title:{
+          text: "Hotel Location Graph"
+        },
+        data: [{
+          type: chart,
+          indexLabelFontColor: "#5A5757",
+          indexLabelPlacement: "outside",
+          dataPoints: this.graphDataPoints,
+          click: function (e) {
+            alert(e.dataPoint.y +" "+e.dataPoint.label)
+          }
+        }]
+      });
+      chart.render();
+    }
       showDetails(event)
       {
         alert("working");

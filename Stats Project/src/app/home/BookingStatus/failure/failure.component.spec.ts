@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RatingBasedGraphComponent } from './rating-based-graph.component';
+import { FailureComponent } from './failure.component';
 
-describe('RatingBasedGraphComponent', () => {
-  let component: RatingBasedGraphComponent;
-  let fixture: ComponentFixture<RatingBasedGraphComponent>;
+describe('FailureComponent', () => {
+  let component: FailureComponent;
+  let fixture: ComponentFixture<FailureComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RatingBasedGraphComponent ]
+      declarations: [ FailureComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RatingBasedGraphComponent);
+    fixture = TestBed.createComponent(FailureComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
