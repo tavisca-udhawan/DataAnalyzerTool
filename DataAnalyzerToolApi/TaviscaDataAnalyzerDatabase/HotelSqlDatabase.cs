@@ -144,7 +144,7 @@ namespace TaviscaDataAnalyzerDatabase
         public string BookingDatesDatabase(UIRequest queryFormat)
         {
             List<HotelBookingDates> list = new List<HotelBookingDates>();
-            string query = $"SELECT  t1.ModifiedDate ,COUNT(t1.ModifiedDate) AS Bookings FROM TripProducts t1 JOIN PassengerSegments t2 ON t1.Id=t2.TripProductId JOIN  HotelSegments t3 ON t3.TripProductId=t1.Id where t1.ProductType='Hotel' AND t2.BookingStatus='Purchased' AND  t3.City='{queryFormat.Filter}' AND t1.ModifiedDate between '{queryFormat.FromDate}' and '{queryFormat.ToDate}' group by t1.ModifiedDate;  ";
+            string query = $"SELECT  t1.ModifiedDate ,COUNT(t1.ModifiedDate) AS Bookings FROM TripProducts t1 JOIN PassengerSegments t2 ON t1.Id=t2.TripProductId JOIN  HotelSegments t3 ON t3.TripProductId=t1.Id where t1.ProductType='Hotel' AND t2.BookingStatus='Purchased' AND  t3.City='{queryFormat.Filter}' AND t1.ModifiedDate between '{queryFormat.FromDate}' and '{queryFormat.ToDate}' group by t1.ModifiedDate ;  ";
             DataTable dataTable = QueryExecuter(query);
             foreach (DataRow dataRow in dataTable.Rows)
             {
@@ -152,6 +152,11 @@ namespace TaviscaDataAnalyzerDatabase
                 HotelBookingDates hotelBookingDates = new HotelBookingDates();
                 
                 string bookingDate = Convert.ToString(dataRow["ModifiedDate"]);
+                if(bookingDate[2]=='/' &&bookingDate[5]=='/')
+                    bookingDate = bookingDate.Substring(0, 10);
+                else if (bookingDate[1] == '/' && bookingDate[3] == '/')
+                    bookingDate = bookingDate.Substring(0, 8);
+                else
                 bookingDate = bookingDate.Substring(0, 9);
                 if (list.Exists(existingAlready => existingAlready.BookingDates == bookingDate))
                 {
