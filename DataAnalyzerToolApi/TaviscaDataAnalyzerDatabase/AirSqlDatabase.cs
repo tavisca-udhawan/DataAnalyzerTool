@@ -93,7 +93,12 @@ namespace TaviscaDataAnalyzerDatabase
                 DatesWithBookings datesWithBookings = new DatesWithBookings();
 
                 string bookingDate = Convert.ToString(dataRow["ModifiedDate"]);
-                bookingDate = bookingDate.Substring(0, 9);
+                if (bookingDate[2] == '/' && bookingDate[5] == '/')
+                    bookingDate = bookingDate.Substring(0, 10);
+                else if (bookingDate[1] == '/' && bookingDate[3] == '/')
+                    bookingDate = bookingDate.Substring(0, 8);
+                else
+                    bookingDate = bookingDate.Substring(0, 9);
                 if (list.Exists(existingAlready => existingAlready.Date == bookingDate))
                 {
 
