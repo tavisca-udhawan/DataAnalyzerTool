@@ -1,4 +1,5 @@
 ﻿using CoreContracts.Models;
+using CoreContracts.Models.Air;
 using Microsoft.AspNetCore.Mvc;
 using TaviscaDataAnalyzerServiceProvider;
 
@@ -54,6 +55,14 @@ namespace TaviscaDataAnalyzerTool.Controllers.Air
         {
             UIRequest uiRequest = new UIRequest { FromDate = fromDate, ToDate = toDate };            
             return webApiServiceProvider.BookingsWithinDateRangeInfoService(uiRequest);
+        }
+
+        [HttpGet("BookingsForSpecificTrip")]
+
+        public object GetBookingsForSpecificTrip([FromQuery] string fromDate, string toDate, string departAirportCode, string arrivalAirportCode)
+        {
+            TripBookingRequest uiRequest = new TripBookingRequest { FromDate = fromDate, ToDate = toDate, ArrivalAirportCode = arrivalAirportCode, DepartAirportCode = departAirportCode };
+            return webApiServiceProvider.BookingsForSpecificTripService(uiRequest);
         }
     }
 }

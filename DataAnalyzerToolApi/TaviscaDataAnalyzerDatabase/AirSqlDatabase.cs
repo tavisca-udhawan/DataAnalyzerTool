@@ -33,6 +33,22 @@ namespace TaviscaDataAnalyzerDatabase
         }
         SqlConnector sqlConnector = new SqlConnector();
 
+        public string BookingsForSpecificTripDatabase(TripBookingRequest uIRequest)
+        {
+            var connector = sqlConnector.ConnectionEstablisher();
+            List<BookingsForSpecificTrip> list = new List<BookingsForSpecificTrip>();
+            string query = $"SELECT  t4.ShortName ,COUNT(t4.ShortName) AS Bookings FROM TripProducts t1 JOIN PassengerSegments t2 ON t1.Id=t2.TripProductId JOIN  AirSegments t3 ON t3.TripProductId=t1.Id Join Airlines  t4 on t4.AirlineCode = t3.MarketingAirlineCode where t1.ProductType='Air' AND t2.BookingStatus='Purchased' AND t1.ModifiedDate between '{uIRequest.FromDate}' and '{uIRequest.ToDate}' and t3.DepartAirportCode='{uIRequest.DepartAirportCode}' and t3.ArriveAirportCode='{uIRequest.ArrivalAirportCode}' group by t4.ShortName;";
+            DataTable dataTable = QueryExecuter(query);
+            foreach (DataRow dataRow in dataTable.Rows)
+            {
+                BookingsForSpecificTrip bookingsForSpecificTrip = new BookingsForSpecificTrip();
+                bookingsForSpecificTrip.AirlineName = Convert.ToString(dataRow["ShortName"]);
+                bookingsForSpecificTrip.NumberOfBookings = Convert.ToInt32(dataRow["Bookings"]);
+                list.Add(bookingsForSpecificTrip);
+            }
+            var json = JsonConvert.SerializeObject(list);
+            return json;
+        }
         public string AirFailureCountDatabase(UIRequest uIRequest)
         {
             var connector = sqlConnector.ConnectionEstablisher();

@@ -45,6 +45,20 @@ namespace TaviscaDataAnalyzerServiceProvider
             return dateWithBookings;
         }
 
+        public object BookingsForSpecificTripService(TripBookingRequest uIRequest)
+        {
+            string result = null;
+            string data = "BookingInfoForTrip" + uIRequest.ArrivalAirportCode + uIRequest.FromDate + uIRequest.ToDate + uIRequest.ArrivalAirportCode;
+            result = cache.Get(data);
+            if (result == null)
+            {
+                result = sqlDatabase.BookingsForSpecificTripDatabase(uIRequest);
+                cache.Post(data, result);
+            }
+            List<BookingsForSpecificTrip> bookingsForSpecificTrips = JsonConvert.DeserializeObject<List<BookingsForSpecificTrip>>(result);
+            return bookingsForSpecificTrips;
+        }
+
         public object FailureCountInfoService(UIRequest uIRequest)
         {
             string result = null;

@@ -1,4 +1,5 @@
 ﻿using CoreContracts.Models;
+using CoreContracts.Models.Air;
 
 namespace TaviscaDataAnalyzerDatabase
 {
@@ -9,5 +10,6 @@ namespace TaviscaDataAnalyzerDatabase
         string AirFailureCountDatabase(UIRequest uIRequest);
         string TotalBookingsInfoDatabase();
         string BookingsWithinDateRangeInfoDatabase(UIRequest uIRequest);
+        string BookingsForSpecificTripDatabase(TripBookingRequest uIRequest);
     }
 }

@@ -1,4 +1,5 @@
 ﻿using CoreContracts.Models;
+using CoreContracts.Models.Air;
 
 namespace TaviscaDataAnalyzerServiceProvider
 {
@@ -9,5 +10,6 @@ namespace TaviscaDataAnalyzerServiceProvider
         object FailureCountInfoService(UIRequest uIRequest);
         object TotalBookingsInfoService();
         object BookingsWithinDateRangeInfoService(UIRequest uIRequest);
+        object BookingsForSpecificTripService(TripBookingRequest uIRequest);
     }
 }
