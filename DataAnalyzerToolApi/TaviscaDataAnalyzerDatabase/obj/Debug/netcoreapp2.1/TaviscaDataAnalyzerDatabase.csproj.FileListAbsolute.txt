@@ -57,3 +57,17 @@ C:\Users\pvashisht\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaD
 C:\Users\pvashisht\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.pdb
 C:\Users\pvashisht\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.dll
 C:\Users\pvashisht\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.xml
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\bin\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.deps.json
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\bin\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.dll
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\bin\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.pdb
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\bin\Debug\netcoreapp2.1\CoreContracts.dll
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\bin\Debug\netcoreapp2.1\CoreContracts.pdb
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.xml
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.csprojAssemblyReference.cache
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.csproj.CoreCompileInputs.cache
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.AssemblyInfoInputs.cache
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.AssemblyInfo.cs
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.csproj.CopyComplete
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.dll
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.pdb

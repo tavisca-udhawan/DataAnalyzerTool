@@ -41,6 +41,7 @@ namespace TaviscaDataAnalyzerTool
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSingleton(Configuration);
             //services.AddOptions<AppSetting>("Appsetting");
+            services.AddTransient<IEmailService, EmailService>();
             services.AddTransient<ISqlConnector, SqlConnector>();
             services.AddTransient<IHotelRepository, HotelSqlDatabase>(); 
             services.AddTransient<IAirWebApiService, AirWebApiService>(); 

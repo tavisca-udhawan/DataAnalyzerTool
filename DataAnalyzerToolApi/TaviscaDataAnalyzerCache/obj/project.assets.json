@@ -562,7 +562,7 @@
   },
   "libraries": {
     "Microsoft.AspNet.Cors/5.2.6": {
-      "sha512": "+UR2ucML7OSzE1xB8/NKxwq85dikwxhmjN0tuMrRxySCeiRICrcnRjagQYWeq6GAM2m5pTWNV1gn+E9ig9hwNg==",
+      "sha512": "9aZAbHBY8StAwehBYWPs6ewrc4hdyaj6O0cxgPme5vU9eYNz9kAfbX5z6I1LFsnpWzthpsikcJTE1OyAl/JzuQ==",
       "type": "package",
       "path": "microsoft.aspnet.cors/5.2.6",
       "files": [
@@ -573,7 +573,7 @@
       ]
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
-      "sha512": "AIgEc1up4pvH8kXy+eG1x4Qfqd6piAq3yk11pveCQXWNkkYoiKdflSmcJZuWcerdMcAaoF0xC/mWGoTW4vF4Dg==",
+      "sha512": "rMDlyePoxggkmN/qgha1+BR2Uy+dOr38xKCQOPfVNKGY07R2nYJGMTKJFE1XFgwD70RYUNazf2fqutjJF18XgQ==",
       "type": "package",
       "path": "microsoft.aspnet.webapi.client/5.2.6",
       "files": [
@@ -589,7 +589,7 @@
       ]
     },
     "Microsoft.AspNet.WebApi.Core/5.2.6": {
-      "sha512": "8UiHr2VkrpwDCwXaXea8pNaR2zvJ3HYwsmWmkTFY1lEB2u4eFnL+aM+/GJK91Ud3KQ7Xse+Vysvj/UalM3IlmA==",
+      "sha512": "QMFixs/MvKZXjfUbV0gXxF85LKi+keu/zJKv13upg/JlcxJ+wdLSYzyHO/sgPPUuFVstgndK6Zt3VduWeqFmHQ==",
       "type": "package",
       "path": "microsoft.aspnet.webapi.core/5.2.6",
       "files": [
@@ -602,7 +602,7 @@
       ]
     },
     "Microsoft.AspNet.WebApi.Cors/5.2.6": {
-      "sha512": "Dn0hWJwZL8oND32CdD8Bi7Xb4cm9Jr9F4TaruGRPiV1DhP12gijYHy5syAqMIRn7jwiE5wOpIH/yA/vhPV09gQ==",
+      "sha512": "ZQU40+mCROg6cRE3tydEIuZBC7fh8ZueJmiz3HpaRoTriZVond1rLCcDu/PJM7FQJa0k8ut7iRUTgB1kU5yWFw==",
       "type": "package",
       "path": "microsoft.aspnet.webapi.cors/5.2.6",
       "files": [
@@ -1246,11 +1246,10 @@
       ]
     },
     "System.Buffers/4.4.0": {
-      "sha512": "VCJfpWcYG1gT3WwivZWgT0KaqY678MQBvrOI2si6V8GHeQOtuW+wpiv5ss4KyfGG+cFFdPNaI+nw2/kExCtGgQ==",
+      "sha512": "AwarXzzoDwX6BgrhjoJsk6tUezZEozOT5Y9QKF94Gl4JK91I4PIIBkBco9068Y9/Dra8Dkbie99kXB8+1BaYKw==",
       "type": "package",
       "path": "system.buffers/4.4.0",
       "files": [
-        ".signature.p7s",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/netcoreapp2.0/_._",
@@ -1363,7 +1362,7 @@
       ]
     },
     "System.Diagnostics.PerformanceCounter/4.5.0": {
-      "sha512": "eT8/JtodKzx0rnDwe8hdQE8FPM6m9djYy7B2IXEHTu6pfmtTYtsh7ekYG9dATqiVxMWrVZq5fu5hWdPfr0FVwg==",
+      "sha512": "a5vOZXb+Km4KoSKYr64QY2NkGS+MbRLOd88SSjPF3UkyiNp+7tJbsKxokoOvvIlHMFQDkL4NTkwUA7FlhjK+hg==",
       "type": "package",
       "path": "system.diagnostics.performancecounter/4.5.0",
       "files": [
@@ -1417,7 +1416,7 @@
       ]
     },
     "System.Runtime.CompilerServices.Unsafe/4.5.0": {
-      "sha512": "+XuFKlQaEBZXzJLGYXK2RWSif4doDGol46fJHHt1wwWQoHQHr0iwlmF76U2LlssIp3ZPJgCVVueY620y6JEhqw==",
+      "sha512": "6zBxkHYemB0kQiHP3vGXGRXejZVoNVuMn2paUuqKKi5Wyjkxfkp+D0rd0c3VrGwotidRINt6KpOi2smL4VkJKw==",
       "type": "package",
       "path": "system.runtime.compilerservices.unsafe/4.5.0",
       "files": [
@@ -1633,7 +1632,7 @@
       ]
     },
     "System.Threading.Channels/4.5.0": {
-      "sha512": "61eqqmreCig10E4OhJ0/6VaoxR5DR0s+YcerLeP4I36Ua5I9F+AH4UVFfpccUnu2QWDqZvqCPhsMvOIZGlYSZA==",
+      "sha512": "Js7f30DXMo1plMo32fOpKF7AhCmuKyOKDT1fSayntGGOVfF5V/xKVu1UPI3N+/hTXuqKKgB++eACPZ120uLpGg==",
       "type": "package",
       "path": "system.threading.channels/4.5.0",
       "files": [
@@ -1669,23 +1668,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pvashisht\\.nuget\\packages\\": {},
+    "C:\\Users\\bdeshpande\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pvashisht\\Desktop\\tavisca\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerCache\\TaviscaDataAnalyzerCache.csproj",
+      "projectUniqueName": "C:\\Users\\bdeshpande\\Desktop\\tavisca\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerCache\\TaviscaDataAnalyzerCache.csproj",
       "projectName": "TaviscaDataAnalyzerCache",
-      "projectPath": "C:\\Users\\pvashisht\\Desktop\\tavisca\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerCache\\TaviscaDataAnalyzerCache.csproj",
-      "packagesPath": "C:\\Users\\pvashisht\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pvashisht\\Desktop\\tavisca\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerCache\\obj\\",
+      "projectPath": "C:\\Users\\bdeshpande\\Desktop\\tavisca\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerCache\\TaviscaDataAnalyzerCache.csproj",
+      "packagesPath": "C:\\Users\\bdeshpande\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bdeshpande\\Desktop\\tavisca\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerCache\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\pvashisht\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\bdeshpande\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1698,8 +1697,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\pvashisht\\Desktop\\tavisca\\DataAnalyzerTool\\DataAnalyzerToolApi\\CoreContracts\\CoreContracts.csproj": {
-              "projectPath": "C:\\Users\\pvashisht\\Desktop\\tavisca\\DataAnalyzerTool\\DataAnalyzerToolApi\\CoreContracts\\CoreContracts.csproj"
+            "C:\\Users\\bdeshpande\\Desktop\\tavisca\\DataAnalyzerTool\\DataAnalyzerToolApi\\CoreContracts\\CoreContracts.csproj": {
+              "projectPath": "C:\\Users\\bdeshpande\\Desktop\\tavisca\\DataAnalyzerTool\\DataAnalyzerToolApi\\CoreContracts\\CoreContracts.csproj"
             }
           }
         }

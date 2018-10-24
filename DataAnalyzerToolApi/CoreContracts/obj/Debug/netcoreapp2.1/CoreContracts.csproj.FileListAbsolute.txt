@@ -25,3 +25,12 @@ C:\Users\pvashisht\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\CoreCont
 C:\Users\pvashisht\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\CoreContracts\obj\Debug\netcoreapp2.1\CoreContracts.AssemblyInfo.cs
 C:\Users\pvashisht\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\CoreContracts\obj\Debug\netcoreapp2.1\CoreContracts.dll
 C:\Users\pvashisht\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\CoreContracts\obj\Debug\netcoreapp2.1\CoreContracts.pdb
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\CoreContracts\bin\Debug\netcoreapp2.1\CoreContracts.deps.json
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\CoreContracts\bin\Debug\netcoreapp2.1\CoreContracts.dll
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\CoreContracts\bin\Debug\netcoreapp2.1\CoreContracts.pdb
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\CoreContracts\obj\Debug\netcoreapp2.1\CoreContracts.csprojAssemblyReference.cache
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\CoreContracts\obj\Debug\netcoreapp2.1\CoreContracts.csproj.CoreCompileInputs.cache
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\CoreContracts\obj\Debug\netcoreapp2.1\CoreContracts.AssemblyInfoInputs.cache
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\CoreContracts\obj\Debug\netcoreapp2.1\CoreContracts.AssemblyInfo.cs
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\CoreContracts\obj\Debug\netcoreapp2.1\CoreContracts.dll
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\CoreContracts\obj\Debug\netcoreapp2.1\CoreContracts.pdb

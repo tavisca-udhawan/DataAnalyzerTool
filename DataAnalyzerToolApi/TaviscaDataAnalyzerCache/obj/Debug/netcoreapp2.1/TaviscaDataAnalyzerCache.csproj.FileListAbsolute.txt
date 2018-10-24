@@ -57,3 +57,15 @@ C:\Users\pvashisht\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaD
 C:\Users\pvashisht\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.csproj.CopyComplete
 C:\Users\pvashisht\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.dll
 C:\Users\pvashisht\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.pdb
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\bin\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.deps.json
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\bin\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.dll
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\bin\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.pdb
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\bin\Debug\netcoreapp2.1\CoreContracts.dll
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\bin\Debug\netcoreapp2.1\CoreContracts.pdb
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.csprojAssemblyReference.cache
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.csproj.CoreCompileInputs.cache
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.AssemblyInfoInputs.cache
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.AssemblyInfo.cs
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.csproj.CopyComplete
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.dll
+C:\Users\bdeshpande\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.pdb
