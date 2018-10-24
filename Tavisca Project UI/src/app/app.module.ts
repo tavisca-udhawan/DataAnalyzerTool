@@ -38,12 +38,11 @@ import { GraphsComponentComponent } from './graphs-component/graphs-component.co
 import {MatCardModule} from '@angular/material/card';
 import { HotelBookingStatusStatsComponent } from './home/BookingStatus/hotel-booking-status-stats/hotel-booking-status-stats.component';
 import { FlightBookingStatusStatsComponent } from './home/BookingStatus/flight-booking-status-stats/flight-booking-status-stats.component';
-import { FlightStatisticsComponent } from './flight-components/flight-statistics/flight-statistics.component';
-import { FlightPaymentModeComponent } from './flight-components/Flight-Statistics-Folder/flight-payment-mode/flight-payment-mode.component';
-import { MarketingAirlineGraphComponent } from './flight-components/Flight-Statistics-Folder/marketing-airline-graph/marketing-airline-graph.component';
-import { FlightTotalBookingsGraphComponent } from './flight-components/Flight-Statistics-Folder/flight-total-bookings-graph/flight-total-bookings-graph.component';
-import { FlightBookingWithDateRangeGraphComponent } from './flight-components/Flight-Statistics-Folder/flight-booking-with-date-range-graph/flight-booking-with-date-range-graph.component';
-import { FlightOriginDestinationGraphComponent } from './flight-components/Flight-Statistics-Folder/flight-origin-destination-graph/flight-origin-destination-graph.component'
+import { FlightPaymentModeComponent } from './flight-components/Flight-Statistics/flight-payment-mode/flight-payment-mode.component';
+import { MarketingAirlineGraphComponent } from './flight-components/Flight-Statistics/marketing-airline-graph/marketing-airline-graph.component';
+import { FlightTotalBookingsGraphComponent } from './flight-components/Flight-Statistics/flight-total-bookings-graph/flight-total-bookings-graph.component';
+import { FlightBookingWithDateRangeGraphComponent } from './flight-components/Flight-Statistics/flight-booking-with-date-range-graph/flight-booking-with-date-range-graph.component';
+import { FlightOriginDestinationGraphComponent } from './flight-components/Flight-Statistics/flight-origin-destination-graph/flight-origin-destination-graph.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,7 +69,6 @@ import { FlightOriginDestinationGraphComponent } from './flight-components/Fligh
     GraphsComponentComponent,
     HotelBookingStatusStatsComponent,
     FlightBookingStatusStatsComponent,
-    FlightStatisticsComponent,
     FlightPaymentModeComponent,
     MarketingAirlineGraphComponent,
     FlightTotalBookingsGraphComponent,

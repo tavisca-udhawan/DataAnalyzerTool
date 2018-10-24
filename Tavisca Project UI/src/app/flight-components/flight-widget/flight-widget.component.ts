@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { GraphsServiceService } from 'src/app/service/hotel-service/graphs-service.service';
-import { FlightPaymentModeComponent } from '../Flight-Statistics-Folder/flight-payment-mode/flight-payment-mode.component';
-import { FlightBookingWithDateRangeGraphComponent } from '../Flight-Statistics-Folder/flight-booking-with-date-range-graph/flight-booking-with-date-range-graph.component';
-import { FlightTotalBookingsGraphComponent } from '../Flight-Statistics-Folder/flight-total-bookings-graph/flight-total-bookings-graph.component';
-import { MarketingAirlineGraphComponent } from '../Flight-Statistics-Folder/marketing-airline-graph/marketing-airline-graph.component';
-import { FlightOriginDestinationGraphComponent } from '../Flight-Statistics-Folder/flight-origin-destination-graph/flight-origin-destination-graph.component';
+import { FlightPaymentModeComponent } from '../Flight-Statistics/flight-payment-mode/flight-payment-mode.component';
+import { FlightBookingWithDateRangeGraphComponent } from '../Flight-Statistics/flight-booking-with-date-range-graph/flight-booking-with-date-range-graph.component';
+import { FlightTotalBookingsGraphComponent } from '../Flight-Statistics/flight-total-bookings-graph/flight-total-bookings-graph.component';
+import { MarketingAirlineGraphComponent } from '../Flight-Statistics/marketing-airline-graph/marketing-airline-graph.component';
+import { FlightOriginDestinationGraphComponent } from '../Flight-Statistics/flight-origin-destination-graph/flight-origin-destination-graph.component';
 export interface Graph {
   value: string;
   viewValue: string;

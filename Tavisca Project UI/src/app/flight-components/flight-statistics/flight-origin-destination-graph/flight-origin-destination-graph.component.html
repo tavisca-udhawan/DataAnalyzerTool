@@ -1,3 +1,8 @@
-<p>
-  flight-origin-destination-graph works!
-</p>
+<div id="origin-destination-chart-container"><mat-select placeholder="Graph Type">
+  <mat-option *ngFor="let graph of graphs" [(value)]="graph.value" (click)="GraphSelect(graph.value)">
+    {{graph.viewValue}}
+  </mat-option>
+</mat-select>
+<div id="origin-destination-chart">  
+</div>
+</div>
