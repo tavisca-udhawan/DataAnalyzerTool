@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -10,23 +12,18 @@ using System.Threading.Tasks;
 
 namespace TaviscaDataAnalyzerDatabase
 {
-   public class SqlConnector
+   public class SqlConnector:ISqlConnector
     {
         private SqlConnection connector;
-        private readonly IConfiguration configuration;
-        public SqlConnector(IConfiguration config)
+     
+        private readonly AppSetting _appSettings;
+        public SqlConnector(IOptions<AppSetting>appSettings)
         {
-            configuration = config;
-        }
-
-        public SqlConnector()
-        {
-
+            _appSettings=appSettings.Value;
         }
         private SqlConnection Connection()
         {
-            //string connectionString = configuration.GetConnectionString("SQlDatabase");
-            string connectionString = "Data Source=54.86.216.216;Initial Catalog=qaTripDataWareHouse_Sync;User ID=readonlynewbies2018;Password=Tavisca@123;";
+            string connectionString = _appSettings.ConnectionString;
             connector = new SqlConnection(connectionString);
             return connector;
         }

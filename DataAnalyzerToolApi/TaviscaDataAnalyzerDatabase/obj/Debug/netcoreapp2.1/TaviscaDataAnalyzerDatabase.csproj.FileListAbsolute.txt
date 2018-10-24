@@ -55,3 +55,5 @@ C:\Users\pvashisht\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaD
 C:\Users\pvashisht\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.csproj.CopyComplete
 C:\Users\pvashisht\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.dll
 C:\Users\pvashisht\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.pdb
+C:\Users\pvashisht\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\pvashisht\Desktop\tavisca\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.xml

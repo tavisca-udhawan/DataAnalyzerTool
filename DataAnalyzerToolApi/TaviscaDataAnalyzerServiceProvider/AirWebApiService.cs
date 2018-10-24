@@ -37,7 +37,7 @@ namespace TaviscaDataAnalyzerServiceProvider
             string data = "BookingsWithinDateRange" + uIRequest.FromDate + uIRequest.ToDate;
             result = cache.Get(data);
             if (result == null)
-            {                
+            {
                 result = sqlDatabase.BookingsWithinDateRangeInfoDatabase(uIRequest);
                 cache.Post(data, result);
             }
@@ -65,7 +65,7 @@ namespace TaviscaDataAnalyzerServiceProvider
             string data = "AirFailureCount" + uIRequest.FromDate + uIRequest.ToDate;
             result = cache.Get(data);
             if (result == null)
-            {                
+            {
                 result = sqlDatabase.AirFailureCountDatabase(uIRequest);
                 cache.Post(data, result);
             }
@@ -79,7 +79,7 @@ namespace TaviscaDataAnalyzerServiceProvider
             string data = "MarketingAirLine" + uIRequest.FromDate + uIRequest.ToDate;
             result = cache.Get(data);
             if (result == null)
-            {                
+            {
                 result = sqlDatabase.MarketingAirlineBookingsInfoDatabase(uIRequest);
                 cache.Post(data, result);
             }
@@ -93,7 +93,7 @@ namespace TaviscaDataAnalyzerServiceProvider
             string data = "AirTotalBookingsCount";
             result = cache.Get(data);
             if (result == null)
-            {                
+            {
                 result = sqlDatabase.TotalBookingsInfoDatabase();
                 cache.Post(data, result);
             }

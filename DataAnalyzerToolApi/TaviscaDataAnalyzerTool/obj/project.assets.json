@@ -4483,6 +4483,7 @@
           "Microsoft.AspNet.WebApi.Cors": "5.2.6",
           "Microsoft.AspNetCore.Hosting": "2.1.1",
           "Microsoft.Extensions.Configuration": "2.1.1",
+          "Microsoft.Extensions.Options.ConfigurationExtensions": "2.1.1",
           "Newtonsoft.Json": "11.0.2",
           "System.Data.SqlClient": "4.5.1"
         },

@@ -8,30 +8,31 @@ using CoreContracts.Models.Hotels;
 
 namespace TaviscaDataAnalyzerDatabase
 {
-    public class HotelSqlDatabase:IHotelRepository
+    public class HotelSqlDatabase : IHotelRepository
     {
-        SqlConnection connector;
-        public HotelSqlDatabase()
+        SqlConnection _sqlConnection;
+        ISqlConnector sqlConnector;
+        public HotelSqlDatabase(ISqlConnector _sqlConnector)
         {
-             connector = sqlConnector.ConnectionEstablisher();
+            sqlConnector = _sqlConnector;
+            _sqlConnection = sqlConnector.ConnectionEstablisher();
         }
-        SqlConnector sqlConnector = new SqlConnector();
 
         public DataTable QueryExecuter(string query)
         {
-            SqlCommand command = new SqlCommand(query, connector)
+            SqlCommand command = new SqlCommand(query, _sqlConnection)
             {
                 CommandType = CommandType.Text
             };
             SqlDataAdapter dataAdapter = new SqlDataAdapter(command);
             DataTable dataTable = new DataTable();
-            connector.Open();
+            _sqlConnection.Open();
             dataAdapter.Fill(dataTable);
-            connector.Close();
+            _sqlConnection.Close();
             return dataTable;
         }
         public string GetAllLocationsDatabase()
-        {           
+        {
             Cities cities = new Cities();
             string query = $"SELECT DISTINCT(t3.City)FROM TripFolders t1 JOIN TripProducts t2 ON t1.FolderId = t2.TripFolderId JOIN HotelSegments t3 ON t2.Id = t3.TripProductId ;";
             DataTable dataTable = QueryExecuter(query);
@@ -45,7 +46,7 @@ namespace TaviscaDataAnalyzerDatabase
 
         public string HotelsAtALocationWithDatesDatabases(UIRequest queryFormat)
         {
-         
+
             List<HotelsInALocationWithDates> list = new List<HotelsInALocationWithDates>();
             string query = $"SELECT (t3.City),(t3.HotelName),Count(t3.City) as Bookings FROM TripFolders t1 JOIN TripProducts t2 ON t1.FolderId = t2.TripFolderId JOIN HotelSegments t3 ON t2.Id = t3.TripProductId JOIN PassengerSegments t4 ON t4.TripProductId=t2.Id where t3.StayPeriodStart between '{queryFormat.FromDate}' and '{queryFormat.ToDate}' and t2.ProductType='Hotel'  and t4.BookingStatus='Purchased' group by t3.HotelName,t3.city,t3.StayPeriodStart;";
             DataTable dataTable = QueryExecuter(query);
@@ -74,7 +75,7 @@ namespace TaviscaDataAnalyzerDatabase
         }
         public string HotelNameWithDatesDatabases(UIRequest queryFormat)
         {
-            
+
             List<HotelNamesWithBookings> list = new List<HotelNamesWithBookings>();
             string query = $"SELECT (t3.HotelName),Count(t3.City) as Bookings FROM TripFolders t1 JOIN TripProducts t2 ON t1.FolderId = t2.TripFolderId JOIN HotelSegments t3 ON t2.Id = t3.TripProductId JOIN PassengerSegments t4 ON t4.TripProductId=t2.Id where t3.StayPeriodStart between '{queryFormat.FromDate}' and '{queryFormat.ToDate}'  and t3.City='{queryFormat.Filter}' and t4.BookingStatus='Purchased' and t2.ProductType='Hotel' group by t3.HotelName,t3.StayPeriodStart ;";
             DataTable dataTable = QueryExecuter(query);
@@ -89,7 +90,7 @@ namespace TaviscaDataAnalyzerDatabase
             return json;
         }
         public string SupplierNamesWithDatesDatabase(UIRequest queryFormat)
-        {          
+        {
             List<IndividualSupplierBookings> list = new List<IndividualSupplierBookings>();
             string query = $"SELECT (t3.SupplierFamily),Count(t3.City) as Bookings FROM TripFolders t1 JOIN TripProducts t2 ON t1.FolderId = t2.TripFolderId JOIN HotelSegments t3 ON t2.Id = t3.TripProductId JOIN PassengerSegments t4 ON t4.TripProductId=t2.Id where t3.StayPeriodStart between '{queryFormat.FromDate}' and '{queryFormat.ToDate}' and t3.City='{queryFormat.Filter}' and t4.BookingStatus='Purchased' and t2.ProductType='Hotel' group by t3.SupplierFamily,t3.city,t3.StayPeriodStart ;";
             DataTable dataTable = QueryExecuter(query);
@@ -150,17 +151,17 @@ namespace TaviscaDataAnalyzerDatabase
             {
 
                 HotelBookingDates hotelBookingDates = new HotelBookingDates();
-                
+
                 string bookingDate = Convert.ToString(dataRow["ModifiedDate"]);
-                if(bookingDate[2]=='/' &&bookingDate[5]=='/')
+                if (bookingDate[2] == '/' && bookingDate[5] == '/')
                     bookingDate = bookingDate.Substring(0, 10);
                 else if (bookingDate[1] == '/' && bookingDate[3] == '/')
                     bookingDate = bookingDate.Substring(0, 8);
                 else
-                bookingDate = bookingDate.Substring(0, 9);
+                    bookingDate = bookingDate.Substring(0, 9);
                 if (list.Exists(existingAlready => existingAlready.BookingDates == bookingDate))
                 {
-                    
+
                     list[list.FindIndex(existingAlready => existingAlready.BookingDates == bookingDate)].NumberOfBookings += Convert.ToInt32(dataRow["Bookings"]);
                 }
                 else
@@ -177,14 +178,14 @@ namespace TaviscaDataAnalyzerDatabase
         public string TotalHotelBookingsDataBase()
         {
             List<TotalHotelBookings> list = new List<TotalHotelBookings>();
-            
+
             string query = $"SELECT t2.BookingStatus ,COUNT(t2.BookingStatus) As AllBookings FROM TripProducts t1 JOIN PassengerSegments t2 ON t1.Id=t2.TripProductId where t1.ProductType='Hotel' group by t2.BookingStatus;";
             DataTable dataTable = QueryExecuter(query);
             foreach (DataRow dataRow in dataTable.Rows)
             {
                 TotalHotelBookings totalHotelBookings = new TotalHotelBookings();
-                totalHotelBookings.Type= Convert.ToString(dataRow["BookingStatus"]);
-                totalHotelBookings.Count= Convert.ToInt32(dataRow["AllBookings"]);
+                totalHotelBookings.Type = Convert.ToString(dataRow["BookingStatus"]);
+                totalHotelBookings.Count = Convert.ToInt32(dataRow["AllBookings"]);
                 list.Add(totalHotelBookings);
             }
             var json = JsonConvert.SerializeObject(list);
