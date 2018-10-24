@@ -35,40 +35,13 @@ export class HotelNamesWithDatesGraphComponent implements OnInit {
   graphDataPoints= [];
   id:string="hotel-with-dates-chart";
   constructor (private service:GraphsServiceService) { }
-  setDatesAndLocation()
-  {
-    if(this.startDate == null)
-    {
-      this.paymentStartDate = this.defaultStartDate
-    }
-    else 
-    {
-      this.paymentStartDate = this.startDate
-    }
-    if(this.endDate == null)
-    {
-      this.paymentEndDate = this.defaultEndDate
-    }
-    else 
-    {
-      this.paymentEndDate = this.endDate
-    }
-    if(this.location == null)
-    {
-      this.paymentLocation = this.defaultLocation
-    }
-    else 
-    {
-      this.paymentLocation = this.location
-    }
-  }
+  
   ngOnInit(){
       this.reRender()
 
     }
     reRender()
     {
-      this.setDatesAndLocation()
       this.hotelLocationGraph = null;
       this.defaultGraphType = "line";
       this.HotelsAtParticularLocation = []
@@ -92,7 +65,6 @@ export class HotelNamesWithDatesGraphComponent implements OnInit {
             );
     }
     serviceCall(){
-      this.setDatesAndLocation()
       this.hotelLocationGraph = null;
    this.defaultGraphType = "line";
    this.HotelsAtParticularLocation = []
@@ -108,7 +80,7 @@ export class HotelNamesWithDatesGraphComponent implements OnInit {
                        this.Place.push(data[i].place);
                      //  console.log(this.Bookings);
                      }
-                     //debugger;
+                 
                      this.DisplayGraph( this.chart);
                },
        error=>{ this.errorMsg = error;}

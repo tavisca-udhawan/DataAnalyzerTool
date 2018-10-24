@@ -18,9 +18,8 @@
     text-align: center;
     display:flex;
     flex-wrap:wrap;
-
+height: 52%;
     justify-content: center;
-  
     width:100%;
 }
 .images{
@@ -39,4 +38,7 @@
 .progressBar{
     margin-top: 20px;
     margin-bottom: 20px;
+}
+app-hotel-booking-status-stats,app-flight-booking-status-stats{
+    width:30%;
 }

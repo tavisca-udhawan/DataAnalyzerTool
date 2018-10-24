@@ -25,7 +25,7 @@ export class BookingFaliureCountBasedGraphComponent implements OnInit {
   defaultGraphType: string
   errorMsg: any
   Failures: any = [];
-  
+  loaderDisplay: Boolean
   @Input() location: string;
   @Input() startDate: string;
   @Input() endDate: string;

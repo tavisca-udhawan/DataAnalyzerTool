@@ -17,6 +17,7 @@ export class CancelledComponent implements OnInit {
     this.service.httpResponseFilters("Hotels","TotalBookings")
     .subscribe( data=>{
       this.cancellationCount=data[3].count;
+      this.service.cancelCount=data[3].count;
                 },
         error=>{ this.errorMsg = error;}
 

@@ -1,12 +1,17 @@
-div{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    width: 60%;
-    margin: 10px auto;
-    vertical-align: middle;    
-}
-button{
+button,mat-form-field{
     height: 40px;
     margin-top: 10px;
+    margin-left:2em;
+}
+#flight-graphs {
+    width: 90%;
+    margin: 100px auto;
+}
+.flight-form{
+    width: 100%;
+    margin: 0 auto;
+    position: absolute;
+    background-color: white;
+    text-align: center;
+    z-index : 1;
 }

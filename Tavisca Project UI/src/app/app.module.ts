@@ -31,8 +31,19 @@ import { FailureComponent } from './Home/BookingStatus/failure/failure.component
 import { SuccessComponent } from './Home/BookingStatus/success/success.component';
 import { CancelledComponent } from './Home/BookingStatus/cancelled/cancelled.component';
 import { PastComponent } from './Home/BookingStatus/past/past.component';
+import { flightFailureComponent } from './Home/flightBookingStatus/failure/failure.component';
+import { flightSuccessComponent } from './Home/flightBookingStatus/success/success.component';
+import { flightCancelledComponent } from './Home/flightBookingStatus/cancelled/cancelled.component';
 import { GraphsComponentComponent } from './graphs-component/graphs-component.component';
-import {MatCardModule} from '@angular/material/card'
+import {MatCardModule} from '@angular/material/card';
+import { HotelBookingStatusStatsComponent } from './home/BookingStatus/hotel-booking-status-stats/hotel-booking-status-stats.component';
+import { FlightBookingStatusStatsComponent } from './home/BookingStatus/flight-booking-status-stats/flight-booking-status-stats.component';
+import { FlightStatisticsComponent } from './flight-components/flight-statistics/flight-statistics.component';
+import { FlightPaymentModeComponent } from './flight-components/Flight-Statistics-Folder/flight-payment-mode/flight-payment-mode.component';
+import { MarketingAirlineGraphComponent } from './flight-components/Flight-Statistics-Folder/marketing-airline-graph/marketing-airline-graph.component';
+import { FlightTotalBookingsGraphComponent } from './flight-components/Flight-Statistics-Folder/flight-total-bookings-graph/flight-total-bookings-graph.component';
+import { FlightBookingWithDateRangeGraphComponent } from './flight-components/Flight-Statistics-Folder/flight-booking-with-date-range-graph/flight-booking-with-date-range-graph.component';
+import { FlightOriginDestinationGraphComponent } from './flight-components/Flight-Statistics-Folder/flight-origin-destination-graph/flight-origin-destination-graph.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,10 +61,21 @@ import {MatCardModule} from '@angular/material/card'
     HotelLocationsPipe,
     HotelNamesWithDatesGraphComponent,
     FailureComponent,
+    flightFailureComponent,
+    flightSuccessComponent ,
+    flightCancelledComponent, 
     SuccessComponent,
     CancelledComponent,
     PastComponent,
-    GraphsComponentComponent
+    GraphsComponentComponent,
+    HotelBookingStatusStatsComponent,
+    FlightBookingStatusStatsComponent,
+    FlightStatisticsComponent,
+    FlightPaymentModeComponent,
+    MarketingAirlineGraphComponent,
+    FlightTotalBookingsGraphComponent,
+    FlightBookingWithDateRangeGraphComponent,
+    FlightOriginDestinationGraphComponent
   ],
   imports: [
     BrowserModule,

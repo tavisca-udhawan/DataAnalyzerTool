@@ -1,5 +1,5 @@
 #booking-with-dates-chart{
-    margin: 50px auto;
+    margin: 20px auto;
     height: 400px;
 }
 #booking-with-dates-chart-container{
@@ -11,4 +11,7 @@
 mat-select{
     width: 200px;
     align-content: right;
+}
+.loader{
+    margin-left:45em;
 }

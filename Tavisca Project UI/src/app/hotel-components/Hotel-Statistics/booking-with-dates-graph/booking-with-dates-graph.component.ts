@@ -22,13 +22,16 @@ export class BookingWithDatesGraphComponent implements OnInit {
   NumberOfBooking: any = [];
   graphDataPoints= [];
   id:string="booking-with-dates-chart";
+  loaderDisplay: boolean
   constructor (private service:GraphsServiceService) { }
  
   ngOnInit(){
+    
      this.reRender()
     }
     reRender()
     {
+      this.loaderDisplay = true;
       this.BookingDates = []
       this.NumberOfBooking= []
 
@@ -72,20 +75,19 @@ export class BookingWithDatesGraphComponent implements OnInit {
         
       }
       DisplayGraph(chart ) {
-
+        this.loaderDisplay = false;
         this.setDataPoints(this.BookingDates,this.NumberOfBooking)
 
         var chart = new CanvasJS.Chart(this.id, {
           zoomEnabled:true,
           animationEnabled: true,
           exportEnabled: true,
-          theme: "light1", // "light1", "light2", "dark1", "dark2"
+          theme: "light1", 
           title:{
             text: "Booking with Dates Graph"
           },
           data: [{
-            type: chart, //change type to bar, line, area, pie, etc
-            //indexLabel: "{y}", //Shows y value on all Data Points
+            type: chart, 
             indexLabelFontColor: "#5A5757",
             indexLabelPlacement: "outside",
             dataPoints: this.graphDataPoints,

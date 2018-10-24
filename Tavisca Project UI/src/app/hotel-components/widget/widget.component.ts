@@ -20,14 +20,12 @@ export interface Graph {
 })
 
 export class WidgetComponent implements OnInit {
-
-  @ViewChild(BookingWithDatesGraphComponent) book: BookingWithDatesGraphComponent;
-  @ViewChild(HotelLocationBasedGraphComponent) hotelLocation: HotelLocationBasedGraphComponent;
-  @ViewChild(HotelNamesWithDatesGraphComponent) hotelNames: HotelNamesWithDatesGraphComponent;
-  @ViewChild(LocationBasedGraphComponent) locationsGraph: LocationBasedGraphComponent;
-  @ViewChild(PaymentModeBasedGraphComponent) payment: PaymentModeBasedGraphComponent;
-  @ViewChild(SupplierNameBasedGraphComponent) supplierName: SupplierNameBasedGraphComponent;
-  currentStartDate:Date;
+   hotelLocation = new HotelLocationBasedGraphComponent(this.service)
+   hotelNames = new HotelNamesWithDatesGraphComponent(this.service)
+   book = new BookingWithDatesGraphComponent(this.service)
+   supplierName = new SupplierNameBasedGraphComponent(this.service)
+   payment = new PaymentModeBasedGraphComponent(this.service)
+ currentStartDate:Date;
   currentEndDate:Date=new Date();
   hotelEndDate:string;
   hotelStartDate: string;
@@ -77,33 +75,28 @@ export class WidgetComponent implements OnInit {
     });
   
   }
-  GetLocationData()
-  {
-    debugger
-    this.service.httpResponseFilters("Hotels","HotelNamesWithDates?fromDate="+ this.service.start +" 00:00:00.000&toDate="+this.service.end+" 00:00:00.000&location="+this.service.location)
-    .subscribe(data => {
-     // this.service.locationServiceResponse = null;
-    //  this.service.locationServiceResponse = data;
-      //this.locationsGraph.value 
-      //this.hotelLocation.RenderGraph()
-      debugger
-    })
-  }
+  
   checkStartDate(){
     this.IsVisible=false;
   }
    ServiceCalls()
   {
+    console.log(this.checkValue);
+
     if(this.checkValue.includes('location'))
-    { this.hotelLocation.reRender();}
+    { 
+      this.hotelLocation.reRender();
+    }
     if(this.checkValue.includes ('name'))
-    {this.hotelNames.reRender();}
+    {
+      this.hotelNames.reRender();}
     if(this.checkValue.includes('bookDate'))
     { this.book.reRender();}
     if(this.checkValue.includes('supplierName'))
-    {  this.supplierName.reRender();}
+    { this.supplierName.reRender();}
     if(this.checkValue.includes('paymentMode'))
-    {this.payment.reRender();}
+    { this.payment.reRender();}
+
   }
 
 
