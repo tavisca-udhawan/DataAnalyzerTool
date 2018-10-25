@@ -11,24 +11,28 @@ namespace TaviscaDataAnalyzerServiceProvider
     {
         public void generatingMail(RecipientDetails details)
         {
-            string textBody = "<h2> Analysis Report of " + details.FilterName + "</h2>" +
-                              "<h3> from " + details.StartDate + " upto " + details.EndDate + " at " + details.Location + "</h3>" + "<br>" +
-                              " <table border=" + 1 + " cellpadding=" + 10 + " cellspacing=" + 0 + " width = " + 500 + ">" +
-                              "<tr bgcolor='#D3D3D3'>" +
-                              "<td><b>Lables</b></td> " +
-                              "<td><b>Statistics</b></td>" +
-                              "</tr>";
-            for (int loopCount = 0; loopCount < details.Lables.Length; loopCount++)
+            string textBody = "";
+            for (int tableCount = 0; tableCount < details.Labels.Length; tableCount++)
+            {
+                textBody = textBody + "<h2> Analysis Report of " + details.FilterName[tableCount] + "</h2>" +
+                               "<h3> from " + details.StartDate[tableCount] + " upto " + details.EndDate[tableCount] + " at " + details.Location[tableCount] + "</h3>" + "<br>" +
+                               " <table border=" + 1 + " cellpadding=" + 10 + " cellspacing=" + 0 + " width = " + 500 + ">" +
+                               "<tr bgcolor='#D3D3D3'>" +
+                               "<td><b>Lables</b></td> " +
+                               "<td><b>Statistics</b></td>" +
+                               "</tr>";
+            for (int loopCount = 0; loopCount < details.Labels[tableCount].Length; loopCount++)
             {
                 textBody += "<tr>" +
-                            "<td>" + details.Lables[loopCount] + "</td>" +
-                            "<td> " + details.Statistics[loopCount] + "</td> " +
+                            "<td>" + details.Labels[tableCount][loopCount] + "</td>" +
+                            "<td> " + details.Statistics[tableCount][loopCount] + "</td> " +
                             "</tr>";
             }
-            textBody += "</table>";
+            textBody += "</table>" + "<br>";
+        }
 
 
-            MailMessage mailMessage = new MailMessage("purab2018@gmail.com", details.RecipientEmialId);
+        MailMessage mailMessage = new MailMessage("purab2018@gmail.com", details.RecipientEmialId);
             mailMessage.Subject = "Data Analysis Report";
             mailMessage.Body = textBody;
             mailMessage.IsBodyHtml = true;

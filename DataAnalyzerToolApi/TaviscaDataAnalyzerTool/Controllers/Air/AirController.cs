@@ -21,7 +21,7 @@ namespace TaviscaDataAnalyzerTool.Controllers.Air
 
         public object GetPaymentType([FromQuery]string fromDate, string toDate)
         {
-            UIRequest uiRequest = new UIRequest { FromDate = fromDate, ToDate = toDate };            
+            UIRequest uiRequest = new UIRequest { FromDate = fromDate, ToDate = toDate };
             return webApiServiceProvider.AirPaymentTypeService(uiRequest);
         }
 
@@ -29,7 +29,7 @@ namespace TaviscaDataAnalyzerTool.Controllers.Air
 
         public object GetMarketingAirlineBookingInfo([FromQuery] string fromDate, string toDate)
         {
-            UIRequest uiRequest = new UIRequest { FromDate = fromDate, ToDate = toDate };           
+            UIRequest uiRequest = new UIRequest { FromDate = fromDate, ToDate = toDate };
             return webApiServiceProvider.MarketingAirlineBookingsInfoService(uiRequest);
         }
 
@@ -37,14 +37,14 @@ namespace TaviscaDataAnalyzerTool.Controllers.Air
 
         public object GetFailureCountInfo([FromQuery] string fromDate, string toDate)
         {
-            UIRequest uiRequest = new UIRequest { FromDate = fromDate, ToDate = toDate };            
+            UIRequest uiRequest = new UIRequest { FromDate = fromDate, ToDate = toDate };
             return webApiServiceProvider.FailureCountInfoService(uiRequest);
         }
 
         [HttpGet("TotalBookings")]
 
         public object GetTotalBookingsInfo()
-        {           
+        {
             return webApiServiceProvider.TotalBookingsInfoService();
         }
 
@@ -53,7 +53,7 @@ namespace TaviscaDataAnalyzerTool.Controllers.Air
 
         public object GetBookingsWithinDateRangeInfo([FromQuery] string fromDate, string toDate)
         {
-            UIRequest uiRequest = new UIRequest { FromDate = fromDate, ToDate = toDate };            
+            UIRequest uiRequest = new UIRequest { FromDate = fromDate, ToDate = toDate };
             return webApiServiceProvider.BookingsWithinDateRangeInfoService(uiRequest);
         }
 
@@ -69,7 +69,6 @@ namespace TaviscaDataAnalyzerTool.Controllers.Air
 
         public object GetListOfAirportsWithCode()
         {
-
             return webApiServiceProvider.ListOfAirportsWithCodeService();
         }
     }
