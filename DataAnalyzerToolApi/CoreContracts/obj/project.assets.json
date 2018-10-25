@@ -968,7 +968,7 @@
       ]
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
-      "sha512": "AIgEc1up4pvH8kXy+eG1x4Qfqd6piAq3yk11pveCQXWNkkYoiKdflSmcJZuWcerdMcAaoF0xC/mWGoTW4vF4Dg==",
+      "sha512": "rMDlyePoxggkmN/qgha1+BR2Uy+dOr38xKCQOPfVNKGY07R2nYJGMTKJFE1XFgwD70RYUNazf2fqutjJF18XgQ==",
       "type": "package",
       "path": "microsoft.aspnet.webapi.client/5.2.6",
       "files": [
@@ -3929,23 +3929,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pvashisht\\.nuget\\packages\\": {},
+    "C:\\Users\\ajoshi\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
+    "restoreSettings": {
+      "hideWarningsAndErrors": true
+    },
     "restore": {
-      "projectUniqueName": "C:\\Users\\pvashisht\\Desktop\\tavLatest\\DataAnalyzerTool\\DataAnalyzerToolApi\\CoreContracts\\CoreContracts.csproj",
+      "projectUniqueName": "C:\\Users\\ajoshi\\Desktop\\New folder\\DataAnalyzerTool\\DataAnalyzerToolApi\\CoreContracts\\CoreContracts.csproj",
       "projectName": "CoreContracts",
-      "projectPath": "C:\\Users\\pvashisht\\Desktop\\tavLatest\\DataAnalyzerTool\\DataAnalyzerToolApi\\CoreContracts\\CoreContracts.csproj",
-      "packagesPath": "C:\\Users\\pvashisht\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pvashisht\\Desktop\\tavLatest\\DataAnalyzerTool\\DataAnalyzerToolApi\\CoreContracts\\obj\\",
+      "projectPath": "C:\\Users\\ajoshi\\Desktop\\New folder\\DataAnalyzerTool\\DataAnalyzerToolApi\\CoreContracts\\CoreContracts.csproj",
+      "packagesPath": "C:\\Users\\ajoshi\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ajoshi\\Desktop\\New folder\\DataAnalyzerTool\\DataAnalyzerToolApi\\CoreContracts\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\pvashisht\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ajoshi\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3971,12 +3974,12 @@
         "dependencies": {
           "Microsoft.AspNet.WebApi.Cors": {
             "target": "Package",
-            "version": "[5.2.6, )"
+            "version": "5.2.6"
           },
           "Microsoft.NETCore.App": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[2.1.0, )",
+            "version": "2.1",
             "autoReferenced": true
           }
         },

@@ -113,3 +113,16 @@ C:\Users\pvashisht\Desktop\tavLatest\DataAnalyzerTool\DataAnalyzerToolApi\Tavisc
 C:\Users\pvashisht\Desktop\tavLatest\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.csproj.CopyComplete
 C:\Users\pvashisht\Desktop\tavLatest\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.dll
 C:\Users\pvashisht\Desktop\tavLatest\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.pdb
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\bin\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.deps.json
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\bin\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.dll
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\bin\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.pdb
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\bin\Debug\netcoreapp2.1\CoreContracts.dll
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\bin\Debug\netcoreapp2.1\CoreContracts.pdb
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\bin\Debug\netcoreapp2.1\Microsoft.EntityFrameworkCore.xml
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.csprojResolveAssemblyReference.cache
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.csproj.CoreCompileInputs.cache
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.AssemblyInfoInputs.cache
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.AssemblyInfo.cs
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.dll
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerDatabase\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.pdb

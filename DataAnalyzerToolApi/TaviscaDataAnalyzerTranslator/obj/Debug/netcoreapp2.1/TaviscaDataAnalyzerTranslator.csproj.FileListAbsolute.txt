@@ -10,3 +10,14 @@ C:\Users\pvashisht\Desktop\tavLatest\DataAnalyzerTool\DataAnalyzerToolApi\Tavisc
 C:\Users\pvashisht\Desktop\tavLatest\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTranslator\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerTranslator.csproj.CopyComplete
 C:\Users\pvashisht\Desktop\tavLatest\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTranslator\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerTranslator.dll
 C:\Users\pvashisht\Desktop\tavLatest\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTranslator\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerTranslator.pdb
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTranslator\bin\Debug\netcoreapp2.1\TaviscaDataAnalyzerTranslator.deps.json
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTranslator\bin\Debug\netcoreapp2.1\TaviscaDataAnalyzerTranslator.dll
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTranslator\bin\Debug\netcoreapp2.1\TaviscaDataAnalyzerTranslator.pdb
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTranslator\bin\Debug\netcoreapp2.1\CoreContracts.dll
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTranslator\bin\Debug\netcoreapp2.1\CoreContracts.pdb
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTranslator\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerTranslator.csprojResolveAssemblyReference.cache
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTranslator\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerTranslator.csproj.CoreCompileInputs.cache
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTranslator\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerTranslator.AssemblyInfoInputs.cache
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTranslator\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerTranslator.AssemblyInfo.cs
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTranslator\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerTranslator.dll
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTranslator\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerTranslator.pdb

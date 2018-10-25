@@ -48,7 +48,9 @@ namespace TaviscaDataAnalyzerTool
             services.AddTransient<IEmailService, EmailService>();
             services.AddTransient<ISqlConnector, SqlConnector>();
             services.AddTransient<IHotelRepository, HotelSqlDatabase>(); 
-            services.AddTransient<IAirWebApiService, AirWebApiService>(); 
+            services.AddTransient<IAirWebApiService, AirWebApiService>();
+            services.AddTransient<ICache, RedisCache>();
+            services.AddTransient<IRedisConnectionFactory, RedisConnectionFactory>();
             services.AddTransient<IAirRepository, AirSqlDatabase>();
             services.AddTransient<IHotelWebApiServiceProvider, HotelWebApiServiceProvider>();
         }

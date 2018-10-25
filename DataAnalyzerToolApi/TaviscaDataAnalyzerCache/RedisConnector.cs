@@ -7,24 +7,36 @@ using StackExchange.Redis;
 
 namespace TaviscaDataAnalyzerCache
 {
-    public class RedisConnector
+    public class RedisConnectionFactory : IRedisConnectionFactory
     {
-        static RedisConnector()
+        //static RedisConnector()
+        //{
+        //    RedisConnector.lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
+        //    {
+        //        return ConnectionMultiplexer.Connect("13.232.45.55:6379");
+        //    });
+        //}
+
+        //private static Lazy<ConnectionMultiplexer> lazyConnection;
+
+        //public ConnectionMultiplexer Connection
+        //{
+        //    get
+        //    {
+        //        return lazyConnection.Value;
+        //    }
+        //}
+
+        private readonly Lazy<ConnectionMultiplexer> _connection;
+
+        public RedisConnectionFactory()
         {
-            RedisConnector.lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
-            {
-                return ConnectionMultiplexer.Connect("13.232.45.55:6379");
-            });
+            this._connection = new Lazy<ConnectionMultiplexer>(() => ConnectionMultiplexer.Connect("13.232.45.55:6379"));
         }
 
-        private static Lazy<ConnectionMultiplexer> lazyConnection;
-
-        public ConnectionMultiplexer Connection
+        public ConnectionMultiplexer Connection()
         {
-            get
-            {
-                return lazyConnection.Value;
-            }
+            return this._connection.Value;
         }
     }
 }

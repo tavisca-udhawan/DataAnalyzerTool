@@ -12,11 +12,11 @@ namespace TaviscaDataAnalyzerServiceProvider
     public class HotelWebApiServiceProvider : IHotelWebApiServiceProvider
     {
         IHotelRepository _sqlDatabase;
-        ICache cache;
+        ICache _cache;
         IHotelTranslator _hotelTranslator;
-        public HotelWebApiServiceProvider(IHotelRepository sqlDatabase, IHotelTranslator hotelTranslator)
+        public HotelWebApiServiceProvider(IHotelRepository sqlDatabase, IHotelTranslator hotelTranslator, ICache cache)
         {
-            cache = new RedisCache();
+            _cache = cache;
             _sqlDatabase = sqlDatabase;
             _hotelTranslator = hotelTranslator;
         }
@@ -24,13 +24,13 @@ namespace TaviscaDataAnalyzerServiceProvider
         {
             string result = null;
             string data = "BookingDates" + query.Filter + query.FromDate + query.ToDate;
-            result = cache.Get(data);
+            result = _cache.Get(data);
             if (result == null)
             {
 
                 DataTable dataTable = _sqlDatabase.BookingDatesDatabase(query);
                 result = _hotelTranslator.BookingDatesTranslator(dataTable);
-                cache.Post(data, result);
+                _cache.Post(data, result);
             }
             List<HotelBookingDates> hotelBookingDates = JsonConvert.DeserializeObject<List<HotelBookingDates>>(result);
             return hotelBookingDates;
@@ -40,13 +40,13 @@ namespace TaviscaDataAnalyzerServiceProvider
         {
             string result = null;
             string data = "FailureCount";
-            result = cache.Get(data);
+            result = _cache.Get(data);
             if (result == null)
             {
 
                 DataTable dataTable = _sqlDatabase.FailureCountDataBase(query);
                 result = _hotelTranslator.FailureCountTranslator(dataTable);
-                cache.Post(data, result);
+                _cache.Post(data, result);
             }
             FailuresInBooking FailureCount = JsonConvert.DeserializeObject<FailuresInBooking>(result);
             return FailureCount;
@@ -56,13 +56,13 @@ namespace TaviscaDataAnalyzerServiceProvider
         {
             string result = null;
             string data = "AllLocations";
-            result = cache.Get(data);
+            result = _cache.Get(data);
             if (result == null)
             {
 
                 DataTable dataTable = _sqlDatabase.GetAllLocationsDatabase();
                 result = _hotelTranslator.GetAllLocationsTranslator(dataTable);
-                cache.Post(data, result);
+                _cache.Post(data, result);
             }
             Cities ListOfCities = JsonConvert.DeserializeObject<Cities>(result);
             return ListOfCities;
@@ -72,13 +72,13 @@ namespace TaviscaDataAnalyzerServiceProvider
         {
             string result = null;
             string data = query.ToDate + query.Filter + query.FromDate;
-            result = cache.Get(data);
+            result = _cache.Get(data);
             if (result == null)
             {
 
                 DataTable dataTable = _sqlDatabase.HotelNameWithDatesDatabases(query);
                 result = _hotelTranslator.HotelNameWithDatesTranslator(dataTable);
-                cache.Post(data, result);
+                _cache.Post(data, result);
             }
             List<HotelNamesWithBookings> ListOfHotelNamesWithDates = JsonConvert.DeserializeObject<List<HotelNamesWithBookings>>(result);
             return ListOfHotelNamesWithDates;
@@ -88,13 +88,13 @@ namespace TaviscaDataAnalyzerServiceProvider
         {
             string result = null;
             string data = query.ToDate + query.FromDate;
-            result = cache.Get(data);
+            result = _cache.Get(data);
             if (result == null)
             {
 
                 DataTable dataTable = _sqlDatabase.HotelsAtALocationWithDatesDatabases(query);
                 result = _hotelTranslator.HotelsAtALocationWithDatesTranslator(dataTable);
-                cache.Post(data, result);
+                _cache.Post(data, result);
             }
             List<HotelsInALocationWithDates> ListOfHotelsWithDates = JsonConvert.DeserializeObject<List<HotelsInALocationWithDates>>(result);
             return ListOfHotelsWithDates;
@@ -104,13 +104,13 @@ namespace TaviscaDataAnalyzerServiceProvider
         {
             string result = null;
             string data = query.ToDate + query.FromDate + "Payment" + query.Filter;
-            result = cache.Get(data);
+            result = _cache.Get(data);
             if (result == null)
             {
 
                 DataTable dataTable = _sqlDatabase.PaymentDetailsDatabase(query);
                 result = _hotelTranslator.PaymentDetailsTranslator(dataTable);
-                cache.Post(data, result);
+                _cache.Post(data, result);
             }
             List<PaymentDetails> payment = JsonConvert.DeserializeObject<List<PaymentDetails>>(result);
             return payment;
@@ -120,13 +120,13 @@ namespace TaviscaDataAnalyzerServiceProvider
         {
             string result = null;
             string data = query.ToDate + query.FromDate + query.Filter;
-            result = cache.Get(data);
+            result = _cache.Get(data);
             if (result == null)
             {
 
                 DataTable dataTable = _sqlDatabase.SupplierNamesWithDatesDatabase(query);
                 result = _hotelTranslator.SupplierNamesWithDatesTranslator(dataTable);
-                cache.Post(data, result);
+                _cache.Post(data, result);
             }
             List<IndividualSupplierBookings> ListOfSuppliers = JsonConvert.DeserializeObject<List<IndividualSupplierBookings>>(result);
             return ListOfSuppliers;
@@ -136,13 +136,13 @@ namespace TaviscaDataAnalyzerServiceProvider
         {
             string result = null;
             string data = "TotalHotelBookings";
-            result = cache.Get(data);
+            result = _cache.Get(data);
             if (result == null)
             {
 
                 DataTable dataTable = _sqlDatabase.TotalHotelBookingsDataBase();
                 result = _hotelTranslator.TotalHotelBookingsTranslator(dataTable);
-                cache.Post(data, result);
+                _cache.Post(data, result);
             }
             List<TotalHotelBookings> totalHotelBookings = JsonConvert.DeserializeObject<List<TotalHotelBookings>>(result);
             return totalHotelBookings;

@@ -11,12 +11,12 @@ namespace TaviscaDataAnalyzerServiceProvider
 {
     public class AirWebApiService : IAirWebApiService
     {
-        ICache cache;
+        ICache _cache;
         IAirRepository _sqlDatabase;
         IAirTranslator _airTranslator; 
-        public AirWebApiService(IAirRepository sqlDatabase,IAirTranslator airTranslator)
+        public AirWebApiService(IAirRepository sqlDatabase,IAirTranslator airTranslator, ICache cache)
         {
-            cache = new RedisCache();
+            _cache = cache;
             _sqlDatabase = sqlDatabase;
             _airTranslator = airTranslator;
         }
@@ -25,12 +25,12 @@ namespace TaviscaDataAnalyzerServiceProvider
             string result = null;
             
             string data = "AirPaymentType" + uIRequest.FromDate + uIRequest.ToDate;
-            result = cache.Get(data);
+            result = _cache.Get(data);
             if (result == null)
             {
                 DataTable dataTable = _sqlDatabase.AirPaymentTypeDatabase(uIRequest);
                 result = _airTranslator.AirPaymentTypeTranslator(dataTable);
-                cache.Post(data, result);
+                _cache.Post(data, result);
             }
             List<AirPaymentType> airPaymentType = JsonConvert.DeserializeObject<List<AirPaymentType>>(result);
             return airPaymentType;
@@ -41,12 +41,12 @@ namespace TaviscaDataAnalyzerServiceProvider
         {
             string result = null;
             string data = "BookingsWithinDateRange" + uIRequest.FromDate + uIRequest.ToDate;
-            result = cache.Get(data);
+            result = _cache.Get(data);
             if (result == null)
             {
                 DataTable dataTable = _sqlDatabase.BookingsWithinDateRangeInfoDatabase(uIRequest);
                 result = _airTranslator.BookingsWithinDateRangeInfoTranslator(dataTable);
-                cache.Post(data, result);
+                _cache.Post(data, result);
             }
             List<DatesWithBookings> dateWithBookings = JsonConvert.DeserializeObject<List<DatesWithBookings>>(result);
             return dateWithBookings;
@@ -56,12 +56,12 @@ namespace TaviscaDataAnalyzerServiceProvider
         {
             string result = null;
             string data = "BookingInfoForTrip" + uIRequest.ArrivalAirportCode + uIRequest.FromDate + uIRequest.ToDate + uIRequest.ArrivalAirportCode;
-            result = cache.Get(data);
+            result = _cache.Get(data);
             if (result == null)
             {
                 DataTable dataTable = _sqlDatabase.BookingsForSpecificTripDatabase(uIRequest);
                 result = _airTranslator.BookingsForSpecificTripTranslator(dataTable);
-                cache.Post(data, result);
+                _cache.Post(data, result);
             }
             List<BookingsForSpecificTrip> bookingsForSpecificTrips = JsonConvert.DeserializeObject<List<BookingsForSpecificTrip>>(result);
             return bookingsForSpecificTrips;
@@ -71,12 +71,12 @@ namespace TaviscaDataAnalyzerServiceProvider
         {
             string result = null;
             string data = "AirFailureCount" + uIRequest.FromDate + uIRequest.ToDate;
-            result = cache.Get(data);
+            result = _cache.Get(data);
             if (result == null)
             {
                 DataTable dataTable = _sqlDatabase.AirFailureCountDatabase(uIRequest);
                 result = _airTranslator.AirFailureCountTranslator(dataTable);
-                cache.Post(data, result);
+                _cache.Post(data, result);
             }
             FailureCount failureCount = JsonConvert.DeserializeObject<FailureCount>(result);
             return failureCount;
@@ -86,12 +86,12 @@ namespace TaviscaDataAnalyzerServiceProvider
         {
             string result = null;
             string data = "MarketingAirLine" + uIRequest.FromDate + uIRequest.ToDate;
-            result = cache.Get(data);
+            result = _cache.Get(data);
             if (result == null)
             {
                 DataTable dataTable = _sqlDatabase.MarketingAirlineBookingsInfoDatabase(uIRequest);
                 result = _airTranslator.MarketingAirlineBookingsInfoTranslator(dataTable);
-                cache.Post(data, result);
+                _cache.Post(data, result);
             }
             List<MarketingAirlineBookings> marketingAirlineBookings = JsonConvert.DeserializeObject<List<MarketingAirlineBookings>>(result);
             return marketingAirlineBookings;
@@ -101,12 +101,12 @@ namespace TaviscaDataAnalyzerServiceProvider
         {
             string result = null;
             string data = "AirTotalBookingsCount";
-            result = cache.Get(data);
+            result = _cache.Get(data);
             if (result == null)
             {
                 DataTable dataTable = _sqlDatabase.TotalBookingsInfoDatabase();
                 result = _airTranslator.TotalBookingsInfoTranslator(dataTable);
-                cache.Post(data, result);
+                _cache.Post(data, result);
             }
             List<TotalBookings> totatlBookings = JsonConvert.DeserializeObject<List<TotalBookings>>(result);
             return totatlBookings;
@@ -115,12 +115,12 @@ namespace TaviscaDataAnalyzerServiceProvider
         {
             string result = null;
             string data = "AirPortsWithCodes";
-            result = cache.Get(data);
+            result = _cache.Get(data);
             if (result == null)
             {
                 DataTable dataTable = _sqlDatabase.ListOfAirportsWithCodeDatabase();
                 result = _airTranslator.ListOfAirportsWithCodeTranslator(dataTable);
-                cache.Post(data, result);
+                _cache.Post(data, result);
             }
             List<AirportsWithCodes> totatlBookings = JsonConvert.DeserializeObject<List<AirportsWithCodes>>(result);
             return totatlBookings;
