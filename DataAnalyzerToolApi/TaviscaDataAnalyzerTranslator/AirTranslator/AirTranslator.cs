@@ -82,13 +82,13 @@ namespace TaviscaDataAnalyzerTranslator.AirTranslator
 
         public string ListOfAirportsWithCodeTranslator(DataTable dataTable)
         {
-            List<AirportsWithCodes> list = new List<AirportsWithCodes>();
+            AirportsWithCodes list = new AirportsWithCodes();
             foreach (DataRow dataRow in dataTable.Rows)
             {
-                AirportsWithCodes airportWithCodes = new AirportsWithCodes();
-                airportWithCodes.AirportName = Convert.ToString(dataRow["AirportName"]);
-                airportWithCodes.AirportCode = Convert.ToString(dataRow["AirportCode"]);
-                list.Add(airportWithCodes);
+                
+                string airportNameAndCode = Convert.ToString(dataRow["AirportName"])+"-"+ Convert.ToString(dataRow["AirportCode"]);
+                 
+                list.AirportNameWithCode.Add(airportNameAndCode);
             }
             var json = JsonConvert.SerializeObject(list);
             return json;

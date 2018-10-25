@@ -12,6 +12,6 @@ namespace TaviscaDataAnalyzerServiceProvider
         List<TotalBookings> TotalBookingsInfoService();
         List<DatesWithBookings> BookingsWithinDateRangeInfoService(UIRequest uIRequest);
         List<BookingsForSpecificTrip> BookingsForSpecificTripService(TripBookingRequest uIRequest);
-        List<AirportsWithCodes> ListOfAirportsWithCodeService();
+        AirportsWithCodes ListOfAirportsWithCodeService();
     }
 }

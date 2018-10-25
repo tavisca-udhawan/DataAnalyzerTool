@@ -6,7 +6,6 @@ namespace CoreContracts.Models.Air
 {
    public  class AirportsWithCodes
     {
-        public string AirportName { get; set; }
-        public string AirportCode { get; set; }
+        public List<string> AirportNameWithCode = new List<string>();        
     }
 }

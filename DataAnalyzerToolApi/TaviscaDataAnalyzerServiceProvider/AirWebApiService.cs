@@ -111,7 +111,7 @@ namespace TaviscaDataAnalyzerServiceProvider
             List<TotalBookings> totatlBookings = JsonConvert.DeserializeObject<List<TotalBookings>>(result);
             return totatlBookings;
         }
-        public List<AirportsWithCodes> ListOfAirportsWithCodeService()
+        public AirportsWithCodes ListOfAirportsWithCodeService()
         {
             string result = null;
             string data = "AirPortsWithCodes";
@@ -122,8 +122,8 @@ namespace TaviscaDataAnalyzerServiceProvider
                 result = _airTranslator.ListOfAirportsWithCodeTranslator(dataTable);
                 _cache.Post(data, result);
             }
-            List<AirportsWithCodes> totatlBookings = JsonConvert.DeserializeObject<List<AirportsWithCodes>>(result);
-            return totatlBookings;
+            AirportsWithCodes airportsWithCodes = JsonConvert.DeserializeObject<AirportsWithCodes>(result);
+            return airportsWithCodes;
         }
     }
 }
