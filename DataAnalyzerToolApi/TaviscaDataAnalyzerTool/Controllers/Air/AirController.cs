@@ -64,5 +64,13 @@ namespace TaviscaDataAnalyzerTool.Controllers.Air
             TripBookingRequest uiRequest = new TripBookingRequest { FromDate = fromDate, ToDate = toDate, ArrivalAirportCode = arrivalAirportCode, DepartAirportCode = departAirportCode };
             return webApiServiceProvider.BookingsForSpecificTripService(uiRequest);
         }
+
+        [HttpGet("ListOfAirportsWithCode")]
+
+        public object GetListOfAirportsWithCode()
+        {
+
+            return webApiServiceProvider.ListOfAirportsWithCodeService();
+        }
     }
 }

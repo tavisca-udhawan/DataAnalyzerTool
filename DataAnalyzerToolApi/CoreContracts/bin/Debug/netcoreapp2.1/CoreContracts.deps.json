@@ -485,7 +485,7 @@
     "Microsoft.AspNet.Cors/5.2.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-9aZAbHBY8StAwehBYWPs6ewrc4hdyaj6O0cxgPme5vU9eYNz9kAfbX5z6I1LFsnpWzthpsikcJTE1OyAl/JzuQ==",
+      "sha512": "sha512-+UR2ucML7OSzE1xB8/NKxwq85dikwxhmjN0tuMrRxySCeiRICrcnRjagQYWeq6GAM2m5pTWNV1gn+E9ig9hwNg==",
       "path": "microsoft.aspnet.cors/5.2.6",
       "hashPath": "microsoft.aspnet.cors.5.2.6.nupkg.sha512"
     },
@@ -499,14 +499,14 @@
     "Microsoft.AspNet.WebApi.Core/5.2.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-QMFixs/MvKZXjfUbV0gXxF85LKi+keu/zJKv13upg/JlcxJ+wdLSYzyHO/sgPPUuFVstgndK6Zt3VduWeqFmHQ==",
+      "sha512": "sha512-8UiHr2VkrpwDCwXaXea8pNaR2zvJ3HYwsmWmkTFY1lEB2u4eFnL+aM+/GJK91Ud3KQ7Xse+Vysvj/UalM3IlmA==",
       "path": "microsoft.aspnet.webapi.core/5.2.6",
       "hashPath": "microsoft.aspnet.webapi.core.5.2.6.nupkg.sha512"
     },
     "Microsoft.AspNet.WebApi.Cors/5.2.6": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ZQU40+mCROg6cRE3tydEIuZBC7fh8ZueJmiz3HpaRoTriZVond1rLCcDu/PJM7FQJa0k8ut7iRUTgB1kU5yWFw==",
+      "sha512": "sha512-Dn0hWJwZL8oND32CdD8Bi7Xb4cm9Jr9F4TaruGRPiV1DhP12gijYHy5syAqMIRn7jwiE5wOpIH/yA/vhPV09gQ==",
       "path": "microsoft.aspnet.webapi.cors/5.2.6",
       "hashPath": "microsoft.aspnet.webapi.cors.5.2.6.nupkg.sha512"
     },

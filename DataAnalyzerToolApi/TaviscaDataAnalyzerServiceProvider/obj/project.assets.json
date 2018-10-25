@@ -972,7 +972,7 @@
   },
   "libraries": {
     "Microsoft.AspNet.Cors/5.2.6": {
-      "sha512": "9aZAbHBY8StAwehBYWPs6ewrc4hdyaj6O0cxgPme5vU9eYNz9kAfbX5z6I1LFsnpWzthpsikcJTE1OyAl/JzuQ==",
+      "sha512": "+UR2ucML7OSzE1xB8/NKxwq85dikwxhmjN0tuMrRxySCeiRICrcnRjagQYWeq6GAM2m5pTWNV1gn+E9ig9hwNg==",
       "type": "package",
       "path": "microsoft.aspnet.cors/5.2.6",
       "files": [
@@ -999,7 +999,7 @@
       ]
     },
     "Microsoft.AspNet.WebApi.Core/5.2.6": {
-      "sha512": "QMFixs/MvKZXjfUbV0gXxF85LKi+keu/zJKv13upg/JlcxJ+wdLSYzyHO/sgPPUuFVstgndK6Zt3VduWeqFmHQ==",
+      "sha512": "8UiHr2VkrpwDCwXaXea8pNaR2zvJ3HYwsmWmkTFY1lEB2u4eFnL+aM+/GJK91Ud3KQ7Xse+Vysvj/UalM3IlmA==",
       "type": "package",
       "path": "microsoft.aspnet.webapi.core/5.2.6",
       "files": [
@@ -1012,7 +1012,7 @@
       ]
     },
     "Microsoft.AspNet.WebApi.Cors/5.2.6": {
-      "sha512": "ZQU40+mCROg6cRE3tydEIuZBC7fh8ZueJmiz3HpaRoTriZVond1rLCcDu/PJM7FQJa0k8ut7iRUTgB1kU5yWFw==",
+      "sha512": "Dn0hWJwZL8oND32CdD8Bi7Xb4cm9Jr9F4TaruGRPiV1DhP12gijYHy5syAqMIRn7jwiE5wOpIH/yA/vhPV09gQ==",
       "type": "package",
       "path": "microsoft.aspnet.webapi.cors/5.2.6",
       "files": [
@@ -1972,7 +1972,7 @@
       ]
     },
     "System.Buffers/4.5.0": {
-      "sha512": "xpHYjjtyTEpzMwtSQBWdVc3dPjLdQtvyUg6fBlBqcLl1r2Y7gDG/W/enAYOB98nG3oD3Q153Y2FBO8JDWd+0Xw==",
+      "sha512": "5BgE5qYF/TgftB9FlByFqfhwYVt8UKf748KGovHLkBnW67Z89VdY/8ZXDVXRU78RCtQ/gIJ3TPBLmXtFvhm5xA==",
       "type": "package",
       "path": "system.buffers/4.5.0",
       "files": [
@@ -2000,7 +2000,7 @@
       ]
     },
     "System.Configuration.ConfigurationManager/4.5.0": {
-      "sha512": "NIY8VUJuSNeXPrV5wjQBKKMcd/vctzEGzQuY15zt3/j7Vd4PXfk/QVIOBlqU1/ONRRUu0dsdk5uUTLSSNY+now==",
+      "sha512": "+2SYYKwbN0n+9SrBanflZdaVleFkytEfTNzOu+f3SK0vROMMrorpw1UJyHJQ1ZooughRxPmLj8Fh5N2tSe7sdA==",
       "type": "package",
       "path": "system.configuration.configurationmanager/4.5.0",
       "files": [
@@ -2117,7 +2117,7 @@
       ]
     },
     "System.Diagnostics.PerformanceCounter/4.5.0": {
-      "sha512": "a5vOZXb+Km4KoSKYr64QY2NkGS+MbRLOd88SSjPF3UkyiNp+7tJbsKxokoOvvIlHMFQDkL4NTkwUA7FlhjK+hg==",
+      "sha512": "eT8/JtodKzx0rnDwe8hdQE8FPM6m9djYy7B2IXEHTu6pfmtTYtsh7ekYG9dATqiVxMWrVZq5fu5hWdPfr0FVwg==",
       "type": "package",
       "path": "system.diagnostics.performancecounter/4.5.0",
       "files": [
@@ -2171,7 +2171,7 @@
       ]
     },
     "System.Memory/4.5.1": {
-      "sha512": "vcG3/MbfpxznMkkkaAblJi7RHOmuP7kawQMhDgLSuA1tRpRQYsFSCTxRSINDUgn2QNn2jWeLxv8er5BXbyACkw==",
+      "sha512": "oonnLQPZAGD21qtNMG4EtVmbYOInk2jV7M+g108B6OHOb67ZOaWnA/K8P5oQ6uK9wxKzB1iEXSChQOi2scKOqA==",
       "type": "package",
       "path": "system.memory/4.5.1",
       "files": [
@@ -2280,7 +2280,7 @@
       ]
     },
     "System.Security.Cryptography.ProtectedData/4.5.0": {
-      "sha512": "wZGwRoLGTuEQBOYXlZmEK41OfmO+vYWbLk7q5ePoFqs6vOKP2kUsOeviEjQoR6MbW9udlDjx9iWhcWOTzSj05w==",
+      "sha512": "s/MFK8BvgtejZj5a8qAPDXEGBtWkpFX98qwQP/wqVa9CgIC7LrKHxDFdlN5x6afGAb0ZVBVGIZlCdBLnO2QjZw==",
       "type": "package",
       "path": "system.security.cryptography.protecteddata/4.5.0",
       "files": [
@@ -2447,7 +2447,7 @@
       ]
     },
     "System.Threading.Channels/4.5.0": {
-      "sha512": "Js7f30DXMo1plMo32fOpKF7AhCmuKyOKDT1fSayntGGOVfF5V/xKVu1UPI3N+/hTXuqKKgB++eACPZ120uLpGg==",
+      "sha512": "61eqqmreCig10E4OhJ0/6VaoxR5DR0s+YcerLeP4I36Ua5I9F+AH4UVFfpccUnu2QWDqZvqCPhsMvOIZGlYSZA==",
       "type": "package",
       "path": "system.threading.channels/4.5.0",
       "files": [
@@ -2494,23 +2494,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ajoshi\\.nuget\\packages\\": {},
+    "C:\\Users\\pvashisht\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ajoshi\\Desktop\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerServiceProvider\\TaviscaDataAnalyzerServiceProvider.csproj",
+      "projectUniqueName": "C:\\Users\\pvashisht\\Desktop\\tavLatest\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerServiceProvider\\TaviscaDataAnalyzerServiceProvider.csproj",
       "projectName": "TaviscaDataAnalyzerServiceProvider",
-      "projectPath": "C:\\Users\\ajoshi\\Desktop\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerServiceProvider\\TaviscaDataAnalyzerServiceProvider.csproj",
-      "packagesPath": "C:\\Users\\ajoshi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ajoshi\\Desktop\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerServiceProvider\\obj\\",
+      "projectPath": "C:\\Users\\pvashisht\\Desktop\\tavLatest\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerServiceProvider\\TaviscaDataAnalyzerServiceProvider.csproj",
+      "packagesPath": "C:\\Users\\pvashisht\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pvashisht\\Desktop\\tavLatest\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerServiceProvider\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\ajoshi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pvashisht\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2523,14 +2523,14 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\ajoshi\\Desktop\\DataAnalyzerTool\\DataAnalyzerToolApi\\CoreContracts\\CoreContracts.csproj": {
-              "projectPath": "C:\\Users\\ajoshi\\Desktop\\DataAnalyzerTool\\DataAnalyzerToolApi\\CoreContracts\\CoreContracts.csproj"
+            "C:\\Users\\pvashisht\\Desktop\\tavLatest\\DataAnalyzerTool\\DataAnalyzerToolApi\\CoreContracts\\CoreContracts.csproj": {
+              "projectPath": "C:\\Users\\pvashisht\\Desktop\\tavLatest\\DataAnalyzerTool\\DataAnalyzerToolApi\\CoreContracts\\CoreContracts.csproj"
             },
-            "C:\\Users\\ajoshi\\Desktop\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerCache\\TaviscaDataAnalyzerCache.csproj": {
-              "projectPath": "C:\\Users\\ajoshi\\Desktop\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerCache\\TaviscaDataAnalyzerCache.csproj"
+            "C:\\Users\\pvashisht\\Desktop\\tavLatest\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerCache\\TaviscaDataAnalyzerCache.csproj": {
+              "projectPath": "C:\\Users\\pvashisht\\Desktop\\tavLatest\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerCache\\TaviscaDataAnalyzerCache.csproj"
             },
-            "C:\\Users\\ajoshi\\Desktop\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerDatabase\\TaviscaDataAnalyzerDatabase.csproj": {
-              "projectPath": "C:\\Users\\ajoshi\\Desktop\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerDatabase\\TaviscaDataAnalyzerDatabase.csproj"
+            "C:\\Users\\pvashisht\\Desktop\\tavLatest\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerDatabase\\TaviscaDataAnalyzerDatabase.csproj": {
+              "projectPath": "C:\\Users\\pvashisht\\Desktop\\tavLatest\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerDatabase\\TaviscaDataAnalyzerDatabase.csproj"
             }
           }
         }

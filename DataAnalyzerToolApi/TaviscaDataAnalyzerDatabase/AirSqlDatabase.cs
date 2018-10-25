@@ -151,5 +151,22 @@ namespace TaviscaDataAnalyzerDatabase
             var json = JsonConvert.SerializeObject(list);
             return json;
         }
+
+        public string ListOfAirportsWithCodeDatabase()
+        {
+            var connector = _sqlConnector.ConnectionEstablisher();
+            List<AirportsWithCodes> list = new List<AirportsWithCodes>();
+            string query = $"Select AirportName,AirportCode from Airports;";
+            DataTable dataTable = QueryExecuter(query);
+            foreach (DataRow dataRow in dataTable.Rows)
+            {
+                AirportsWithCodes airportWithCodes = new AirportsWithCodes();
+                airportWithCodes.AirportName = Convert.ToString(dataRow["AirportName"]);
+                airportWithCodes.AirportCode = Convert.ToString(dataRow["AirportCode"]);
+                list.Add(airportWithCodes);
+            }
+            var json = JsonConvert.SerializeObject(list);
+            return json;
+        }
     }
 }

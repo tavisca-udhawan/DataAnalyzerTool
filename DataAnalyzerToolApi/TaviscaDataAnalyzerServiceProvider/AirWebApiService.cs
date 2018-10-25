@@ -100,5 +100,18 @@ namespace TaviscaDataAnalyzerServiceProvider
             List<TotalBookings> totatlBookings = JsonConvert.DeserializeObject<List<TotalBookings>>(result);
             return totatlBookings;
         }
+        public object ListOfAirportsWithCodeService()
+        {
+            string result = null;
+            string data = "AirPortsWithCodes";
+            result = cache.Get(data);
+            if (result == null)
+            {
+                result = sqlDatabase.ListOfAirportsWithCodeDatabase();
+                cache.Post(data, result);
+            }
+            List<AirportsWithCodes> totatlBookings = JsonConvert.DeserializeObject<List<AirportsWithCodes>>(result);
+            return totatlBookings;
+        }
     }
 }

@@ -957,7 +957,7 @@
   },
   "libraries": {
     "Microsoft.AspNet.Cors/5.2.6": {
-      "sha512": "9aZAbHBY8StAwehBYWPs6ewrc4hdyaj6O0cxgPme5vU9eYNz9kAfbX5z6I1LFsnpWzthpsikcJTE1OyAl/JzuQ==",
+      "sha512": "+UR2ucML7OSzE1xB8/NKxwq85dikwxhmjN0tuMrRxySCeiRICrcnRjagQYWeq6GAM2m5pTWNV1gn+E9ig9hwNg==",
       "type": "package",
       "path": "microsoft.aspnet.cors/5.2.6",
       "files": [
@@ -984,7 +984,7 @@
       ]
     },
     "Microsoft.AspNet.WebApi.Core/5.2.6": {
-      "sha512": "QMFixs/MvKZXjfUbV0gXxF85LKi+keu/zJKv13upg/JlcxJ+wdLSYzyHO/sgPPUuFVstgndK6Zt3VduWeqFmHQ==",
+      "sha512": "8UiHr2VkrpwDCwXaXea8pNaR2zvJ3HYwsmWmkTFY1lEB2u4eFnL+aM+/GJK91Ud3KQ7Xse+Vysvj/UalM3IlmA==",
       "type": "package",
       "path": "microsoft.aspnet.webapi.core/5.2.6",
       "files": [
@@ -997,7 +997,7 @@
       ]
     },
     "Microsoft.AspNet.WebApi.Cors/5.2.6": {
-      "sha512": "ZQU40+mCROg6cRE3tydEIuZBC7fh8ZueJmiz3HpaRoTriZVond1rLCcDu/PJM7FQJa0k8ut7iRUTgB1kU5yWFw==",
+      "sha512": "Dn0hWJwZL8oND32CdD8Bi7Xb4cm9Jr9F4TaruGRPiV1DhP12gijYHy5syAqMIRn7jwiE5wOpIH/yA/vhPV09gQ==",
       "type": "package",
       "path": "microsoft.aspnet.webapi.cors/5.2.6",
       "files": [
@@ -3929,23 +3929,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ajoshi\\.nuget\\packages\\": {},
+    "C:\\Users\\pvashisht\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ajoshi\\Desktop\\DataAnalyzerTool\\DataAnalyzerToolApi\\CoreContracts\\CoreContracts.csproj",
+      "projectUniqueName": "C:\\Users\\pvashisht\\Desktop\\tavLatest\\DataAnalyzerTool\\DataAnalyzerToolApi\\CoreContracts\\CoreContracts.csproj",
       "projectName": "CoreContracts",
-      "projectPath": "C:\\Users\\ajoshi\\Desktop\\DataAnalyzerTool\\DataAnalyzerToolApi\\CoreContracts\\CoreContracts.csproj",
-      "packagesPath": "C:\\Users\\ajoshi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ajoshi\\Desktop\\DataAnalyzerTool\\DataAnalyzerToolApi\\CoreContracts\\obj\\",
+      "projectPath": "C:\\Users\\pvashisht\\Desktop\\tavLatest\\DataAnalyzerTool\\DataAnalyzerToolApi\\CoreContracts\\CoreContracts.csproj",
+      "packagesPath": "C:\\Users\\pvashisht\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pvashisht\\Desktop\\tavLatest\\DataAnalyzerTool\\DataAnalyzerToolApi\\CoreContracts\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\ajoshi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pvashisht\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

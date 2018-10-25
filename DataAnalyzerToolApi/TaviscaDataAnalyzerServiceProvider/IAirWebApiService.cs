@@ -11,5 +11,6 @@ namespace TaviscaDataAnalyzerServiceProvider
         object TotalBookingsInfoService();
         object BookingsWithinDateRangeInfoService(UIRequest uIRequest);
         object BookingsForSpecificTripService(TripBookingRequest uIRequest);
+        object ListOfAirportsWithCodeService();
     }
 }

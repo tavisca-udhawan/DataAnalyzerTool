@@ -13,7 +13,7 @@ namespace TaviscaDataAnalyzerCache
         {
             RedisConnector.lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
             {
-                return ConnectionMultiplexer.Connect("ec2-13-233-115-83.ap-south-1.compute.amazonaws.com:6379");
+                return ConnectionMultiplexer.Connect("13.232.45.55:6379");
             });
         }
 

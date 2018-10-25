@@ -11,5 +11,6 @@ namespace TaviscaDataAnalyzerDatabase
         string TotalBookingsInfoDatabase();
         string BookingsWithinDateRangeInfoDatabase(UIRequest uIRequest);
         string BookingsForSpecificTripDatabase(TripBookingRequest uIRequest);
+        string ListOfAirportsWithCodeDatabase();
     }
 }
