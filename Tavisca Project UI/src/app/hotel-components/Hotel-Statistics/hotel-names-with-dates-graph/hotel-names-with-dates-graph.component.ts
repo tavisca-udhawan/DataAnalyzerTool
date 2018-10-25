@@ -35,13 +35,40 @@ export class HotelNamesWithDatesGraphComponent implements OnInit {
   graphDataPoints= [];
   id:string="hotel-with-dates-chart";
   constructor (private service:GraphsServiceService) { }
-  
+  setDatesAndLocation()
+  {
+    if(this.startDate == null)
+    {
+      this.paymentStartDate = this.defaultStartDate
+    }
+    else 
+    {
+      this.paymentStartDate = this.startDate
+    }
+    if(this.endDate == null)
+    {
+      this.paymentEndDate = this.defaultEndDate
+    }
+    else 
+    {
+      this.paymentEndDate = this.endDate
+    }
+    if(this.location == null)
+    {
+      this.paymentLocation = this.defaultLocation
+    }
+    else 
+    {
+      this.paymentLocation = this.location
+    }
+  }
   ngOnInit(){
       this.reRender()
 
     }
     reRender()
     {
+      this.setDatesAndLocation()
       this.hotelLocationGraph = null;
       this.defaultGraphType = "line";
       this.HotelsAtParticularLocation = []
@@ -57,6 +84,15 @@ export class HotelNamesWithDatesGraphComponent implements OnInit {
                           this.Place.push(data[i].place);
                         //  console.log(this.Bookings);
                         }
+                        this.service.statsReport.push(
+                          {
+                            filter: "Hotel names based on Dates",
+                            startDate: this.service.start,
+                            endDate: this.service.end,
+                            location: this.service.location,
+                            labels: this.Place,
+                            statistics: this.totalBookings
+                          })
                         //debugger;
                         this.DisplayGraph( this.chart);
                   },
@@ -64,30 +100,7 @@ export class HotelNamesWithDatesGraphComponent implements OnInit {
 
             );
     }
-    serviceCall(){
-      this.hotelLocationGraph = null;
-   this.defaultGraphType = "line";
-   this.HotelsAtParticularLocation = []
-   this.totalBookings= []
-   this.Place= []
-   this.service.httpResponseFilters("Hotels","HotelLocationWithDates?fromDate="+ this.service.start +" 00:00:00.000&toDate="+this.service.end+" 00:00:00.000")
-   .subscribe( data=>{
-           
-                   for(var i=0;i<Object.keys(data).length;i++)
-                     {
-                       this.HotelsAtParticularLocation.push(data[i].hotelsAtParticularLocation[0]["hotelName"]+"-"+data[i].hotelsAtParticularLocation[0]["bookings"]);
-                       this.totalBookings.push(data[i].totalBookings);
-                       this.Place.push(data[i].place);
-                     //  console.log(this.Bookings);
-                     }
-                 
-                     this.DisplayGraph( this.chart);
-               },
-       error=>{ this.errorMsg = error;}
-
-         );
-
-    }
+   
     graphs: GraphTypes[] = [
       {value: 'bar', viewValue: 'Bar Graph'},
       {value: 'pie', viewValue: 'Pie Graph'},

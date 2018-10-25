@@ -12,7 +12,6 @@ import {MatAutocompleteModule,MatButtonModule,MatFormFieldModule,MatInputModule,
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { CommonModule } from '@angular/common';
 import { FlightWidgetComponent } from './flight-components/flight-widget/flight-widget.component';
-import { LocationBasedGraphComponent } from './hotel-components/Hotel-Statistics/location-based-graph/location-based-graph.component';
 import { HotelLocationBasedGraphComponent } from './hotel-components/Hotel-Statistics/hotel-location-based-graph/hotel-location-based-graph.component';
 import { BookingWithDatesGraphComponent } from './hotel-components/Hotel-Statistics/booking-with-dates-graph/booking-with-dates-graph.component';
 import { SupplierNameBasedGraphComponent } from './hotel-components/Hotel-Statistics/supplier-name-based-graph/supplier-name-based-graph.component';
@@ -31,13 +30,9 @@ import { FailureComponent } from './Home/BookingStatus/failure/failure.component
 import { SuccessComponent } from './Home/BookingStatus/success/success.component';
 import { CancelledComponent } from './Home/BookingStatus/cancelled/cancelled.component';
 import { PastComponent } from './Home/BookingStatus/past/past.component';
-import { flightFailureComponent } from './Home/flightBookingStatus/failure/failure.component';
-import { flightSuccessComponent } from './Home/flightBookingStatus/success/success.component';
-import { flightCancelledComponent } from './Home/flightBookingStatus/cancelled/cancelled.component';
 import { GraphsComponentComponent } from './graphs-component/graphs-component.component';
 import {MatCardModule} from '@angular/material/card';
-import { HotelBookingStatusStatsComponent } from './home/BookingStatus/hotel-booking-status-stats/hotel-booking-status-stats.component';
-import { FlightBookingStatusStatsComponent } from './home/BookingStatus/flight-booking-status-stats/flight-booking-status-stats.component'
+import { HotelEmailComponentComponent } from './hotel-components/hotel-email-component/hotel-email-component.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +41,6 @@ import { FlightBookingStatusStatsComponent } from './home/BookingStatus/flight-b
     WidgetComponent,
     HomeComponent,
     FlightWidgetComponent,
-    LocationBasedGraphComponent,
     HotelLocationBasedGraphComponent,
     BookingWithDatesGraphComponent,
     SupplierNameBasedGraphComponent,
@@ -55,15 +49,11 @@ import { FlightBookingStatusStatsComponent } from './home/BookingStatus/flight-b
     HotelLocationsPipe,
     HotelNamesWithDatesGraphComponent,
     FailureComponent,
-    flightFailureComponent,
-    flightSuccessComponent ,
-    flightCancelledComponent, 
     SuccessComponent,
     CancelledComponent,
     PastComponent,
     GraphsComponentComponent,
-    HotelBookingStatusStatsComponent,
-    FlightBookingStatusStatsComponent
+    HotelEmailComponentComponent
   ],
   imports: [
     BrowserModule,

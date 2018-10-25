@@ -38,30 +38,7 @@ export class PaymentModeBasedGraphComponent implements OnInit {
   constructor (private service:GraphsServiceService) {
    
    }
-serviceCall(){
-  this.setDatesAndLocation()
-  this.hotelLocationGraph = null;
-  this.defaultGraphType = "line";
-  this.PaymentType = []
-  this.NumberOfBooking= []
 
-     this.service.httpResponseFilters("Hotels","PaymentType?fromDate="+ this.paymentStartDate +" 00:00:00.000&toDate="+this.paymentEndDate+" 00:00:00.000&location="+this.paymentLocation)
-  .subscribe( data=>{
-         
-                  for(var i=0;i<Object.keys(data).length;i++)
-                    {
-                      this.PaymentType.push(data[i].paymentType);
-                      this.NumberOfBooking.push(data[i].numberOfBooking);
-                    //  console.log(this.Bookings);
-                    } 
-                    this.DisplayGraph( this.chart);
-                    
-
-              },
-      error=>{ this.errorMsg = error;}
-                
-        );
-}
   getRandomColorHex() {
     var hex = "0123456789ABCDEF",
         color = "#";
@@ -71,39 +48,13 @@ serviceCall(){
     return color;
   }
 
-  setDatesAndLocation()
-  {
-    if(this.startDate == null)
-    {
-      this.paymentStartDate = this.defaultStartDate
-    }
-    else 
-    {
-      this.paymentStartDate = this.startDate
-    }
-    if(this.endDate == null)
-    {
-      this.paymentEndDate = this.defaultEndDate
-    }
-    else 
-    {
-      this.paymentEndDate = this.endDate
-    }
-    if(this.location == null)
-    {
-      this.paymentLocation = this.defaultLocation
-    }
-    else 
-    {
-      this.paymentLocation = this.location
-    }
-  }
+
   ngOnInit(){
     this.reRender()
     }
     reRender()
     {
-      this.setDatesAndLocation()
+
     this.hotelLocationGraph = null;
     this.defaultGraphType = "line";
     this.PaymentType = []
@@ -118,6 +69,15 @@ serviceCall(){
                         this.NumberOfBooking.push(data[i].numberOfBooking);
                       //  console.log(this.Bookings);
                       } 
+                      this.service.statsReport.push(
+                        {
+                          filter: "Payment Type Analysis",
+                          startDate: this.service.start,
+                          endDate: this.service.end,
+                          location: this.service.location,
+                          labels: this.PaymentType,
+                          statistics: this.NumberOfBooking
+                        })
                       this.DisplayGraph( this.chart);
                       
  

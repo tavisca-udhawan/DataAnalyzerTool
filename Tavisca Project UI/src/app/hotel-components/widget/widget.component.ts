@@ -6,7 +6,6 @@ import { stringify } from '@angular/core/src/util';
 import { BookingWithDatesGraphComponent } from '../Hotel-Statistics/booking-with-dates-graph/booking-with-dates-graph.component';
 import { HotelLocationBasedGraphComponent } from '../Hotel-Statistics/hotel-location-based-graph/hotel-location-based-graph.component';
 import { HotelNamesWithDatesGraphComponent } from '../Hotel-Statistics/hotel-names-with-dates-graph/hotel-names-with-dates-graph.component';
-import { LocationBasedGraphComponent } from '../Hotel-Statistics/location-based-graph/location-based-graph.component';
 import { PaymentModeBasedGraphComponent } from '../Hotel-Statistics/payment-mode-based-graph/payment-mode-based-graph.component';
 import { SupplierNameBasedGraphComponent } from '../Hotel-Statistics/supplier-name-based-graph/supplier-name-based-graph.component';
 export interface Graph {
@@ -20,12 +19,13 @@ export interface Graph {
 })
 
 export class WidgetComponent implements OnInit {
-   hotelLocation = new HotelLocationBasedGraphComponent(this.service)
-   hotelNames = new HotelNamesWithDatesGraphComponent(this.service)
-   book = new BookingWithDatesGraphComponent(this.service)
-   supplierName = new SupplierNameBasedGraphComponent(this.service)
-   payment = new PaymentModeBasedGraphComponent(this.service)
- currentStartDate:Date;
+
+  @ViewChild(BookingWithDatesGraphComponent) book: BookingWithDatesGraphComponent;
+  @ViewChild(HotelLocationBasedGraphComponent) hotelLocation: HotelLocationBasedGraphComponent;
+  @ViewChild(HotelNamesWithDatesGraphComponent) hotelNames: HotelNamesWithDatesGraphComponent;
+  @ViewChild(PaymentModeBasedGraphComponent) payment: PaymentModeBasedGraphComponent;
+  @ViewChild(SupplierNameBasedGraphComponent) supplierName: SupplierNameBasedGraphComponent;
+  currentStartDate:Date;
   currentEndDate:Date=new Date();
   hotelEndDate:string;
   hotelStartDate: string;
@@ -75,28 +75,33 @@ export class WidgetComponent implements OnInit {
     });
   
   }
-  
+  GetLocationData()
+  {
+    debugger
+    this.service.httpResponseFilters("Hotels","HotelNamesWithDates?fromDate="+ this.service.start +" 00:00:00.000&toDate="+this.service.end+" 00:00:00.000&location="+this.service.location)
+    .subscribe(data => {
+     // this.service.locationServiceResponse = null;
+    //  this.service.locationServiceResponse = data;
+      //this.locationsGraph.value 
+      //this.hotelLocation.RenderGraph()
+      debugger
+    })
+  }
   checkStartDate(){
     this.IsVisible=false;
   }
    ServiceCalls()
   {
-    console.log(this.checkValue);
-
     if(this.checkValue.includes('location'))
-    { 
-      this.hotelLocation.reRender();
-    }
+    { this.hotelLocation.reRender();}
     if(this.checkValue.includes ('name'))
-    {
-      this.hotelNames.reRender();}
+    {this.hotelNames.reRender();}
     if(this.checkValue.includes('bookDate'))
     { this.book.reRender();}
     if(this.checkValue.includes('supplierName'))
-    { this.supplierName.reRender();}
+    {  this.supplierName.reRender();}
     if(this.checkValue.includes('paymentMode'))
-    { this.payment.reRender();}
-
+    {this.payment.reRender();}
   }
 
 
@@ -108,7 +113,7 @@ export class WidgetComponent implements OnInit {
     this.hotelStartDate = startDate.toString();
     this.hotelEndDate = this.dateFormatter(this.hotelEndDate)
     this.hotelStartDate = this.dateFormatter(this.hotelStartDate)
-
+    this.service.statsReport = [];
     this.service.start=this.hotelStartDate;
     this.service.end=this.hotelEndDate;
     this.service.location=this.searchTerm;
@@ -116,6 +121,8 @@ export class WidgetComponent implements OnInit {
    
     //debugger
      this.ServiceCalls()
+     debugger
+    console.log(this.service.statsReport)
      //this.GetLocationData();
     
   }

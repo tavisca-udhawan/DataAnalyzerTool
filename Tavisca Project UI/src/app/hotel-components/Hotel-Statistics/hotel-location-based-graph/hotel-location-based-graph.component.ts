@@ -28,10 +28,10 @@ export class HotelLocationBasedGraphComponent implements OnInit  {
   ngOnInit(){
       this.reRender();
     }
-    async reRender(){
+    reRender(){
     this.Bookings = []
     this.Hotels = []
-    await this.service.httpResponseFilters("Hotels","HotelNamesWithDates?fromDate="+ this.service.start +" 00:00:00.000&toDate="+this.service.end+" 00:00:00.000&location="+this.service.location)
+    this.service.httpResponseFilters("Hotels","HotelNamesWithDates?fromDate="+ this.service.start +" 00:00:00.000&toDate="+this.service.end+" 00:00:00.000&location="+this.service.location)
     .subscribe( data=>{
                     for(var i=0;i<Object.keys(data).length;i++)
                       {
@@ -39,7 +39,16 @@ export class HotelLocationBasedGraphComponent implements OnInit  {
                         this.Hotels.push(data[i].hotelName);
                       //  console.log(this.Bookings);
                       }
-                     this.DisplayGraph( this.chart);
+                      this.service.statsReport.push(
+                        {
+                          filter: "Hotel based on location",
+                          startDate: this.service.start,
+                          endDate: this.service.end,
+                          location: this.service.location,
+                          labels: this.Hotels,
+                          statistics: this.Bookings
+                        })
+                      this.DisplayGraph( this.chart);
                 },
         error=>{ this.errorMsg = error;}
 

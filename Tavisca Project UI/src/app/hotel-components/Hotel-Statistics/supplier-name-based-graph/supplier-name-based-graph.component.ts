@@ -33,41 +33,11 @@ export class SupplierNameBasedGraphComponent implements OnInit
   graphDataPoints=[]
   id:string="supplier-name-chart";
   constructor (private service:GraphsServiceService) { }
-  setDatesAndLocation()
-  {
-    if(this.startDate == null)
-    {
-      this.paymentStartDate = this.defaultStartDate
-    }
-    else 
-    {
-      this.paymentStartDate = this.startDate
-    }
-    if(this.endDate == null)
-    {
-      this.paymentEndDate = this.defaultEndDate
-    }
-    else 
-    {
-      this.paymentEndDate = this.endDate
-    }
-    if(this.location == null)
-    {
-      this.paymentLocation = this.defaultLocation
-    }
-    else 
-    {
-      this.paymentLocation = this.location
-    }
-  }
+ 
   ngOnInit(){
     this.reRender()
   }
   reRender(){
-    this.setDatesAndLocation()
-      
-    this.hotelLocationGraph = null;
-    this.defaultGraphType = "line";
     this.SupplierName = [];
     this.NumberOfBooking= [];
     this.service.httpResponseFilters("Hotels","SupplierNamesWithDates?fromDate="+ this.service.start +" 00:00:00.000&toDate="+this.service.end+" 00:00:00.000&location="+this.service.location)
@@ -77,6 +47,15 @@ export class SupplierNameBasedGraphComponent implements OnInit
                         this.SupplierName.push(data[i].supplierName);
                         this.NumberOfBooking.push(data[i].bookings);
                       }
+                      this.service.statsReport.push(
+                        {
+                          filter: "Suppliers Analysis",
+                          startDate: this.service.start,
+                          endDate: this.service.end,
+                          location: this.service.location,
+                          labels: this.SupplierName,
+                          statistics: this.NumberOfBooking
+                        })
                       this.DisplayGraph( this.chart);
                 },
         error=>{ this.errorMsg = error;}
@@ -91,26 +70,6 @@ export class SupplierNameBasedGraphComponent implements OnInit
       {value: 'doughnut', viewValue: 'Doughnut Graph'}
     ];
 
-serviceCall(){
- // console.log("aaa"+this.location+" "+this.startDate+" "+this.endDate+" "+this.id);
-  this.setDatesAndLocation()
-  this.hotelLocationGraph = null;
-  this.defaultGraphType = "line";
-  this.SupplierName = [];
-  this.NumberOfBooking= [];
-  this.service.httpResponseFilters("Hotels","SupplierNamesWithDates?fromDate="+ this.paymentStartDate +" 00:00:00.000&toDate="+this.paymentEndDate+" 00:00:00.000&location="+this.paymentLocation)
-  .subscribe( data=>{
-            for(var i=0;i<Object.keys(data).length;i++)
-                    {
-                      this.SupplierName.push(data[i].supplierName);
-                      this.NumberOfBooking.push(data[i].bookings);
-                    }
-                    this.DisplayGraph( this.chart);
-              },
-      error=>{ this.errorMsg = error;}
-
-        );
-}
     GraphSelect(graphValue)
     {
       this.chart = graphValue;

@@ -6,17 +6,11 @@ button,mat-form-field{
 }
 #graphs {
     width: 90%;
-    height: 100vh;
+
     margin: 20px auto;
 }
 .hotel-form{
     width: 70%;
     margin: 0 auto;
-    position: static;
     text-align: center;
-}
-.forms{
-    position:absolute;
-    background-color: white;
-    top:20px;
 }

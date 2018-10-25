@@ -21,6 +21,7 @@ export class BookingWithDatesGraphComponent implements OnInit {
   BookingDates: any=[];
   NumberOfBooking: any = [];
   graphDataPoints= [];
+  displayLoader: boolean;
   id:string="booking-with-dates-chart";
   constructor (private service:GraphsServiceService) { }
  
@@ -29,6 +30,7 @@ export class BookingWithDatesGraphComponent implements OnInit {
     }
     reRender()
     {
+      this.displayLoader = true;
       this.BookingDates = []
       this.NumberOfBooking= []
 
@@ -41,6 +43,17 @@ export class BookingWithDatesGraphComponent implements OnInit {
                           this.NumberOfBooking.push(data[i].numberOfBookings);
                         }
                         this.DisplayGraph( this.chart);
+                        this.service.statsReport.push(
+                          {
+                            filter: "Booking on date range",
+                            startDate: this.service.start,
+                            endDate: this.service.end,
+                            location: this.service.location,
+                            labels: this.BookingDates,
+                            statistics: this.NumberOfBooking
+                          }
+                        )
+                        debugger
                   },
           error=>{ this.errorMsg = error;}
 
@@ -72,19 +85,20 @@ export class BookingWithDatesGraphComponent implements OnInit {
         
       }
       DisplayGraph(chart ) {
-
+        this.displayLoader = false;
         this.setDataPoints(this.BookingDates,this.NumberOfBooking)
 
         var chart = new CanvasJS.Chart(this.id, {
           zoomEnabled:true,
           animationEnabled: true,
           exportEnabled: true,
-          theme: "light1", 
+          theme: "light1", // "light1", "light2", "dark1", "dark2"
           title:{
             text: "Booking with Dates Graph"
           },
           data: [{
-            type: chart, 
+            type: chart, //change type to bar, line, area, pie, etc
+            //indexLabel: "{y}", //Shows y value on all Data Points
             indexLabelFontColor: "#5A5757",
             indexLabelPlacement: "outside",
             dataPoints: this.graphDataPoints,
