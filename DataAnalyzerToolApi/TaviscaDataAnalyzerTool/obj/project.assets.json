@@ -4785,13 +4785,27 @@
           "Newtonsoft.Json": "11.0.2",
           "System.Data.SqlClient": "4.5.1",
           "TaviscaDataAnalyzerCache": "1.0.0",
-          "TaviscaDataAnalyzerDatabase": "1.0.0"
+          "TaviscaDataAnalyzerDatabase": "1.0.0",
+          "TaviscaDataAnalyzerTranslator": "1.0.0"
         },
         "compile": {
           "bin/placeholder/TaviscaDataAnalyzerServiceProvider.dll": {}
         },
         "runtime": {
           "bin/placeholder/TaviscaDataAnalyzerServiceProvider.dll": {}
+        }
+      },
+      "TaviscaDataAnalyzerTranslator/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "CoreContracts": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TaviscaDataAnalyzerTranslator.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TaviscaDataAnalyzerTranslator.dll": {}
         }
       }
     }
@@ -12569,6 +12583,11 @@
       "type": "project",
       "path": "../TaviscaDataAnalyzerServiceProvider/TaviscaDataAnalyzerServiceProvider.csproj",
       "msbuildProject": "../TaviscaDataAnalyzerServiceProvider/TaviscaDataAnalyzerServiceProvider.csproj"
+    },
+    "TaviscaDataAnalyzerTranslator/1.0.0": {
+      "type": "project",
+      "path": "../TaviscaDataAnalyzerTranslator/TaviscaDataAnalyzerTranslator.csproj",
+      "msbuildProject": "../TaviscaDataAnalyzerTranslator/TaviscaDataAnalyzerTranslator.csproj"
     }
   },
   "projectFileDependencyGroups": {

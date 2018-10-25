@@ -2,52 +2,57 @@
 using CoreContracts.Models.Hotels;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Data;
 using TaviscaDataAnalyzerCache;
 using TaviscaDataAnalyzerDatabase;
-
+using TaviscaDataAnalyzerTranslator.HotelsTranslator;
 
 namespace TaviscaDataAnalyzerServiceProvider
 {
     public class HotelWebApiServiceProvider : IHotelWebApiServiceProvider
     {
-        IHotelRepository sqlDatabase;
+        IHotelRepository _sqlDatabase;
         ICache cache;
-        public HotelWebApiServiceProvider(IHotelRepository _sqlDatabase)
+        IHotelTranslator _hotelTranslator;
+        public HotelWebApiServiceProvider(IHotelRepository sqlDatabase, IHotelTranslator hotelTranslator)
         {
             cache = new RedisCache();
-            sqlDatabase = _sqlDatabase;
+            _sqlDatabase = sqlDatabase;
+            _hotelTranslator = hotelTranslator;
         }
-        public object BookingDatesService(UIRequest query)
+        public List<HotelBookingDates> BookingDatesService(UIRequest query)
         {
             string result = null;
             string data = "BookingDates" + query.Filter + query.FromDate + query.ToDate;
             result = cache.Get(data);
             if (result == null)
             {
-                 
-                result = sqlDatabase.BookingDatesDatabase(query);
+
+                DataTable dataTable = _sqlDatabase.BookingDatesDatabase(query);
+                result = _hotelTranslator.BookingDatesTranslator(dataTable);
                 cache.Post(data, result);
             }
             List<HotelBookingDates> hotelBookingDates = JsonConvert.DeserializeObject<List<HotelBookingDates>>(result);
             return hotelBookingDates;
         }
 
-        public object FailureCountService(UIRequest query)
+        public FailuresInBooking FailureCountService(UIRequest query)
         {
             string result = null;
             string data = "FailureCount";
             result = cache.Get(data);
             if (result == null)
             {
-          
-                result = sqlDatabase.FailureCountDataBase(query);
+
+                DataTable dataTable = _sqlDatabase.FailureCountDataBase(query);
+                result = _hotelTranslator.FailureCountTranslator(dataTable);
                 cache.Post(data, result);
             }
             FailuresInBooking FailureCount = JsonConvert.DeserializeObject<FailuresInBooking>(result);
             return FailureCount;
         }
 
-        public object GetAllLocationsService()
+        public Cities GetAllLocationsService()
         {
             string result = null;
             string data = "AllLocations";
@@ -55,14 +60,15 @@ namespace TaviscaDataAnalyzerServiceProvider
             if (result == null)
             {
 
-                result = sqlDatabase.GetAllLocationsDatabase();
+                DataTable dataTable = _sqlDatabase.GetAllLocationsDatabase();
+                result = _hotelTranslator.GetAllLocationsTranslator(dataTable);
                 cache.Post(data, result);
             }
             Cities ListOfCities = JsonConvert.DeserializeObject<Cities>(result);
             return ListOfCities;
         }
 
-        public object HotelNameWithDatesService(UIRequest query)
+        public List<HotelNamesWithBookings> HotelNameWithDatesService(UIRequest query)
         {
             string result = null;
             string data = query.ToDate + query.Filter + query.FromDate;
@@ -70,14 +76,15 @@ namespace TaviscaDataAnalyzerServiceProvider
             if (result == null)
             {
 
-                result = sqlDatabase.HotelNameWithDatesDatabases(query);
+                DataTable dataTable = _sqlDatabase.HotelNameWithDatesDatabases(query);
+                result = _hotelTranslator.HotelNameWithDatesTranslator(dataTable);
                 cache.Post(data, result);
             }
             List<HotelNamesWithBookings> ListOfHotelNamesWithDates = JsonConvert.DeserializeObject<List<HotelNamesWithBookings>>(result);
             return ListOfHotelNamesWithDates;
         }
 
-        public object HotelsAtALocationWithDatesService(UIRequest query)
+        public List<HotelsInALocationWithDates> HotelsAtALocationWithDatesService(UIRequest query)
         {
             string result = null;
             string data = query.ToDate + query.FromDate;
@@ -85,14 +92,15 @@ namespace TaviscaDataAnalyzerServiceProvider
             if (result == null)
             {
 
-                result = sqlDatabase.HotelsAtALocationWithDatesDatabases(query);
+                DataTable dataTable = _sqlDatabase.HotelsAtALocationWithDatesDatabases(query);
+                result = _hotelTranslator.HotelsAtALocationWithDatesTranslator(dataTable);
                 cache.Post(data, result);
             }
             List<HotelsInALocationWithDates> ListOfHotelsWithDates = JsonConvert.DeserializeObject<List<HotelsInALocationWithDates>>(result);
             return ListOfHotelsWithDates;
         }
 
-        public object PaymentDetailsService(UIRequest query)
+        public List<PaymentDetails> PaymentDetailsService(UIRequest query)
         {
             string result = null;
             string data = query.ToDate + query.FromDate + "Payment" + query.Filter;
@@ -100,37 +108,40 @@ namespace TaviscaDataAnalyzerServiceProvider
             if (result == null)
             {
 
-                result = sqlDatabase.PaymentDetailsDatabase(query);
+                DataTable dataTable = _sqlDatabase.PaymentDetailsDatabase(query);
+                result = _hotelTranslator.PaymentDetailsTranslator(dataTable);
                 cache.Post(data, result);
             }
             List<PaymentDetails> payment = JsonConvert.DeserializeObject<List<PaymentDetails>>(result);
             return payment;
         }
 
-        public object SupplierNamesWithDatesService(UIRequest query)
+        public List<IndividualSupplierBookings> SupplierNamesWithDatesService(UIRequest query)
         {
             string result = null;
             string data = query.ToDate + query.FromDate + query.Filter;
             result = cache.Get(data);
             if (result == null)
             {
-                
-                result = sqlDatabase.SupplierNamesWithDatesDatabase(query);
+
+                DataTable dataTable = _sqlDatabase.SupplierNamesWithDatesDatabase(query);
+                result = _hotelTranslator.SupplierNamesWithDatesTranslator(dataTable);
                 cache.Post(data, result);
             }
             List<IndividualSupplierBookings> ListOfSuppliers = JsonConvert.DeserializeObject<List<IndividualSupplierBookings>>(result);
             return ListOfSuppliers;
         }
 
-        public object TotalHotelBookingsService()
+        public List<TotalHotelBookings> TotalHotelBookingsService()
         {
             string result = null;
             string data = "TotalHotelBookings";
             result = cache.Get(data);
             if (result == null)
             {
-                
-                result = sqlDatabase.TotalHotelBookingsDataBase();
+
+                DataTable dataTable = _sqlDatabase.TotalHotelBookingsDataBase();
+                result = _hotelTranslator.TotalHotelBookingsTranslator(dataTable);
                 cache.Post(data, result);
             }
             List<TotalHotelBookings> totalHotelBookings = JsonConvert.DeserializeObject<List<TotalHotelBookings>>(result);

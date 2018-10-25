@@ -1,17 +1,18 @@
 ﻿using CoreContracts.Models;
+using CoreContracts.Models.Hotels;
+using System.Collections.Generic;
 
 namespace TaviscaDataAnalyzerServiceProvider
 {
     public interface IHotelWebApiServiceProvider
     {
-        object GetAllLocationsService();
-        object HotelsAtALocationWithDatesService(UIRequest query);
-        object HotelNameWithDatesService(UIRequest query);
-
-        object SupplierNamesWithDatesService(UIRequest query);
-        object FailureCountService(UIRequest query);
-        object PaymentDetailsService(UIRequest query);
-        object BookingDatesService(UIRequest query);
-        object TotalHotelBookingsService();
+        Cities GetAllLocationsService();
+        List<HotelsInALocationWithDates> HotelsAtALocationWithDatesService(UIRequest query);
+        List<HotelNamesWithBookings> HotelNameWithDatesService(UIRequest query);
+        List<IndividualSupplierBookings> SupplierNamesWithDatesService(UIRequest query);
+        FailuresInBooking FailureCountService(UIRequest query);
+        List<PaymentDetails> PaymentDetailsService(UIRequest query);
+        List<HotelBookingDates> BookingDatesService(UIRequest query);
+        List<TotalHotelBookings> TotalHotelBookingsService();
     }
 }

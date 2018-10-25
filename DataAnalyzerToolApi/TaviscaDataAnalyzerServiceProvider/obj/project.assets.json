@@ -967,6 +967,19 @@
         "runtime": {
           "bin/placeholder/TaviscaDataAnalyzerDatabase.dll": {}
         }
+      },
+      "TaviscaDataAnalyzerTranslator/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.1",
+        "dependencies": {
+          "CoreContracts": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/TaviscaDataAnalyzerTranslator.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TaviscaDataAnalyzerTranslator.dll": {}
+        }
       }
     }
   },
@@ -2480,6 +2493,11 @@
       "type": "project",
       "path": "../TaviscaDataAnalyzerDatabase/TaviscaDataAnalyzerDatabase.csproj",
       "msbuildProject": "../TaviscaDataAnalyzerDatabase/TaviscaDataAnalyzerDatabase.csproj"
+    },
+    "TaviscaDataAnalyzerTranslator/1.0.0": {
+      "type": "project",
+      "path": "../TaviscaDataAnalyzerTranslator/TaviscaDataAnalyzerTranslator.csproj",
+      "msbuildProject": "../TaviscaDataAnalyzerTranslator/TaviscaDataAnalyzerTranslator.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2490,7 +2508,8 @@
       "Newtonsoft.Json >= 11.0.2",
       "System.Data.SqlClient >= 4.5.1",
       "TaviscaDataAnalyzerCache >= 1.0.0",
-      "TaviscaDataAnalyzerDatabase >= 1.0.0"
+      "TaviscaDataAnalyzerDatabase >= 1.0.0",
+      "TaviscaDataAnalyzerTranslator >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2531,6 +2550,9 @@
             },
             "C:\\Users\\pvashisht\\Desktop\\tavLatest\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerDatabase\\TaviscaDataAnalyzerDatabase.csproj": {
               "projectPath": "C:\\Users\\pvashisht\\Desktop\\tavLatest\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerDatabase\\TaviscaDataAnalyzerDatabase.csproj"
+            },
+            "C:\\Users\\pvashisht\\Desktop\\tavLatest\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerTranslator\\TaviscaDataAnalyzerTranslator.csproj": {
+              "projectPath": "C:\\Users\\pvashisht\\Desktop\\tavLatest\\DataAnalyzerTool\\DataAnalyzerToolApi\\TaviscaDataAnalyzerTranslator\\TaviscaDataAnalyzerTranslator.csproj"
             }
           }
         }

@@ -1,18 +1,19 @@
 ﻿using CoreContracts.Models;
+using System.Data;
 
 namespace TaviscaDataAnalyzerDatabase
 {
     public interface IHotelRepository
     {
-        string GetAllLocationsDatabase();
-        string HotelsAtALocationWithDatesDatabases(UIRequest query);
+        DataTable GetAllLocationsDatabase();
+        DataTable HotelsAtALocationWithDatesDatabases(UIRequest query);
 
-        string SupplierNamesWithDatesDatabase(UIRequest query);
-        string HotelNameWithDatesDatabases(UIRequest query);
-        string BookingDatesDatabase(UIRequest query);
-        string FailureCountDataBase(UIRequest query);
-        string PaymentDetailsDatabase(UIRequest query);
+        DataTable SupplierNamesWithDatesDatabase(UIRequest query);
+        DataTable HotelNameWithDatesDatabases(UIRequest query);
+        DataTable BookingDatesDatabase(UIRequest query);
+        DataTable FailureCountDataBase(UIRequest query);
+        DataTable PaymentDetailsDatabase(UIRequest query);
 
-        string TotalHotelBookingsDataBase();
+        DataTable TotalHotelBookingsDataBase();
     }
 }

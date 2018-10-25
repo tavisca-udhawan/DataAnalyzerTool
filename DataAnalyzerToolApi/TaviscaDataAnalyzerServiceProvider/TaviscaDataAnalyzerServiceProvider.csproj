@@ -15,6 +15,7 @@
     <ProjectReference Include="..\CoreContracts\CoreContracts.csproj" />
     <ProjectReference Include="..\TaviscaDataAnalyzerCache\TaviscaDataAnalyzerCache.csproj" />
     <ProjectReference Include="..\TaviscaDataAnalyzerDatabase\TaviscaDataAnalyzerDatabase.csproj" />
+    <ProjectReference Include="..\TaviscaDataAnalyzerTranslator\TaviscaDataAnalyzerTranslator.csproj" />
   </ItemGroup>
 
 </Project>

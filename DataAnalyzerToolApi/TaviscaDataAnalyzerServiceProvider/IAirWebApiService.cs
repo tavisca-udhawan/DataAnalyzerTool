@@ -1,16 +1,17 @@
 ﻿using CoreContracts.Models;
 using CoreContracts.Models.Air;
+using System.Collections.Generic;
 
 namespace TaviscaDataAnalyzerServiceProvider
 {
    public interface IAirWebApiService
     {
-        object AirPaymentTypeService(UIRequest uIRequest);
-        object MarketingAirlineBookingsInfoService(UIRequest uIRequest);
-        object FailureCountInfoService(UIRequest uIRequest);
-        object TotalBookingsInfoService();
-        object BookingsWithinDateRangeInfoService(UIRequest uIRequest);
-        object BookingsForSpecificTripService(TripBookingRequest uIRequest);
-        object ListOfAirportsWithCodeService();
+        List<AirPaymentType> AirPaymentTypeService(UIRequest uIRequest);
+        List<MarketingAirlineBookings> MarketingAirlineBookingsInfoService(UIRequest uIRequest);
+        FailureCount FailureCountInfoService(UIRequest uIRequest);
+        List<TotalBookings> TotalBookingsInfoService();
+        List<DatesWithBookings> BookingsWithinDateRangeInfoService(UIRequest uIRequest);
+        List<BookingsForSpecificTrip> BookingsForSpecificTripService(TripBookingRequest uIRequest);
+        List<AirportsWithCodes> ListOfAirportsWithCodeService();
     }
 }

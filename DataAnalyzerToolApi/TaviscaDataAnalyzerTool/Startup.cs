@@ -15,6 +15,8 @@ using TaviscaDataAnalyzerServiceProvider;
 using TaviscaDataAnalyzerCache;
 using Microsoft.EntityFrameworkCore;
 using System.Data.SqlClient;
+using TaviscaDataAnalyzerTranslator.AirTranslator;
+using TaviscaDataAnalyzerTranslator.HotelsTranslator;
 
 namespace TaviscaDataAnalyzerTool
 {
@@ -40,13 +42,14 @@ namespace TaviscaDataAnalyzerTool
             services.Configure<AppSetting>(Configuration.GetSection("AppSetting"));
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSingleton(Configuration);
-            //services.AddOptions<AppSetting>("Appsetting");
+                        
+            services.AddTransient<IHotelTranslator, HotelTranslator>();
+            services.AddTransient<IAirTranslator,AirTranslator >();
             services.AddTransient<IEmailService, EmailService>();
             services.AddTransient<ISqlConnector, SqlConnector>();
             services.AddTransient<IHotelRepository, HotelSqlDatabase>(); 
             services.AddTransient<IAirWebApiService, AirWebApiService>(); 
             services.AddTransient<IAirRepository, AirSqlDatabase>();
-            
             services.AddTransient<IHotelWebApiServiceProvider, HotelWebApiServiceProvider>();
         }
 

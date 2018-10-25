@@ -1,16 +1,17 @@
 ﻿using CoreContracts.Models;
 using CoreContracts.Models.Air;
+using System.Data;
 
 namespace TaviscaDataAnalyzerDatabase
 {
     public interface IAirRepository
     {
-        string AirPaymentTypeDatabase(UIRequest uIRequest);
-        string MarketingAirlineBookingsInfoDatabase(UIRequest uIRequest);
-        string AirFailureCountDatabase(UIRequest uIRequest);
-        string TotalBookingsInfoDatabase();
-        string BookingsWithinDateRangeInfoDatabase(UIRequest uIRequest);
-        string BookingsForSpecificTripDatabase(TripBookingRequest uIRequest);
-        string ListOfAirportsWithCodeDatabase();
+        DataTable AirPaymentTypeDatabase(UIRequest uIRequest);
+        DataTable MarketingAirlineBookingsInfoDatabase(UIRequest uIRequest);
+        DataTable AirFailureCountDatabase(UIRequest uIRequest);
+        DataTable TotalBookingsInfoDatabase();
+        DataTable BookingsWithinDateRangeInfoDatabase(UIRequest uIRequest);
+        DataTable BookingsForSpecificTripDatabase(TripBookingRequest uIRequest);
+        DataTable ListOfAirportsWithCodeDatabase();
     }
 }

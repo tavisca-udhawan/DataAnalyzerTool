@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaviscaDataAnalyzerDatabase
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaviscaDataAnalyzerCache", "TaviscaDataAnalyzerCache\TaviscaDataAnalyzerCache.csproj", "{6BEEEB6F-4D6F-4914-92E7-3806266D9676}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreContracts", "CoreContracts\CoreContracts.csproj", "{6F5A61AF-F4F2-4678-AC78-D14259B6145D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreContracts", "CoreContracts\CoreContracts.csproj", "{6F5A61AF-F4F2-4678-AC78-D14259B6145D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaviscaDataAnalyzerTranslator", "TaviscaDataAnalyzerTranslator\TaviscaDataAnalyzerTranslator.csproj", "{65C480BD-D7CB-4B4C-B399-375BCE073B93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{6F5A61AF-F4F2-4678-AC78-D14259B6145D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F5A61AF-F4F2-4678-AC78-D14259B6145D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F5A61AF-F4F2-4678-AC78-D14259B6145D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65C480BD-D7CB-4B4C-B399-375BCE073B93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65C480BD-D7CB-4B4C-B399-375BCE073B93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65C480BD-D7CB-4B4C-B399-375BCE073B93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65C480BD-D7CB-4B4C-B399-375BCE073B93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

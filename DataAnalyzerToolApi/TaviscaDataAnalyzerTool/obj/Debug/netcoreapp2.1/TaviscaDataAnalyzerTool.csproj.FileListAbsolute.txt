@@ -198,3 +198,5 @@ C:\Users\pvashisht\Desktop\tavLatest\DataAnalyzerTool\DataAnalyzerToolApi\Tavisc
 C:\Users\pvashisht\Desktop\tavLatest\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTool\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerTool.csproj.CopyComplete
 C:\Users\pvashisht\Desktop\tavLatest\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTool\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerTool.dll
 C:\Users\pvashisht\Desktop\tavLatest\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTool\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerTool.pdb
+C:\Users\pvashisht\Desktop\tavLatest\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTool\bin\Debug\netcoreapp2.1\TaviscaDataAnalyzerTranslator.dll
+C:\Users\pvashisht\Desktop\tavLatest\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTool\bin\Debug\netcoreapp2.1\TaviscaDataAnalyzerTranslator.pdb

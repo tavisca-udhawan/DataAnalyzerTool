@@ -704,13 +704,25 @@
           "Newtonsoft.Json": "11.0.2",
           "System.Data.SqlClient": "4.5.1",
           "TaviscaDataAnalyzerCache": "1.0.0",
-          "TaviscaDataAnalyzerDatabase": "1.0.0"
+          "TaviscaDataAnalyzerDatabase": "1.0.0",
+          "TaviscaDataAnalyzerTranslator": "1.0.0"
         },
         "runtime": {
           "TaviscaDataAnalyzerServiceProvider.dll": {}
         },
         "compile": {
           "TaviscaDataAnalyzerServiceProvider.dll": {}
+        }
+      },
+      "TaviscaDataAnalyzerTranslator/1.0.0": {
+        "dependencies": {
+          "CoreContracts": "1.0.0"
+        },
+        "runtime": {
+          "TaviscaDataAnalyzerTranslator.dll": {}
+        },
+        "compile": {
+          "TaviscaDataAnalyzerTranslator.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3912,6 +3924,11 @@
       "sha512": ""
     },
     "TaviscaDataAnalyzerServiceProvider/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "TaviscaDataAnalyzerTranslator/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
