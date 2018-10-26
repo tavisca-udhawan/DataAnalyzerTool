@@ -6,8 +6,6 @@ namespace TaviscaDataAnalyzerCache
 
     public class RedisCache : ICache
     {
-        //RedisConnector connector = new RedisConnector();
-
         internal readonly IDatabase redisDatabase;
         protected readonly IRedisConnectionFactory _connectionFactory;
 
@@ -25,13 +23,9 @@ namespace TaviscaDataAnalyzerCache
             else
                 return value;
         }
-
-
-        public void Post(string key, string value)
-        {
+       public void Add(string key, string value)
+       {
             redisDatabase.StringSet(key, value, TimeSpan.FromMinutes(1));
-        }
-
-
+       }
     }
 }

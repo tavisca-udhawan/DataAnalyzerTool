@@ -215,7 +215,6 @@ C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaD
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTool\bin\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.pdb
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTool\bin\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.pdb
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTool\bin\Debug\netcoreapp2.1\TaviscaDataAnalyzerTranslator.pdb
-C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTool\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerTool.csprojResolveAssemblyReference.cache
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTool\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerTool.csproj.CoreCompileInputs.cache
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTool\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerTool.RazorAssemblyInfo.cache
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTool\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerTool.RazorAssemblyInfo.cs
@@ -224,3 +223,5 @@ C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaD
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTool\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerTool.RazorTargetAssemblyInfo.cache
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTool\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerTool.dll
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTool\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerTool.pdb
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTool\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerTool.csprojAssemblyReference.cache
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerTool\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerTool.csproj.CopyComplete

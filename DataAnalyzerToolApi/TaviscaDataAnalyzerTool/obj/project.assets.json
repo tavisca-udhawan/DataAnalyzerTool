@@ -4746,6 +4746,7 @@
         "dependencies": {
           "CoreContracts": "1.0.0",
           "Microsoft.AspNet.WebApi.Cors": "5.2.6",
+          "Microsoft.Extensions.Options": "2.1.1",
           "Newtonsoft.Json": "11.0.2",
           "StackExchange.Redis": "2.0.513",
           "System.Data.SqlClient": "4.5.1"

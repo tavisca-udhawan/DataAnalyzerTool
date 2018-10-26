@@ -9,7 +9,7 @@ namespace TaviscaDataAnalyzerCache
 {
     public interface ICache
     {
-        void Post(string key, string value);
+        void Add(string key, string value);
         string Get(string key);
     }
 }

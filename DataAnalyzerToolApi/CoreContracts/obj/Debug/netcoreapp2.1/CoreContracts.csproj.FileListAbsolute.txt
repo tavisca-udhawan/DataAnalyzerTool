@@ -55,9 +55,9 @@ C:\Users\pvashisht\Desktop\tavLatest\DataAnalyzerTool\DataAnalyzerToolApi\CoreCo
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\CoreContracts\bin\Debug\netcoreapp2.1\CoreContracts.deps.json
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\CoreContracts\bin\Debug\netcoreapp2.1\CoreContracts.dll
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\CoreContracts\bin\Debug\netcoreapp2.1\CoreContracts.pdb
-C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\CoreContracts\obj\Debug\netcoreapp2.1\CoreContracts.csprojResolveAssemblyReference.cache
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\CoreContracts\obj\Debug\netcoreapp2.1\CoreContracts.csproj.CoreCompileInputs.cache
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\CoreContracts\obj\Debug\netcoreapp2.1\CoreContracts.AssemblyInfoInputs.cache
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\CoreContracts\obj\Debug\netcoreapp2.1\CoreContracts.AssemblyInfo.cs
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\CoreContracts\obj\Debug\netcoreapp2.1\CoreContracts.dll
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\CoreContracts\obj\Debug\netcoreapp2.1\CoreContracts.pdb
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\CoreContracts\obj\Debug\netcoreapp2.1\CoreContracts.csprojAssemblyReference.cache

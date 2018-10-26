@@ -9,23 +9,6 @@ namespace TaviscaDataAnalyzerCache
 {
     public class RedisConnectionFactory : IRedisConnectionFactory
     {
-        //static RedisConnector()
-        //{
-        //    RedisConnector.lazyConnection = new Lazy<ConnectionMultiplexer>(() =>
-        //    {
-        //        return ConnectionMultiplexer.Connect("13.232.45.55:6379");
-        //    });
-        //}
-
-        //private static Lazy<ConnectionMultiplexer> lazyConnection;
-
-        //public ConnectionMultiplexer Connection
-        //{
-        //    get
-        //    {
-        //        return lazyConnection.Value;
-        //    }
-        //}
 
         private readonly Lazy<ConnectionMultiplexer> _connection;
 

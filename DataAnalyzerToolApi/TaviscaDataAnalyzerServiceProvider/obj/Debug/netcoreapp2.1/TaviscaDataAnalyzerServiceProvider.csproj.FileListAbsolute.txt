@@ -152,9 +152,10 @@ C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaD
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerServiceProvider\bin\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.pdb
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerServiceProvider\bin\Debug\netcoreapp2.1\TaviscaDataAnalyzerDatabase.pdb
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerServiceProvider\bin\Debug\netcoreapp2.1\TaviscaDataAnalyzerTranslator.pdb
-C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerServiceProvider\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerServiceProvider.csprojResolveAssemblyReference.cache
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerServiceProvider\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerServiceProvider.csproj.CoreCompileInputs.cache
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerServiceProvider\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerServiceProvider.AssemblyInfoInputs.cache
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerServiceProvider\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerServiceProvider.AssemblyInfo.cs
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerServiceProvider\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerServiceProvider.dll
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerServiceProvider\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerServiceProvider.pdb
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerServiceProvider\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerServiceProvider.csprojAssemblyReference.cache
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerServiceProvider\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerServiceProvider.csproj.CopyComplete

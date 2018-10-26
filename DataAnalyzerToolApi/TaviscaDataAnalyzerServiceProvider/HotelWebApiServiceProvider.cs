@@ -30,7 +30,7 @@ namespace TaviscaDataAnalyzerServiceProvider
 
                 DataTable dataTable = _sqlDatabase.BookingDatesDatabase(query);
                 result = _hotelTranslator.BookingDatesTranslator(dataTable);
-                _cache.Post(data, result);
+                _cache.Add(data, result);
             }
             List<HotelBookingDates> hotelBookingDates = JsonConvert.DeserializeObject<List<HotelBookingDates>>(result);
             return hotelBookingDates;
@@ -46,7 +46,7 @@ namespace TaviscaDataAnalyzerServiceProvider
 
                 DataTable dataTable = _sqlDatabase.FailureCountDataBase(query);
                 result = _hotelTranslator.FailureCountTranslator(dataTable);
-                _cache.Post(data, result);
+                _cache.Add(data, result);
             }
             FailuresInBooking FailureCount = JsonConvert.DeserializeObject<FailuresInBooking>(result);
             return FailureCount;
@@ -62,7 +62,7 @@ namespace TaviscaDataAnalyzerServiceProvider
 
                 DataTable dataTable = _sqlDatabase.GetAllLocationsDatabase();
                 result = _hotelTranslator.GetAllLocationsTranslator(dataTable);
-                _cache.Post(data, result);
+                _cache.Add(data, result);
             }
             Cities ListOfCities = JsonConvert.DeserializeObject<Cities>(result);
             return ListOfCities;
@@ -78,7 +78,7 @@ namespace TaviscaDataAnalyzerServiceProvider
 
                 DataTable dataTable = _sqlDatabase.HotelNameWithDatesDatabases(query);
                 result = _hotelTranslator.HotelNameWithDatesTranslator(dataTable);
-                _cache.Post(data, result);
+                _cache.Add(data, result);
             }
             List<HotelNamesWithBookings> ListOfHotelNamesWithDates = JsonConvert.DeserializeObject<List<HotelNamesWithBookings>>(result);
             return ListOfHotelNamesWithDates;
@@ -94,7 +94,7 @@ namespace TaviscaDataAnalyzerServiceProvider
 
                 DataTable dataTable = _sqlDatabase.HotelsAtALocationWithDatesDatabases(query);
                 result = _hotelTranslator.HotelsAtALocationWithDatesTranslator(dataTable);
-                _cache.Post(data, result);
+                _cache.Add(data, result);
             }
             List<HotelsInALocationWithDates> ListOfHotelsWithDates = JsonConvert.DeserializeObject<List<HotelsInALocationWithDates>>(result);
             return ListOfHotelsWithDates;
@@ -110,7 +110,7 @@ namespace TaviscaDataAnalyzerServiceProvider
 
                 DataTable dataTable = _sqlDatabase.PaymentDetailsDatabase(query);
                 result = _hotelTranslator.PaymentDetailsTranslator(dataTable);
-                _cache.Post(data, result);
+                _cache.Add(data, result);
             }
             List<PaymentDetails> payment = JsonConvert.DeserializeObject<List<PaymentDetails>>(result);
             return payment;
@@ -126,7 +126,7 @@ namespace TaviscaDataAnalyzerServiceProvider
 
                 DataTable dataTable = _sqlDatabase.SupplierNamesWithDatesDatabase(query);
                 result = _hotelTranslator.SupplierNamesWithDatesTranslator(dataTable);
-                _cache.Post(data, result);
+                _cache.Add(data, result);
             }
             List<IndividualSupplierBookings> ListOfSuppliers = JsonConvert.DeserializeObject<List<IndividualSupplierBookings>>(result);
             return ListOfSuppliers;
@@ -142,7 +142,7 @@ namespace TaviscaDataAnalyzerServiceProvider
 
                 DataTable dataTable = _sqlDatabase.TotalHotelBookingsDataBase();
                 result = _hotelTranslator.TotalHotelBookingsTranslator(dataTable);
-                _cache.Post(data, result);
+                _cache.Add(data, result);
             }
             List<TotalHotelBookings> totalHotelBookings = JsonConvert.DeserializeObject<List<TotalHotelBookings>>(result);
             return totalHotelBookings;

@@ -110,9 +110,10 @@ C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaD
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\bin\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.pdb
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\bin\Debug\netcoreapp2.1\CoreContracts.dll
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\bin\Debug\netcoreapp2.1\CoreContracts.pdb
-C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.csprojResolveAssemblyReference.cache
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.csproj.CoreCompileInputs.cache
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.AssemblyInfoInputs.cache
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.AssemblyInfo.cs
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.dll
 C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.pdb
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.csprojAssemblyReference.cache
+C:\Users\ajoshi\Desktop\New folder\DataAnalyzerTool\DataAnalyzerToolApi\TaviscaDataAnalyzerCache\obj\Debug\netcoreapp2.1\TaviscaDataAnalyzerCache.csproj.CopyComplete
